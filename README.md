@@ -4,7 +4,7 @@ Modifications:
 * Supports Linux only, at the moment
 
 Compiling:
-* cd src/
-* make
-* cd ..
-* ./src/xeno
+`cd src/ 
+make
+cd ..
+./src/xeno`
