@@ -1,0 +1,1133 @@
+# UWAGA: Kazde podkreslenie w pliku zostanie zamienione na spacje
+#
+
+[INTELLIGENT]
+NAME = "Human"
+CATEGORY = "MONSTER_UNIQUE"
+DESCRIPTION = "A typical human male."
+TILE = "H"
+COLOR = 6
+SIZE = 100
+WEIGHT = 70000
+HIT POINTS = 15
+
+STRENGTH = 10
+DEXTERITY = 8
+SPEED = 20
+ENDURANCE = 10
+INTELLIGENCE = 10
+METABOLISM = 20
+
+UNARMED = "Bare Hands"
+SKIN = "Human Skin"
+
+skill = SMALL GUNS 20
+skill = ENERGY WEAPONS 20
+skill = MELEE WEAPONS 20
+skill = UNARMED 20
+skill = THROWING 20
+skill = MEDICINE 20
+skill = DODGING 10
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Player Combat"
+TILE = "@"
+COLOR = 14
+
+skill = SMALL GUNS 30
+skill = MELEE WEAPONS 45
+skill = UNARMED 30
+skill = THROWING 30
+
+INVENTORY = 1 "Leather Jacket" AS_ARMOR
+INVENTORY = 1 "Pistol 8mm" AS_WEAPON
+INVENTORY = 1 "Knife" AS_READY
+INVENTORY = 36 "Bullet 8mm"
+INVENTORY = 1 "Booster Pill"
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Player Medic"
+TILE = "@"
+COLOR = 14
+
+skill = MEDICINE 60
+metabolism = 40
+
+INVENTORY = 1 "Nanotech Scalpel" AS_WEAPON
+INVENTORY = 1 "Medical Clothing" AS_ARMOR
+INVENTORY = 1 "Nail Pistol" AS_READY
+INVENTORY = 2 "Nanorebuilding Pill"
+INVENTORY = 2 "Booster Pill"
+INVENTORY = 2 "Mijon Pill"
+INVENTORY = 20 "Nail"
+INVENTORY = 1 "Nanotech Battery"
+CATEGORY ITEM = "PILLS_POPULAR"
+CATEGORY ITEM = "PILLS_POPULAR"
+CATEGORY ITEM = "PILLS_POPULAR"
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Player Scientist"
+TILE = "@"
+COLOR = 14
+
+skill = ALIEN SCIENCE 60
+skill = PROGRAMMING 60
+skill = MELEE WEAPONS 30
+
+INVENTORY = 1 "Compact Laser Pistol" AS_WEAPON
+INVENTORY = 1 "Knife" AS_READY
+INVENTORY = 1 "Medical Clothing" AS_ARMOR
+INVENTORY = 1 "Nanorebuilding Pill"
+INVENTORY = 1 "Force Field"
+INVENTORY = 1 "Small Nanotech Battery"
+CATEGORY ITEM = "GRENADE_NORMAL_1"
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Player Mechanic"
+TILE = "@"
+COLOR = 14
+
+skill = MECHANIC 50
+skill = PROGRAMMING 40
+
+INVENTORY = 1 "Hammer" 
+INVENTORY = 1 "Workwear" AS_ARMOR
+INVENTORY = "Wrench" AS_WEAPON
+INVENTORY = "Automatic Repair Tool"
+INVENTORY = "Programming Tool"
+INVENTORY = "Utility Bot Shell"
+INVENTORY = "SentryGun CPU"
+INVENTORY = "Weak Simple Seeker CPU"
+INVENTORY = "Walking Bomb CPU"
+INVENTORY = "Rubber Robot Wheel"
+INVENTORY = "Rubber Robot Wheel"
+INVENTORY = "Metal Robot Caterpillar"
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Player TEST"
+TILE = "@"
+COLOR = 14
+
+skill = SMALL GUNS 30
+skill = MELEE WEAPONS 80
+skill = UNARMED 30
+skill = THROWING 30
+
+HIT POINTS = 30
+metabolism = 30
+strength = 15
+
+#INVENTORY = 1 "Protective Body Suit" AS_ARMOR
+INVENTORY = 1 "Power Armor" AS_ARMOR
+INVENTORY = 1 "Chainsaw" AS_WEAPON
+INVENTORY = 1 "Self-Charging Accumulator"
+INVENTORY = 2 "Booster Pill"
+INVENTORY = 2 "Antitoxin"
+INVENTORY = 1 "Mijon Pill"
+INVENTORY = 3 "Incendiary Grenade"
+INVENTORY = 3 "Poison-Gas Grenade"
+INVENTORY = 3 "Stun-Gas Grenade"
+INVENTORY = 3 "Paralyze-Gas Grenade"
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Player Tutorial"
+TILE = "@"
+COLOR = 14
+
+skill = SMALL GUNS 100
+skill = MELEE WEAPONS 100
+skill = UNARMED 100
+skill = THROWING 100
+skill = MECHANIC 100
+
+INVENTORY = "Axe"
+
+HIT POINTS = 100
+metabolism = 30
+strength = 15
+
+[COPYOF "Human"]
+NAME = "Crazy Citizen"
+CATEGORY = "MONSTER_POOR_HUMAN"
+GROUP = CRAZY
+DESCRIPTION = "This man is, or was, a citizen of the city in which you now stand. Though his body may now be present, his mind seems to be completely vacant. You gaze into his eyes, and you see it there, the madness, this man is mad, and he lost his sanity long ago. You get the feeling that it would be wise to keep your distance from him."
+INVENTORY = 1 "Leather Jacket" AS_ARMOR
+experience = 10
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+skill = MELEE WEAPONS 50
+skill = UNARMED 50
+
+[COPYOF "Human"]
+NAME = "Crazy Scientist"
+COLOR = 15
+CATEGORY = "MONSTER_CRAZY_HUMAN"
+GROUP = CRAZY
+DESCRIPTION = "This man was once a brilliant scientist, but now he is a mindless shell of his former self, driven to madness by the horrors he has witnessed. He shambles along, mumbling and muttering under his breath, and sometime cackling with delight at sights only he can see. As you watch him hopping about you get the feeling that he is dangerous, and should be avoided."
+
+intelligence = 25
+
+INVENTORY = 1 "Medical Clothing" AS_ARMOR
+CATEGORY ITEM = "PILLS_POPULAR"
+CATEGORY ITEM = "PILLS_POPULAR"
+CATEGORY ITEM = "PILLS_POPULAR"
+experience = 50
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Crazy Technician"
+COLOR = 7
+GROUP = CRAZY
+CATEGORY = "MONSTER_CRAZY_HUMAN"
+DESCRIPTION = "Fear filled, wild eyes glisten from out the darkness, belonging to a man that has lost all capacity for rational thought. The terrors he has seen have shattered his mind, causing him to abandon his work in favour of a new job; killing everyone and everything that moves, because they all pose a threat to him in his mind. He sees you as a threat as well, and will not hesitate to butcher your body."
+
+skill = MELEE WEAPONS 30
+INVENTORY = 1 "Workwear" AS_ARMOR
+CATEGORY ITEM = "WEAPON_H2H_IMPROVISED_1"
+experience = 50
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Soldier"
+CATEGORY = "MONSTER_HUMAN_MILITARY_1"
+COLOR = 2
+DESCRIPTION = "This is a human soldier, outfitted in heavy armour that bears the signs of the SpaceTroopers. You see his eyes, the are strange, inhuman, and they burn with a fiery hatred that only death can extinguish."
+WEIGHT = 80000
+HIT POINTS = 25
+
+strength = 14
+dexterity = 10
+speed = 20
+
+skill = SMALL GUNS 50
+skill = ENERGY WEAPONS 50
+skill = MELEE WEAPONS 50
+skill = UNARMED 50
+skill = THROWING 50
+skill = MEDICINE 50
+skill = DODGING 30
+
+INVENTORY = 1 "Pistol 8mm" AS_WEAPON
+INVENTORY = 1 "Kevlar Vest" AS_ARMOR
+INVENTORY = 20 "Bullet 8mm" 
+INVENTORY = 3 "Hand Grenade"
+INVENTORY = 2 "Smoke Grenade"
+INVENTORY = 1 "Incendiary Grenade"
+INVENTORY = 1 "Stun Grenade"
+INVENTORY = 1 "Force Field"
+INVENTORY = 1 "Large Force Field"
+INVENTORY = 3 "Personal Field"
+INVENTORY = 2 "Sensor Mine"
+INVENTORY = 2 "Sensor Incendiary Mine"
+experience = 500
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[COPYOF "Human"]
+NAME = "Crazy Miner"
+CATEGORY = "MONSTER_MINES_1"
+GROUP = CRAZY
+COLOR = 1
+DESCRIPTION = "The job of a miner is a dangerous thing, especially in the mines of Tartarus 3, where all manner of strange creatures run wild. Most people couldn't handle the stress of working under such conditions, and many of them would snap under the pressure. This is true of the man you are looking at. The nightmares that he had witnessed drove him over the brink of insanity. His eyes are cold and lifeless, yet he still lives, and he seeks the ruin of all around him, including you."
+WEIGHT = 80000
+HIT POINTS = 25
+
+strength = 14
+dexterity = 8
+speed = 20
+
+skill = MELEE WEAPONS 40
+skill = UNARMED 40
+skill = THROWING 30
+skill = DODGING 30
+
+CATEGORY ITEM = "WEAPON_H2H_IMPROVISED_2"
+INVENTORY = 1 "Mining Suit" AS_ARMOR
+INVENTORY = 1 "Mining Battery"
+experience = 300
+
+SOUND PAIN = "data/sounds/monsters/human/pain.wav"
+SOUND DYING = "data/sounds/monsters/human/die.wav"
+
+[ANIMAL]
+NAME = "Claw Rat"
+CATEGORY = "MONSTER_SPACE_SHIP_1"
+DESCRIPTION = "You see before you a large, rat-like creature whose body is covered in a thick brown layer of crusty, matted fur. Its eyes are like glowing yellow orbs, bulging out of its head, while from its mouth pours a steady stream of slimy drool. You also notice that the claw rat happens to have a set of claws that, though small, are extremely sharp, perhaps sharp enough to cut through armour, but definitely sharp enough to cut through flesh..."
+TILE = "r"
+COLOR = 6
+SIZE = 30
+WEIGHT = 20000
+HIT POINTS = 5
+
+strength = 8
+dexterity = 8
+speed = 20
+endurance = 10
+intelligence = 5
+metabolism = 10
+
+experience = 25
+
+unarmed = "Small Claws"
+skin = "Small Fur"
+
+skill = UNARMED 20
+
+SOUND PAIN = "data/sounds/monsters/rat/pain.wav"
+SOUND DYING = "data/sounds/monsters/rat/die.wav"
+
+[ANIMAL]
+NAME = "Tutorial Monster"
+CATEGORY = "MONSTER_UNIQUE"
+DESCRIPTION = "You see before you a large, rat-like creature whose body is covered in a thick brown layer of crusty, matted fur. Its eyes are like glowing yellow orbs, bulging out of its head, while from its mouth pours a steady stream of slimy drool. You also notice that the claw rat happens to have a set of claws that, though small, are extremely sharp, perhaps sharp enough to cut through armour, but definitely sharp enough to cut through flesh..."
+TILE = "r"
+COLOR = 6
+SIZE = 30
+WEIGHT = 20000
+HIT POINTS = 10
+
+strength = 0
+dexterity = 0
+speed = 15
+endurance = 10
+intelligence = 5
+metabolism = 10
+
+experience = 1
+
+unarmed = "Small Claws"
+skin = "Small Fur"
+
+skill = UNARMED 0
+
+SOUND PAIN = "data/sounds/monsters/rat/pain.wav"
+SOUND DYING = "data/sounds/monsters/rat/die.wav"
+
+# definicja znajduje sie glownie w klasie, tutaj tylko dla mozliwosci zmian bez kompilacji kodu
+[MADDOCTOR]
+NAME = "Mad Doctor"
+CATEGORY = "MONSTER_UNIQUE"
+DESCRIPTION = "This genetic lab was once home to a myriad of illegal experiments, all which have gone awry. You have witnessed with your own eyes the horrors that man may forge when he alters nature against the natural order. But all of the horrors you have witness prior to this moment pale in comparison to the terror that now stands before you. This genetic lab was once overseen by a doctor, a mad man who believed himself to be equal to God. Yet he was not omnipotent, and when his own creations turned on him and left him for dead, he was forced to turn to his own twisted science to save himself. In order to save himself he injected into his bloodstream a myriad of mutagenic chemicals, each different chemical containing a sampling of alien DNA. Now he stands before you, no longer recognizable as a man. The DNAs of his experiments have merged with his own, transforming him into a thing that is neither man nor beast. High above you he towers, easily ten feet tall, covered from the waist up by a thin layer of matted, putrid, twisted fur. His arms, thick as tree trunks, each sport a multitude of fingers, while at the end of each finger is a sword-like claw. Below the waist he ceases to resemble a man in the least, his belly terminating in a set of chitinous, spider-esque legs. From out his back protrudes what would appear to be an exoskeletal tail, at the end of which rests a large barb that looks as if it was stripped right off of some immense devil-scorpion. All these things are terrifying, but the feature of the doctor that is most hideous of all is not one of his many bizarre appendages. No, the thing about him that strikes you with greatest dread is his face. Though set into a mass of hideous, inhuman flesh, the doctor's face is very human. It has all the features that one would expect to find in an old, grandfatherly man, but this pleasant face is twisted into a sick grin, and its cold grey eyes burn with an empty and hollow fire. Yes, this was once a man, but regardless of who this man once was, you can see that what he is now, and you know this; he gazed upon you with intent, the intent to kill. The fear swells up inside of your chest as he draws nearer, and you know that you have to make a choice. You can either fight to rid the cosmos of this thing, or you can flee to save your own life. With every passing moment the doctor draws nearer, and so you have to make a choice, and fast. What will you do?"
+COLOR = 10
+SIZE = 1000
+WEIGHT = 200000
+HIT POINTS = 200
+
+strength = 15
+dexterity = 15
+speed = 35
+endurance = 10
+intelligence = 20
+metabolism = 100
+
+experience = 4000
+skill = UNARMED 70
+skill = MELEE WEAPONS 70
+skill = THROWING 90
+
+RESIST = Radioactive 100
+RESIST = Poison 100
+RESIST = Stun 100
+
+skin = "Small Fur"
+unarmed = "Claw Arms"
+
+[ANIMAL]
+NAME = "Rabid Prankster"
+CATEGORY = "MONSTER_SPACE_SHIP_1"
+DESCRIPTION = "Pranksters resemble small monkeys, though they only have the intelligence of your average dog. These creatures are usually kept as pets, though this one acts like it is wild. On closer inspection you see the reason for the creature's behaviour, it is foaming at the mouth, making this a rabid prankster."
+TILE = "m"
+COLOR = 6
+SIZE = 150
+WEIGHT = 20000
+HIT POINTS = 15
+
+strength = 8
+dexterity = 7
+skill = UNARMED 25
+speed = 20
+endurance = 3
+intelligence = 10
+metabolism = 10
+
+experience = 50
+
+unarmed = "Small Teeth"
+skin = "Small Fur"
+
+SOUND PAIN = "data/sounds/monsters/prankster/pain.wav"
+SOUND DYING = "data/sounds/monsters/prankster/die.wav"
+
+[ANIMAL]
+NAME = "Starcrawler"
+CATEGORY = "MONSTER_SPACE_SHIP_1"
+DESCRIPTION = "Starcrawlers are large centipedes, commonly found on planets outside of the Solar System. Despite extensive research, scientists have yet to explain how this race became so wide spread throughout the galaxy."
+TILE = "w"
+COLOR = 9
+SIZE = 50
+WEIGHT = 10000
+HIT POINTS = 15
+
+strength = 15
+dexterity = 5
+speed = 15
+endurance = 15
+intelligence = 10
+metabolism = 10
+experience = 40
+skill = UNARMED 40
+
+unarmed = "Small Claws"
+skin = "Soft Skin"
+
+SOUND PAIN = "data/sounds/monsters/worm/pain.wav"
+SOUND DYING = "data/sounds/monsters/worm/die.wav"
+
+[ANIMAL]
+NAME = "Splitter"
+CATEGORY = "MONSTER_MINES_2"
+DESCRIPTION = "The splitter appears at first glance to be nothing more than a large glob of yellow mucous, but closer inspection would show that the creature is very much alive. It crawls about the floor, hunting after smaller organisms and absorbing them into it's membrane. You remember reading something about this creature once. Supposedly it functions very much like a giant once-celled amoeba, and, when terminally damaged, it is capable of diving itself into two smaller splitters by using the nutrients in its cytoplasm to heal itself. Splitters can only be destroyed once they do not have enough nutrients left to split."
+SPECIAL FEATURE = SPLITTER
+TILE = "n"
+COLOR = 14
+SIZE = 100
+WEIGHT = 20000
+HIT POINTS = 25
+
+strength = 12
+dexterity = 8
+speed = 20
+skill = UNARMED 60
+endurance = 3
+intelligence = 10
+metabolism = 10
+experience = 200
+
+unarmed = "Small Teeth"
+skin = "Soft Skin"
+
+SOUND PAIN = "data/sounds/monsters/splitter/pain.wav"
+SOUND DYING = "data/sounds/monsters/splitter/die.wav"
+
+[ANIMAL]
+NAME = "Small Critter"
+CATEGORY = "MONSTER_SPACE_SHIP_1"
+DESCRIPTION = "Critters appear to be harmless, furry, ball-like creatures, but upon closer inspection one would find that they are anything but harmless. With their rows upon rows of razor sharp teeth, and their glowing red eyes, they look like something out of a nightmare. They love the taste of raw, living flesh (especially human flesh), so there's always an open season for them. This critter is very young, and it hasn't begun to grow it's fur yet."
+
+TILE = "o"
+COLOR = 7
+SIZE = 100
+WEIGHT = 15000
+HIT POINTS = 12
+strength = 7
+dexterity = 8
+speed = 30
+endurance = 10
+intelligence = 10
+metabolism = 10
+
+experience = 60
+skill = UNARMED 40
+
+unarmed = "Small Teeth"
+skin = "Soft Skin"
+
+SOUND PAIN = "data/sounds/monsters/critter/pain.ogg"
+SOUND DYING = "data/sounds/monsters/critter/die.ogg"
+
+[ANIMAL]
+NAME = "Black Beetle"
+CATEGORY = "MONSTER_SPACE_SHIP_2"
+DESCRIPTION = "Black Beetles are enormous insectoid organisms. Though they may move slow, their thick chitinous armour protects them from the attacks of most other life forms. Their armour, combined with their huge, razor-edged mandibles, makes them essentially an organic tank. You find it strange that this creature is here. They are usually found in dark caves on planets with low oxygen atmospheres, and not on space stations."
+TILE = "B"
+COLOR = 8
+SIZE = 200
+WEIGHT = 35000
+HIT POINTS = 25
+
+strength = 20
+dexterity = 7
+speed = 10
+endurance = 20
+intelligence = 10
+metabolism = 10
+
+experience = 120
+
+unarmed = "Sharp Teeth"
+skin = "Chitin Armor"
+
+skill = UNARMED 20
+
+SOUND PAIN = "data/sounds/monsters/beetle/pain.wav"
+SOUND DYING = "data/sounds/monsters/beetle/die.wav"
+
+[ANIMAL]
+NAME = "Medium Critter"
+CATEGORY = "MONSTER_SPACE_SHIP_2"
+DESCRIPTION = "Critters appear to be harmless, furry, ball-like creatures, but upon closer inspection one would find that they are anything but harmless. With their rows upon rows of razor sharp teeth, and their glowing red eyes, they look like something out of a nightmare. They love the taste of raw, living flesh (especially human flesh), so there's always an open season for them. This critter is probably not that young, since it has begun to grow a small coat of fur."
+TILE = "o"
+COLOR = 6
+SIZE = 200
+WEIGHT = 30000
+HIT POINTS = 25
+skill = UNARMED 40
+
+strength = 8
+dexterity = 9
+speed = 30
+endurance = 10
+
+intelligence = 10
+metabolism = 10
+
+experience = 125
+
+unarmed = "Small Teeth"
+skin = "Small Fur"
+
+SOUND PAIN = "data/sounds/monsters/critter/pain.wav"
+SOUND DYING = "data/sounds/monsters/critter/die.wav"
+
+[ANIMAL]
+NAME = "Stained Worm"
+CATEGORY = "MONSTER_SPACE_SHIP_2"
+DESCRIPTION = "Stained worms are large, slow moving tubular life forms. Their skin has a green pigmentation that can range from being very light to being very dark, almost black. Though there in not much force behind its bite, the stainy worm's teeth inject a poisonous venom into whatever it bites. This makes the stainy worm a potentially deadly foe."
+
+TILE = "w"
+COLOR = 2
+SIZE = 100
+WEIGHT = 12000
+HIT POINTS = 20
+
+strength = 15
+dexterity = 10
+speed = 15
+endurance = 8
+intelligence = 10
+metabolism = 10
+
+experience = 100
+
+unarmed = "Small Poisoning Teeth"
+skin = "Soft Skin"
+RESIST = Poison 50
+
+SOUND PAIN = "data/sounds/monsters/worm/pain.wav"
+SOUND DYING = "data/sounds/monsters/worm/die.wav"
+
+[ANIMAL]
+NAME = "Flying Leech"
+CATEGORY = "MONSTER_SPACE_SHIP_2"
+DESCRIPTION = "This creature appears to be a large, black, flying leech. It is a scavenger, hovering about and attaching itself to a nearby organism. The leech, rather than killing the creature, paralyses it and waits for it to die, and then feasts on the remains."
+TILE = "b"
+COLOR = 12
+SIZE = 100
+WEIGHT = 10000
+HIT POINTS = 15
+
+strength = 13
+dexterity = 13
+speed = 30
+endurance = 8
+intelligence = 10
+metabolism = 20
+experience = 75
+skill = UNARMED 40
+
+unarmed = "Paralyzing Sucker"
+skin = "Soft Skin"
+RESIST = Paralyze 50
+
+SOUND PAIN = "data/sounds/monsters/flyleech/pain.wav"
+SOUND DYING = "data/sounds/monsters/flyleech/die.wav"
+
+[ANIMAL]
+NAME = "Genotroid"
+CATEGORY = "MONSTER_SPACE_SHIP_3"
+DESCRIPTION = "The genotroid are a race of hunters that sport deadly, razor sharp claws and teeth as their weapons. You can run from a genotroid, but you can't hide - it will find you and kill you... Amongst the SpaceTroopers it is rumoured, that they were bred by the Enemy..."
+TILE = "A"
+COLOR = 8
+SIZE = 150
+WEIGHT = 60000
+HIT POINTS = 55
+
+experience = 350
+
+strength = 12
+dexterity = 15
+speed = 25
+endurance = 15
+intelligence = 5
+metabolism = 10
+
+skill = UNARMED 50
+RESIST = Poison 50
+
+unarmed = "Genotroid Claws"
+skin = "Small Fur"
+
+SOUND PAIN = "data/sounds/monsters/genotroid/pain.wav"
+SOUND DYING = "data/sounds/monsters/genotroid/die.wav"
+
+[ANIMAL]
+NAME = "Two-headed Dog"
+CATEGORY = "MONSTER_GENETIC_LAB_1"
+DESCRIPTION = "This creature resembles a hideous two-headed canine. The product of some bizarre genetic experiment, it has a brown fur and two muzzles full of teeth."
+TILE = "d"
+COLOR = 6
+SIZE = 100
+WEIGHT = 7000
+HIT POINTS = 25
+
+strength = 10
+dexterity = 10
+speed = 35
+endurance = 5
+intelligence = 5
+metabolism = 20
+
+experience = 50
+skill = UNARMED 60
+
+unarmed = "Dog Teeth & Claws"
+skin = "Small Fur"
+
+SOUND PAIN = "data/sounds/monsters/dog/pain.wav"
+SOUND DYING = "data/sounds/monsters/dog/die.wav"
+
+[ANIMAL]
+NAME = "Giant Spider"
+CATEGORY = "MONSTER_GENETIC_LAB_2"
+DESCRIPTION = "A giant green arachnid created as the result of genetic engineering. Who would want to make such a monstrous creature, you can only imagine."
+TILE = "s"
+COLOR = 14
+SIZE = 40
+WEIGHT = 5000
+HIT POINTS = 40
+skill = UNARMED 80
+
+strength = 10
+dexterity = 12
+speed = 20
+endurance = 8
+intelligence = 6
+metabolism = 10
+
+experience = 250
+
+unarmed = "Large Poisoning Teeth"
+skin = "Small Fur"
+
+RESIST = Poison 50
+
+SOUND PAIN = "data/sounds/monsters/spider/pain.wav"
+SOUND DYING = "data/sounds/monsters/spider/die.wav"
+
+[ANIMAL]
+NAME = "Radioactive Spider"
+CATEGORY = "MONSTER_GENETIC_LAB_3"
+DESCRIPTION = "A giant green arachnid created as the result of genetic engineering. Who would want to make such a monstrous creature, you can only imagine. This one is shining green!"
+TILE = "s"
+COLOR = 13
+SIZE = 40
+WEIGHT = 5000
+HIT POINTS = 40
+skill = UNARMED 80
+
+strength = 12
+dexterity = 12
+speed = 20
+endurance = 8
+intelligence = 6
+metabolism = 10
+
+experience = 350
+
+unarmed = "Large Radioactive Teeth"
+skin = "Small Fur"
+RESIST = Radioactive 50
+
+SOUND PAIN = "data/sounds/monsters/spider/pain.wav"
+SOUND DYING = "data/sounds/monsters/spider/die.wav"
+
+[ANIMAL]
+NAME = "Vampire Bat"
+CATEGORY = "MONSTER_GENETIC_LAB_2"
+DESCRIPTION = "This flying mammal doesn't resemble the vampire bats that one would find on Earth. Instead of merely draining the blood of its victim, this creature uses its fangs to metabolise the player's haemoglobin in order to heal its own wounds. Add that to the fact that it moves extremely fast, and you've got one deadly predator."
+TILE = "b"
+COLOR = 7
+SIZE = 30
+WEIGHT = 5000
+HIT POINTS = 30
+skill = UNARMED 70
+
+strength = 6
+dexterity = 20
+speed = 40
+endurance = 8
+intelligence = 3
+metabolism = 20
+
+experience = 75
+
+unarmed = "Vampiric Teeth"
+skin = "Small Fur"
+
+SOUND PAIN = "data/sounds/monsters/flyleech/pain.wav"
+SOUND DYING = "data/sounds/monsters/flyleech/die.wav"
+
+[ANIMAL]
+NAME = "Walking Octopus"
+CATEGORY = "MONSTER_GENETIC_LAB_2"
+DESCRIPTION = "A huge cephalopod, artificially engineered to live out of the water. Amazingly enough, this squid-like creature walks on four of its massive tentacles, reserving the other four for manipulating the world around it. This includes using its toxin-covered limbs to eliminate other life forms, such as yourself..."
+TILE = "J"
+COLOR = 10
+SIZE = 130
+WEIGHT = 15000
+HIT POINTS = 30
+skill = UNARMED 90
+
+strength = 6
+dexterity = 8
+speed = 20
+endurance = 8
+intelligence = 3
+metabolism = 45
+
+experience = 150
+
+unarmed = "Poisoning Tentacles"
+skin = "Soft Skin"
+RESIST = Radioactive 50
+RESIST = Poison 50
+RESIST = Paralyze 50
+
+SOUND PAIN = "data/sounds/monsters/octopus/pain.wav"
+SOUND DYING = "data/sounds/monsters/octopus/die.wav"
+
+[ANIMAL]
+NAME = "Red Centipede"
+CATEGORY = "MONSTER_GENETIC_LAB_1"
+DESCRIPTION = "A large red centipede, it looks a lot like a starcrawler, only much larger and more deadly. Exercise extreme caution when approaching."
+TILE = "w"
+COLOR = 4
+SIZE = 130
+WEIGHT = 15000
+HIT POINTS = 20
+skill = UNARMED 80
+
+strength = 12
+dexterity = 10
+speed = 25
+endurance = 8
+intelligence = 3
+metabolism = 10
+
+experience = 50
+skill = UNARMED 90
+
+unarmed = "Small Claws"
+skin = "Chitin Armor"
+
+RESIST = Fire 50
+RESIST = Radioactive 50
+
+SOUND PAIN = "data/sounds/monsters/worm/pain.wav"
+SOUND DYING = "data/sounds/monsters/worm/die.wav"
+
+[ANIMAL]
+NAME = "Green Centipede"
+CATEGORY = "MONSTER_GENETIC_LAB_3"
+DESCRIPTION = "At first all you heard was the clicking sound made by its monstrous legs. Slowly the sound grew louder and louder as the creature began to draw near. Then its green chitin shell emerged from the shadows, and you glimpsed it with your own two eyes. It resembled the kind of creature that you'd expect to find sleeping beneath a rock during the day, or be horrified to find crawling up your leg by night, only this specimen was a hundred times larger and a hundred times more horrifying. Surely this thing could only have been conceived in the laboratory of some deranged, mad scientist. Flee, flee while you still can..."
+TILE = "w"
+COLOR = 2
+SIZE = 130
+WEIGHT = 15000
+HIT POINTS = 40
+skill = UNARMED 100
+
+strength = 13
+dexterity = 13
+
+speed = 20
+endurance = 12
+intelligence = 3
+metabolism = 30
+
+experience = 250
+
+unarmed = "Large Claws"
+skin = "Chitin Armor"
+
+RESIST = Poison 50
+RESIST = Radioactive 50
+
+SOUND PAIN = "data/sounds/monsters/worm/pain.wav"
+SOUND DYING = "data/sounds/monsters/worm/die.wav"
+
+[ANIMAL]
+NAME = "Blue Mouse"
+CATEGORY = "MONSTER_GENETIC_LAB_1"
+DESCRIPTION = "A small neon-blue mouse that skits about the floor. You have no idea why someone would want to engineer a blue mouse, unless the man who created it was completely insane."
+TILE = "r"
+COLOR = 1
+SIZE = 30
+WEIGHT = 3000
+HIT POINTS = 10
+skill = UNARMED 50
+
+strength = 5
+dexterity = 10
+speed = 30
+endurance = 8
+intelligence = 8
+metabolism = 25
+
+experience = 5
+
+unarmed = "Small Claws"
+
+skin = "Small Fur"
+
+RESIST = Electricity 100
+RESIST = Fire 100
+RESIST = Poison 100
+RESIST = Radioactive 100
+RESIST = Stun 100
+
+SOUND PAIN = "data/sounds/monsters/rat/pain.wav"
+SOUND DYING = "data/sounds/monsters/rat/die.wav"
+
+[ANIMAL]
+NAME = "Bloody Rabbit"
+CATEGORY = "MONSTER_GENETIC_LAB_2"
+DESCRIPTION = "At first glance this may appear to be a small rabbit, the kind that people often keep as pets. As it gets closer, and you glimpse it in the light, you see that this is not ordinary bunny. The organism's fur is covered with layer upon layer of blood, some of it brown and dry, but some of it red and fresh. The creature's eyes glisten with an unholy light and reveals the beasts true nature. It is a killer, and it cannot wait to sink its vorpal fangs into your flesh..."
+TILE = "r"
+COLOR = 7
+SIZE = 80
+WEIGHT = 7000
+HIT POINTS = 10
+skill = UNARMED 80
+
+strength = 11
+dexterity = 10
+speed = 30
+endurance = 8
+intelligence = 4
+metabolism = 25
+
+experience = 200
+
+unarmed = "Sharp Teeth"
+skin = "Small Fur"
+
+SOUND PAIN = "data/sounds/monsters/rabbit/pain.wav"
+SOUND DYING = "data/sounds/monsters/rabbit/die.wav"
+
+[ANIMAL]
+NAME = "Giant Wasp"
+CATEGORY = "MONSTER_GENETIC_LAB_1"
+DESCRIPTION = "This creature appears to be a gigantic version of the common wasp. Hovering several feet above the ground, its hard exoskeleton offers excellent protection, while its foot-long stinger is sure to make quite an impression on its next meal..."
+TILE = "b"
+COLOR = 14
+SIZE = 40
+WEIGHT = 5000
+HIT POINTS = 25
+
+strength = 9
+dexterity = 10
+speed = 30
+endurance = 8
+intelligence = 4
+metabolism = 25
+
+experience = 125
+
+unarmed = "Sting"
+skin = "Hard Skin"
+
+RESIST = Poison 50
+skill = UNARMED 50
+
+SOUND PAIN = "data/sounds/monsters/wasp/pain.wav"
+SOUND DYING = "data/sounds/monsters/wasp/die.wav"
+
+[ANIMAL]
+NAME = "Tentacle Bear"
+CATEGORY = "MONSTER_GENETIC_LAB_3"
+DESCRIPTION = "A truly bizarre creature, it has the body of a large, fearsome bear, and the venomous arms of a cephalopod. As with everything else in this lab, the tentacle bear was probably conceived in a test-tube."
+TILE = "J"
+COLOR = 6
+SIZE = 140
+WEIGHT = 45000
+HIT POINTS = 55
+skill = UNARMED 80
+
+strength = 15
+dexterity = 10
+speed = 25
+endurance = 15
+intelligence = 4
+metabolism = 35
+
+experience = 150
+
+unarmed = "Poisoning and Paralyzing Tentacles"
+skin = "Hard Skin"
+
+RESIST = Poison 100
+
+SOUND PAIN = "data/sounds/monsters/bear/pain.wav"
+SOUND DYING = "data/sounds/monsters/bear/die.wav"
+
+[INTELLIGENT]
+NAME = "Snake Man"
+CATEGORY = "MONSTER_GENETIC_LAB_3"
+DESCRIPTION = "A truly horrible hybrid. It has a humanoid body, but it is lacking human skin. Instead it is covered by layer upon layer of thick reptilian scales that extend all the way from its head down to its body, arms, legs and snake-like tail. It's yellow serpentine eyes seem to glow with a light of their own, while its forked tongue constantly flicks out of its head, seeking the scent of its next victim. This doesn't look like the kind of being you would expect to find outside of a fictions, fantasy world."
+TILE = "H"
+COLOR = 2
+SIZE = 100
+WEIGHT = 75000
+HIT POINTS = 45
+
+strength = 12
+dexterity = 20
+speed = 20
+endurance = 15
+intelligence = 10
+metabolism = 30
+
+skill = MELEE WEAPONS 40
+skill = UNARMED 40
+
+experience = 250
+
+unarmed = "Bare Hands"
+skin = "Hard Scales"
+
+CATEGORY ITEM = "WEAPON_H2H_IMPROVISED_2"
+CATEGORY ITEM = "WEAPON_RANGE_IMPROVISED_2"
+
+AI RESTRIRCTIONS = DONT USE HEALING | DONT USE GRENADES
+RESIST = Poison 100
+
+SOUND PAIN = "data/sounds/monsters/snakeman/pain.ogg"
+SOUND DYING = "data/sounds/monsters/snakeman/die.ogg"
+
+[ROBOT]
+NAME = "Sentry Gun"
+CATEGORY = "MONSTER_SENTRY_GUN_1"
+DESCRIPTION = "This is your standard revolving sentry gun, composed of a steel cylindrical base with an automated gun turret mounted on top. The turret sports a fully automatic machinegun that makes up for its low stopping power with a fast fire rate."
+SHELL = "Small Stationary Robot Shell"
+CPU = "SentryGun CPU"
+Action Slot = "Standard Sentry Gun Rifle"
+Action Slot = 42 "Rifle Bullet 6.25mm"
+experience = 100
+
+SOUND DYING = "data/sounds/monsters/robot2/die.wav"
+
+[ROBOT]
+NAME = "Tutorial Target"
+CATEGORY = "MONSTER_UNIQUE"
+DESCRIPTION = "Tutorial Round Target"
+SHELL = "Tutorial Target Shell"
+CPU = "Tutorial Target CPU"
+experience = 1
+
+[ROBOT]
+NAME = "Razor Robot"
+CATEGORY = "MONSTER_SMALL_ROBOT_1"
+DESCRIPTION = "A small spherical robot that moves about quickly upon a single wheel. Attached to the robot's body is a small, circular saw with a razor-sharp edge. This machine was probably designed as some sort of construction droid, whose task would be to cut metal or some other sort of material. It seems to have malfunctioned, however, and had designated you as a material that it can cut as well..."
+SHELL = "Small Quick Robot Shell"
+CPU = "Simple Seeker CPU"
+Action Slot = "Small Razor Blade"
+Move Slot = "Rubber Robot Wheel"
+
+experience = 200
+
+SOUND DYING = "data/sounds/monsters/robot1/die.wav"
+
+[ROBOT]
+NAME = "Small Walking Bomb v1"
+CATEGORY = "MONSTER_WALKING_BOMB_1"
+DESCRIPTION = "A small 'walking' robot that doesn't really walk; rather, it travels along upon a small wheel. Attached to this machine is a small bomb, and once it gets close enough to its target, it detonates, destroying itself along with anything nearby."
+SHELL = "Small Dark Quick Robot Shell"
+CPU = "Walking Bomb CPU"
+Action Slot = "Hand Grenade"
+Move Slot = "Rubber Robot Wheel"
+experience = 200
+
+SOUND DYING = "data/sounds/monsters/robot1/die.wav"
+
+[ROBOT]
+NAME = "Small Walking Bomb v2"
+CATEGORY = "MONSTER_WALKING_BOMB_1"
+DESCRIPTION = "A small 'walking' robot that doesn't really walk; rather, it travels along upon a small wheel. Attached to this machine is a fire bomb, and once it gets close enough to its target, it detonates, erupting into a pool of liquid flame."
+SHELL = "Small Dark Quick Robot Shell"
+CPU = "Walking Bomb CPU"
+Action Slot = "Incendiary Grenade"
+Move Slot = "Rubber Robot Wheel"
+experience = 200
+
+SOUND DYING = "data/sounds/monsters/robot1/die.wav"
+
+[ROBOT]
+NAME = "Commando Droid"
+CATEGORY = "MONSTER_MEDIUM_ROBOT_1"
+DESCRIPTION = "! NOT WRITTEN YET !"
+SHELL = "Medium Moving Robot Shell"
+CPU = "ED710 CPU"
+Action Slot = "Medium Razor Blade"
+Action Slot = 1 "Laser Rifle" 
+Move Slot = "Metal Robot Leg"
+Move Slot = "Metal Robot Leg"
+experience = 500
+
+SOUND DYING = "data/sounds/monsters/robot3/die.wav"
+
+[ROBOT]
+NAME = "Utility Bot"
+CATEGORY = "MONSTER_UTILITY_BOT"
+DESCRIPTION = "A small robot that travels about upon its caterpillar-like legs, picking up trash and garbage. This unit is relatively inexpensive (only 200 credits on the NJoyShopping network) and it is remarkably efficient for its size, making it fairly common and wide spread."
+SHELL = "Utility Bot Shell"
+CPU = "Utility Bot CPU"
+Action Slot = "Garbage Cleaner"
+Move Slot = "Metal Robot Caterpillar"
+experience = 5
+SOUND DYING = "data/sounds/monsters/robot2/die.wav"
+
+[ROBOT]
+NAME = "Bunker Gun"
+CATEGORY = "MONSTER_UNIQUE"
+DESCRIPTION = "The bunker gun."
+SHELL = "Bunker Gun Shell"
+CPU = "BunkerGun CPU"
+Action Slot = "Bunker Gun Cannon"
+experience = 2000
+SOUND DYING = "data/sounds/monsters/robot3/die.wav"
+
+[SEARCHLIGHT]
+NAME = "Searchlight"
+CATEGORY = "MONSTER_UNIQUE"
+TILE = "#"
+COLOR = 14
+SIZE = 150
+WEIGHT = 200000
+HIT POINTS = 50
+experience = 1000
+
+unarmed = "Light"
+skin = "Searchlight Shell"
+DESCRIPTION = "An immense searchlight, like the kind often used by the military in days long since passed. This particular model is extremely large and bright, and is designed to aide the bunker guns in spotting and eliminating all possible intruders."
+
+SOUND DYING = "data/sounds/monsters/searchlight/die.wav"
+
+[WORM]
+NAME = "Giant Red Worm Head"
+CATEGORY = "MONSTER_GIANT_WORM_1"
+DESCRIPTION = "! NOT WRITTEN YET !"
+TILE = "W"
+COLOR = 12
+SIZE = 100
+WEIGHT = 50000
+HIT POINTS = 45
+
+skill = UNARMED 60
+strength = 12
+dexterity = 8
+speed = 20
+endurance = 20
+intelligence = 5
+metabolism = 10
+
+experience = 400
+length = 4
+segment = "Giant Red Worm Segment"
+tail = "Giant Red Worm Tail"
+
+unarmed = "Large Jaws"
+skin = "Hard Skin"
+
+SOUND PAIN = "data/sounds/monsters/worm/pain.wav"
+SOUND DYING = "data/sounds/monsters/worm/die.wav"
+
+[WORM]
+NAME = "Giant Red Worm Segment"
+CATEGORY = "MONSTER_UNIQUE"
+DESCRIPTION = "! NOT WRITTEN YET !"
+TILE = "W"
+COLOR = 4
+SIZE = 100
+WEIGHT = 50000
+HIT POINTS = 35
+
+skill = UNARMED 60
+strength = 10
+dexterity = 8
+speed = 20
+endurance = 20
+intelligence = 5
+metabolism = 10
+
+experience = 300
+segment = "Giant Red Worm Segment"
+tail = "Giant Red Worm Tail"
+
+unarmed = "Worm Segment"
+skin = "Hard Skin"
+
+SOUND PAIN = "data/sounds/monsters/worm/pain.wav"
+SOUND DYING = "data/sounds/monsters/worm/die.wav"
+
+
+[WORM]
+NAME = "Giant Red Worm Tail"
+CATEGORY = "MONSTER_UNIQUE"
+DESCRIPTION = "! NOT WRITTEN YET !"
+TILE = "W"
+COLOR = 6
+SIZE = 100
+WEIGHT = 50000
+HIT POINTS = 45
+
+skill = UNARMED 80
+strength = 12
+dexterity = 8
+speed = 20
+endurance = 20
+intelligence = 5
+metabolism = 10
+
+experience = 300
+
+unarmed = "Worm Tail"
+skin = "Hard Skin"
+
+SOUND PAIN = "data/sounds/monsters/worm/pain.wav"
+SOUND DYING = "data/sounds/monsters/worm/die.wav"

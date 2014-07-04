@@ -1,0 +1,6 @@
+TOSAVE::LoadOptions
+
+*************************************************
+Changing level to: s01
+* LEVEL::LoadObject
+ERROR READ: Can not open file level save/C.s01

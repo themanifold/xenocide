@@ -1,0 +1,359 @@
+
+- TOFIX - bug in reprogramming robots
+- TODO - critical hits
+- TODO - weapon inurement - weapon improves in time - equal Experience received.
+
+xx.xx.xx
+
+Changes:
+- Fixed crash with traveling robots.
+- FAQ updated
+- No-sound version doesn't require FMOD any more.
+- More sounds
+
+28.03.07
+
+Changes:
+- Added tutorial
+- Added explore and travel commands
+- Added simple mutations
+- Added sounds and music
+
+18.10.04
+
+So, the update finally came. I haven't done everything that I wanted to, but pressure of players was too high.
+A lot of time passed since the last update, but take a look at the list of changes :)
+
+Changes:
+
+- Hidden meaning of items (like pill, grenades etc.).
+- New monster descriptions (big thanks to Stephen Pasquella).
+- Player can mend armor using different parts.
+- Added repair tools.
+- Total weight in inventory is shown.
+- Added confirmation for saving/quiting.
+- New item descriptions (thanks to Antti Hukkanen)
+- Improved targeting - you can cycle among enemies with 'n' key.
+- Improved monster traveling (and fixed "Update Pointer" error).
+- Icon for Windows version added.
+- Improved inventory management.
+- One new locations completed (Bunker Enterance)
+- Power of ranged weapons incrased.
+- Added Message Buffer ('M' key) 
+- A story (thanks again to Stephen Pasquella for help).
+- The begin of manual is written
+- Some item features changed (armors, hand weapons, ammo)
+- Less types of ammo on Shuttle (for game balance)
+- Drop/Get/Throw any number of items + new option - always get the whole package.
+- Friendly monsters are marked blue
+- Friendly robots report about their damage
+- Player can repair turned on robots.
+- A diary in Genetic Machine
+- You can put your name as a game parameter (f.e. to start as Jakub run: xenocide_win.exe Jakub )
+- Added power supply and energy tools.
+- Added shortcut keys to activate weapon (;) and armor (').
+- If the game has to pause for calculations, in the left-top corner of the screen a moving sign appears.
+- Added gas grenades.
+- Only the first message of many the same is shown on the console.
+- Monsters can be burdened or strained when carry too heavy items.
+- Electricity status for monsters and items.
+- Improved AI - monsters decide what to do considering their resistances.
+- Mouse cursor is hidden in full-screen Windows version.
+- Slightly optimized gases (I know, should be more).
+- At the end of the game "death.htm" file is generated.
+- Added 4th level of Genetic Lab.
+- New 7 monster types -> 42.
+- New 27 items -> 161.
+- *A lot* of minor changes, bug fixes and improvements.
+
+In next version you will (probably) see:
+- Critical hits
+- Items to build armors and weapons up (with energy usage)
+- More optimized gases
+- More info in descriptions
+- In-game help/manual
+- Gas masks.
+- More levels filled with monsters and items 
+- Finnished Genetic Machine
+- Radioactive Desert/Caves/Bunker
+- Change of skill system(?)
+- Renaming items
+- And much, much more...
+
+05.04.04
+
+Changes:
+- New 6 monster types.
+- New 37 items.
+- Monsters (and player) can wear more than one activated granade, but there's a chance to drop them on hit.
+- Stairs are marked yellow when not visible.
+- Monsters can travel between levels.
+- Improved 'get' command (select from a list if more than one item).
+- Changes in Genetic Machine. Player transforms faster.
+- Added Robots (made of parts).
+- Added new player type - Mechanic - who is skilled enough to build his own robots.
+- Added FAQ.txt
+- Added check for proper console size.
+- Minor bug fixes and changes.
+
+Known bugs:
+- When Intelligent enemy eats a pill, messages appear in wrong order.
+- There are still some problems with Linux Xterm consoles.
+
+Things that will (probably) come with next release:
+- A story for the game.
+- Drop/Get any number of items.
+- Electricity status for monsters and items.
+- Poisonous gases and masks.
+- Reprogramming of CPUs.
+- Tools for repairing robots.
+
+02.02.04
+
+Changes:
+- Fixed bug - player could mend armor using any type of armor as parts
+- Fixed bug - sometimes items were placed incorrectly and assert stopped the game.
+- Fixed bug - "ready weapon" didn't take any time
+- Fixed bug - player could ready wielded weapon
+- Fixed bug - stairs weren't created correctly in Escape Capsule
+
+
+28.01.04
+
+Finally, after a long break, i'm back to Xenocide. Writing my thesis is almost finished, so I can spend more time on the game :) Today's update base mainly on comments and requests from users. Xenocide had some problems with Linux console (the console is too slow, couldn't manage 15 redraws per second), so I had to do some changes. Linux users complained about CPU usage, so I had to change "wait for key" procedure.
+
+Changes:
+- Some improvments in AI.
+- Fixed bug in showing info about things on cell, where player stays.
+- Fixed bug - now monsters can't step into stairs, when player is not on the level.
+- The game uses much less power of processor when Special FXs are off.
+- Difficulty of first levels is better balanced.
+- Player can mend armor using the other one as parts.
+- Player can ready some weapon to instant wield it.
+- Some optimizations (hope without bugs).
+- Some minor changes in game's engine.
+
+04.09.03
+
+Summer... I don't spend too much time on Xenocide, but some things are done.
+
+Changes:
+- Monster can carry random items when created.
+- Added 'Screenshot' command (F11) - saves HTML screenshot.
+- Improved AI for animals (they aren't depend on player's sight any more)
+- Improved descriptions of combat. Descriptions depend on weapons used.
+
+25.07.03
+
+Next month passed and the month wasn't wasted.
+
+Changes:
+- Added advanced AI of intelligent monsters. 
+  They decide which weapon and armor is best for them.
+  They know how to use range weapons and its ammo
+  They try to avoid danger (like fire or traps)
+  They cooperate.
+  They can use granades, pills and all equipment laying around!
+  They try to find hidden enemy.
+  They open closed door on their way
+  They run away, when enemy is too strong
+  They can use some defensive techniques.
+  They even don't like to bore for too long!
+(These features can be disabled in monster's definition)
+- options are saved, you can make a default set.
+- new options: auto-aim nearest enemy,
+               forbid friendly monsters to swap place with you,
+               show cursor on player,
+               for slow computers - info that player is stunned and the game calculates.
+- thrown items bounce on walls, so granades are not deadly for thrower in narrow corridors.
+- a new level type and Genetic Machine moved there.
+- a lot of small bugs corrected.
+- added 'A' command - attack something near you (like terrain or friendly monster)
+- added basic classes (combat, medical, scientific). For now only "combat" is useful.
+- source code exceed 500kb
+
+To do: more items, more monsters, more fun...
+
+10.06.03
+
+- Added descriptions for monsters and items.
+- Added Pills (not fully implemented yet)
+- Beginned AI for intelligent monsters.
+
+29.05.03
+
+Changes:
+- Completed Genetic Laboratory.
+- Colored armor's HP display.
+
+22.05.03
+
+Changes:
+- Added terminal in Genetic Laboratory.
+- Corrected some errors made in last version (stairs on SpaceShip lev. 4)
+
+20.05.03
+
+Changes:
+- Two new level types - one is predefined. Not finnished yet.
+
+11.05.03
+
+Changes:
+
+- Extended definitions of levels, items and monsters.
+- New monsters and items.
+- Generating items and monsters on levels. Monsters don't appear every 150 turns any more.
+- Improved status.
+- Changes in gaining experience.
+- Colored player's/target's HP display.
+- Added 'rest' key ('R')
+- Small changes in readme.txt
+
+04.03.03
+
+Changes:
+
+- Added creating "save" directory if it not exist.
+
+03.03.03
+
+Changes:
+
+- Added new level generator.
+- Fixed a lot of bugs in source code.
+- Added time passing on level, where player was before, when he come back.
+
+24.02.03
+
+Changes:
+
+- Max hit points are incrasing with new level.
+- Metabolism is incrasing proportionaly to HP with new level.
+- Fixed bug in unloading ammo when weapon was not wielded.
+- Auto selecting target in h2h combat.
+- Changed experience system. It's now skill based like in "Dungeon Crawl".
+
+18.02.03
+
+Changes:
+
+- Generator for "SpaceShip" levels
+- More improvements in inventory - only available options are visible.
+- Replaced RNG with "MT19937" by Makoto Matsumoto and Takuji Nishimura.
+- Added "control items" (for instance for auto-opening doors)
+- Improved status - stunned monsters are almost defenseless.
+- Changed rules of hand-to-hand combat.
+- Added stairs, permanent levels and sample connection of levels. To fix: placing player on stairs, when he backs to existing level.
+
+21.01.03
+
+Motivated by kind emails I've wasted some nights and finally i made...
+Changes:
+- Very annoying to write "Save/Load" feature is done. Hope, without bugs. :)
+  Now I can make Xenocide multi-level.
+- Openning screen, where you can name yourself (needed to save)
+- Improvement in interface - when you load ammo in inventory, only matching ammos are bright.
+
+23.12.02
+
+Changes:
+Added "status" to monsters and properties to items, so monster can be poisoned, freezed, stunned, fried etc.
+This is a basic implementation so i have to finnish it up.
+
+25.11.02
+
+No, Xenocide is not dead. I'm just completly out of time... :/ This weekend I had a moment, so I made some bugfixes. "Blue levels" are generated fine now, and every place on the
+map is reachable. Parser works fine too, so linux version probably wont crash anymore (unfortunaltely I have no time to compile it under linux...)
+
+01.10.02
+
+At last I've compiled linux version. Unfortunately this version is still very buggy. I'll try to fix the bugs, but i'm overburdened in work... It's hard to write something for yourself, when you spend all the day on programming...
+
+09.09.02
+
+Changes:
+- Finnished experience system.
+- Added self-treatment to monsters.
+
+05.09.02
+
+Changes:
+- Added simple experience to player. No effects except gaining new levels now.
+
+26.08.02
+
+Changes:
+- Added skills to monsters
+- Shooting can damage items on ground.
+- Added inheritance in monsters and item defs.
+- Added simple terrain damaging. Yes, you can open a door with shotgun now :)
+
+20.08.02
+
+Changes:
+- Showing items on the floor where you are standing.
+- Simplified "get" command.
+- Bug fixed in "look" command.
+- Added noun articles for items.
+- Move into closed door shows question about opening.
+- Changed predefined "Quit" key to 'Q' in the place of 'q'.
+- Added command "Throw last activated item" - 't'
+- Faster screen drawing with Special FX option on.
+
+19.08.02
+
+- Added weight to all items
+- Added hit points and damaging to items (firing still doesn't damage items)
+- Added possibility to hit the floor.
+- Added sensor mines.
+
+16.08.02
+
+Changes:
+- Improved "look" command - now works for items and terrain.
+- Improved smoke display.
+- Monsters can have personal equipment when created (AS_ARMOR, AS_WEAPON in monsters.def)
+- Some changes in Interface Special FX option (texts in console appear fast).
+- Added open/close command.
+- Bug fixed in parser for keyboard.def
+- Some changes in items definitions.
+- Bug fixed in granades (activate)
+- Quiting brings back old screen resolution.
+
+13.08.02
+
+Newsletter works fine now. Please sign in, if you don't recieve news by email.
+
+13.08.02
+
+
+Well, because Polish language isn't so popular in the world, I've decided to make this website international :) I'm too lazy to translate all the things into two languages, so everything will be in English, espacially News. The poll is working now. You can vote.
+
+13.08.02
+
+Dodana zosta³a generacja nowego rodzaju poziomu (uruchom kilka razy grê, je¿eli go nie widzisz - jest 50% szans, ¿e siê pojawi). Na tym poziomie od razu jest 20 potworków. Zmodyfikowane cechy przedmiotow (dostosowanie do mniejszego FOV), dodany parametr DELAY do granatów.
+
+12.08.02
+
+Dzia³a Newsletter - mo¿na siê zapisywaæ na listê, aby dostawaæ mailowo informacje o kolejno wrzucanych na stronê wersjach.
+
+12.08.02
+
+Dodane p³omienie oraz granaty zapalaj¹ce.
+
+09.08.02
+
+Hm... rozmarzy³em siê nad wizj¹ Xenocide zapominaj¹c o pewnych istotnych szczegó³ach implementacyjnych, nad którymi jakiœ czas temu myœla³em. Chodzi mianowicie o losow¹ generacjê "stworzonych przez cz³owieka" poziomów a w³aœciwie niemo¿liwoœæ ich zrobienia... :/ Hm... jednak Xenocide musi pójœæ innym torem. (Mówi³em - nie pytaæ o œwiat gry, mo¿e siê zmieniæ). Ci¹gle zapominam, ¿e roguelike to roguelike...
+
+08.08.02
+
+Gilus po zobaczeniu jak strona jest paskudna postanowi³ zrobiæ mi stronê w swoim stylu. THNX.
+
+08.08.02
+
+Doda³em pole si³owe.
+
+08.08.02
+
+Za³o¿ona nowa stronka na Republice zamiast starej o Nonstopie.

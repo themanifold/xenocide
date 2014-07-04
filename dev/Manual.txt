@@ -1,0 +1,207 @@
+
+                           Xenocide: the roguelike
+
+
+Table Of Contents
+
+  About The Game
+  The Story
+  How to play
+     Main Screen
+     Attirbutes
+     Basic Commands
+  Thanks
+
+
+* About The Game *
+
+"Xenocide the roguelike" is a single-player game that uses ASCII (text)
+graphics. It looks similar in appearance to ADOM, NetHack or Crawl,
+the main difference being the world in which the game is set.
+In Xenocide you won't find goblins, magic or knights - the action takes
+place in the future.
+
+* The Story *
+
+The year is 2129, and man has taken to the stars. With him he had brought
+all of the wonders and horrors that he was wrought throughout the ages;
+joy and sorrow, peace and war, life and death.
+He has also found that he is not alone...
+ 
+In 2058 a huge leap forward was made in the world of interplanetary
+expedition. An international group of brilliant scientists,
+along with large grants from various nations and private organizations,
+developed a prototype hyper-drive engine, a device capable of accelerating
+matter so that it would be able to move at speeds faster than even light
+could travel.
+ 
+In 2076 a stable hyper-drive unit was developed, and the device
+was successfully tested. Gone were the days of conventional space travel,
+taking months to get from one planet to another; now a ship took only
+a few days to travel between stars.
+ 
+So man began to expand his empire. Various nations utilized the hyper-drive
+engines to begin colonizing other planets. They started with Mars, and then
+the moons of Jupiter.
+ 
+Flash forward to the year 2099 Vast interstellar corporations have been
+developed, their purpose to explore and colonize far off worlds.
+Most of the planets they have found cannot support human life,
+and so enormous Biospheres have been build; domes containing oxygen and water,
+made to replicate the ecosystem of Earth. There were other planets that man
+could live on without artificial aid, but these were few and far between.
+ 
+The year was 2121. As we made our way from one end of the Milky Way
+to the other we had discovered various alien life forms;
+everything from harmless plant-life to bizarre beasts and fantastic creatures
+that even the wildest of imaginations could not have conceived outside
+of a dream. For all of the organisms that man had encountered, however,
+he had yet to run across anything that was even remotely intelligent.
+That was about to change.
+ 
+On Earth date 19-11-2121 AD, at approximately 20:45 GMT, the deep space
+exploration vessel Columbus encountered a strange metallic object,
+roughly the size of a mega-freighter, orbiting a large asteroid.
+Upon closer inspection the asteroid appeared to be colonized,
+and the object appeared to be a ship of some sort, though one unlike
+any that man had ever seen. The human race had had its first glimpse
+of an intelligent alien civilization.
+ 
+The crew of the Columbus attempted to make contact with the alien vessel,
+but they received no response. They waited for ten long hours,
+transmitting the same message of greetings and peace.
+Then, just when most of the crew had begun to suspect that the alien
+vessel might be abandoned, they received a response from it.
+The response did not come in the form of a communication, it came in the form
+of a missile, a missile with an antimatter warhead.
+ 
+Needless to say, the Columbus was obliterated. No one survived the attack.
+The entire crew, people who had once been fathers and mothers, brothers
+and sisters, sons and daughters; were nothing more than dust, floating amidst
+celestial blackness.
+ 
+Thus began the war. On one side the humans, a race of beings who had believed
+themselves to be the invincible masters of the cosmos. They were now realising
+the extend of their own mortality.
+ 
+On the other side of the war were the aliens, beings known only as the 'Enemy'.
+Other than the fact that they were hostile and that their weapons were
+far more advanced than the humans, little was known about them. The forces
+of Earth had no idea what kind of organisms they were up against,
+though several reports from the front lines seemed to indicated that
+the creatures may have been insectoid in appearance.
+ 
+The war raged on for seven long years, the forces of the Enemy slowly making
+their way toward Earth. The alien creatures seemed to serve no other purpose
+than to spread chaos and death. They were evil, evil to the core, and they
+had to be eliminated.
+ 
+The year is 2129, and the war has come to a standstill. The Enemy can not
+advance any further, but it refuses to retreat. You were a worker
+on the mega-freighter Atlas, a cargo ship owned by the GenTech Company whose
+purpose was to transport raw ore from mining colonies to manufacturing
+facilities where the ore would be processed and refined.
+ 
+The next stop for the Atlas was the planet Tartarus 3, a small world
+that existed far away from the lines of battle. This planet could support
+human life, and a mining colony had been built to harvest the valuable
+minerals that lay deep beneath the surface. It was the next unnamed colony,
+where refuges usually find place to live.
+ 
+You had heard that the miners told strange stories about creatures that lived
+beneath the mines. Supposedly there were hideous monsters that dwelt
+beneath the surface, and whenever a miner or other colony worker went missing
+his disappearance was blamed on these beasts. Some even said that strange
+genetic experiments were being performed in a secret base beneath the colony.
+You didn't really believe any of those stories, though. After all,
+genetic manipulation was illegal.
+ 
+As the Atlas approached Tartarus 3, the onboard view screens began to show
+that the planet's surface was strangely inactive. The colony should have been
+as busy as an anthill, with miners running about to make preparations for the
+arrival of the shuttle, but everything seemed to be so quiet, so still, so...
+ 
+...dead. Everything seemed so dead.
+ 
+The Atlas' captain tried to hail the colony. No one was surprised by the lack
+of a response. Something was seriously wrong, and everyone knew it. As the
+captain was about to order the ship's retreat, disaster struck. At that very
+moment a volley of missiles leapt up from the planet's surface and struck the
+ship head on.
+ 
+The force of the ensuing explosions knocked you from your feet. As you fell,
+you hit your head, and passed into unconsciousness.
+ 
+When you awoke, you were unharmed, aside from a splitting head ache.
+All around you the floor, ceiling and walls were stained with the red blood
+and the tattered bodies of dead men. This wasn't caused by the missiles;
+someone - or something - had torn your fellow crewmen apart.
+ 
+Then you heard it; a sound, like the sound of some small creature scurrying
+about. You are not alone; something is lurking about the ship, and whatever
+it is, you get the feeling that it's responsible for the deaths of the crew.
+You don't care what horrors lie on the planet below, anything is better than
+this. You have to make it to the escape pods on the bottom level of the ship,
+and get the hell out of here. You can worry about the Enemy forces later;
+your only goal right now is to escape and survive. Survive...
+
+* How To Play *
+
+Most of the time you will see the main game screen, like the sample shown
+below:
+
+-------------------------------------------------------------------------------
+    ##############                                                              
+    #............#  #########                                                   
+    #............#  ..#.......                                                  
+    #............#  ..#........                                                 
+    #............#  ..#.........                                                
+    #......####+#####.#.........                                                
+    #......#........#+#..........                                               
+    #......#........#............                                               
+    #......#.>......#.rr.....w...                                               
+    #......#........#............                                               
+    #...%..#........#.@...........                                              
+    #..%.;.#+########....####+##.                                               
+    #............#.##+####                                                      
+    #........###+#.......#                                                      
+    ##########.........%%#                                                      
+             #......##%###.....#                                                
+             ########..........#                                                
+                    #%........%#                                                
+                    #%...;.....#                                                
+                                                                               
+                                                                                
+                                                                                
+The door has closed.                                                            
+                                                                                
+ HP: 18/20          STR: 10 DEX: 7 SPD: 25 END: 10 INT: 10 EXP: 1\212 (1)       
+                    ( Knife                        [ Leather Jacket             
+                    Target: Claw Rat                       Space Shuttle lev. 1 
+-------------------------------------------------------------------------------
+
+* Attributes *
+STR
+DEX
+END
+INT
+* Basic Commands *
+
+You can move player character with numeric keypad
+- make sure that NumLock is on.
+(1-9 are directions, 5 is wait command).
+To gain info about other commands - press '?'.
+Keyboard can be defined in data/keyboard.def.
+
+The game is still in development, so don't expect stability.
+
+If the game runs slow, you are probalby running Windows version.
+The slowness is caused by Windows port of PDCurses.
+Try the DOS version (it works fine under W9x/ME/2K/XP).
+
+* Thanks *
+
+- to Stephen Pasquella for new monster descriptions, ideas, the story and help
+  with my English language.
+- to Antti Hukkanen for new item descriptions, bug reports
+  and interesting discussion about the game.

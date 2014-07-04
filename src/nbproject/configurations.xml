@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="src" root=".">
+      <in>actions.h</in>
+      <in>attrib.h</in>
+      <in>def_item.cpp</in>
+      <in>def_mons.cpp</in>
+      <in>directions.h</in>
+      <in>fov.cpp</in>
+      <in>fov.h</in>
+      <in>game.cpp</in>
+      <in>game.h</in>
+      <in>global.cpp</in>
+      <in>global.h</in>
+      <in>hero.cpp</in>
+      <in>items.cpp</in>
+      <in>items.h</in>
+      <in>keyboard.cpp</in>
+      <in>keyboard.h</in>
+      <in>level.cpp</in>
+      <in>level.h</in>
+      <in>loadsave.cpp</in>
+      <in>loadsave.h</in>
+      <in>main.cpp</in>
+      <in>map.cpp</in>
+      <in>map.h</in>
+      <in>mem_check.h</in>
+      <in>monster.cpp</in>
+      <in>monster.h</in>
+      <in>mt19937int.cpp</in>
+      <in>mt19937int.h</in>
+      <in>options.cpp</in>
+      <in>options.h</in>
+      <in>parser.cpp</in>
+      <in>parser.h</in>
+      <in>places.cpp</in>
+      <in>places.h</in>
+      <in>position.h</in>
+      <in>resource1.h</in>
+      <in>screenshot.cpp</in>
+      <in>sounds.cpp</in>
+      <in>sounds.h</in>
+      <in>system.cpp</in>
+      <in>system.h</in>
+      <in>tiles.cpp</in>
+      <in>tiles.h</in>
+      <in>tutorial.cpp</in>
+      <in>tutorial.h</in>
+      <in>types.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="resource1.h" ex="true" tool="3" flavor="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

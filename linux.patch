@@ -1,0 +1,3688 @@
+Binary files xeno_orig/data/getch and xeno-2011-02-03/data/getch differ
+diff -rupN xeno_orig/data/getch.c xeno-2011-02-03/data/getch.c
+--- xeno_orig/data/getch.c	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/data/getch.c	2012-04-04 20:06:52.000000000 +0100
+@@ -0,0 +1,46 @@
++//Taken from:
++// http://stackoverflow.com/questions/7499846/convert-getch-response-to-ascii-character
++// Use this to redefine your data/keyboard.def if you find the keys are not working
++
++#include <ncurses.h>
++#include <cctype>
++
++int main(int ac, char **av) 
++{
++    WINDOW* mainWin(initscr());
++    cbreak();
++    noecho();
++
++    // Invoke keypad(x, true) to ensure that arrow keys produce KEY_UP, et al,
++    // and not multiple keystrokes.
++    //keypad(mainWin, true);
++
++    mvprintw(0, 0, "press a key: ");
++    int ch;
++
++    // Note that getch() returns, among other things, the ASCII code of any key
++    // that is pressed. Notice that comparing the return from getch with 'q'
++    // works, since getch() returns the ASCII code 'q' if the users presses that key.
++    while( ch = getch() ) {
++      erase();
++      move(0,0);
++      if(isascii(ch)) {
++        if(isprint(ch)) {
++          // Notice how the return code (if it is ascii) can be printed either
++          // as a character or as a numeric value.
++          printw("You pressed a printable ascii key: %d\n", ch, ch);
++        } else {
++          printw("You pressed an unprintable ascii key: %d\n", ch);
++        }
++      }
++
++      // Again, getch result compared against an ASCII value: '\t', a.k.a. 9
++      if(ch == '\t') {
++        printw("You pressed tab.\n");
++      }
++      printw("Press another key, or 'ctr+c' to quit\n");
++      refresh();
++    }
++
++    endwin();
++}
+diff -rupN xeno_orig/data/getch.c~ xeno-2011-02-03/data/getch.c~
+--- xeno_orig/data/getch.c~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/data/getch.c~	2012-04-04 19:52:48.000000000 +0100
+@@ -0,0 +1,62 @@
++//Taken from:
++// http://stackoverflow.com/questions/7499846/convert-getch-response-to-ascii-character
++// Use this to redefine your data/keyboard.def if you find the keys are not working
++
++#include <ncurses.h>
++#include <cctype>
++
++int main(int ac, char **av) 
++{
++    WINDOW* mainWin(initscr());
++    cbreak();
++    noecho();
++
++    // Invoke keypad(x, true) to ensure that arrow keys produce KEY_UP, et al,
++    // and not multiple keystrokes.
++    keypad(mainWin, true);
++
++    mvprintw(0, 0, "press a key: ");
++    int ch;
++
++    // Note that getch() returns, among other things, the ASCII code of any key
++    // that is pressed. Notice that comparing the return from getch with 'q'
++    // works, since getch() returns the ASCII code 'q' if the users presses that key.
++    while( (ch = getch()) != 'q' ) {
++      erase();
++      move(0,0);
++      if(isascii(ch)) {
++        if(isprint(ch)) {
++          // Notice how the return code (if it is ascii) can be printed either
++          // as a character or as a numeric value.
++          printw("You pressed a printable ascii key: %c with value %d\n", ch, ch);
++        } else {
++          printw("You pressed an unprintable ascii key: %d\n", ch);
++        }
++      }
++
++      // Again, getch result compared against an ASCII value: '\t', a.k.a. 9
++      if(ch == '\t') {
++        printw("You pressed tab.\n");
++      }
++
++      // For non-ASCII values, use the #define-s from <curses.h>
++      switch(ch) {
++      case KEY_UP:
++        printw("You pressed KEY_UP\n");
++        break;
++      case KEY_DOWN:
++        printw("You pressed KEY_DOWN\n");
++        break;
++      case KEY_LEFT:
++        printw("You pressed KEY_LEFT\n");
++        break;
++      case KEY_RIGHT:
++        printw("You pressed KEY_RIGHT\n");
++        break;
++      }
++      printw("Press another key, or 'q' to quit\n");
++      refresh();
++    }
++
++    endwin();
++}
+diff -rupN xeno_orig/data/keyboard.def xeno-2011-02-03/data/keyboard.def
+--- xeno_orig/data/keyboard.def	2008-09-26 21:37:58.000000000 +0100
++++ xeno-2011-02-03/data/keyboard.def	2012-04-04 20:11:32.000000000 +0100
+@@ -10,7 +10,7 @@ QUIT = "Q"
+ WAIT = "5"
+ GET =  "g"
+ ESCAPE = 27
+-BACKSPACE = 8
++BACKSPACE = 127
+ READ MORE = " "
+ READ MORE 2 = 10
+ INVENTORY = "i"
+@@ -37,4 +37,4 @@ TRAVEL = "X"
+ MESSAGE BUFFER = "M"
+ SHOW VISIBLE = "L"
+ ACTIVATE WEAPON = ";"
+-ACTIVATE ARMOR = "'"
+\ No newline at end of file
++ACTIVATE ARMOR = "'"
+diff -rupN xeno_orig/data/keyboard.def~ xeno-2011-02-03/data/keyboard.def~
+--- xeno_orig/data/keyboard.def~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/data/keyboard.def~	2012-04-04 20:11:28.000000000 +0100
+@@ -0,0 +1,40 @@
++_SW = "1"
++_S =  "2"
++_SE = "3"
++_W =  "4"
++_E =  "6"
++_NW = "7"
++_N =  "6"
++_NE = "9"
++QUIT = "Q"
++WAIT = "5"
++GET =  "g"
++ESCAPE = 27
++BACKSPACE = 127
++READ MORE = " "
++READ MORE 2 = 10
++INVENTORY = "i"
++FIRE = "f"
++HELP = "?"
++INC FIRE = "]"
++DEC FIRE = "["
++OPTIONS = "!"
++RELOAD =  "r"
++CHAR INFO = "@"
++LOOK = "l"
++OPEN = "o"
++CLOSE = "c"
++THROW = "t"
++SAVE = "S"
++UP = "<"
++DOWN = ">"
++REST = "R"
++ATTACK = "A"
++EXCHANGE = "e"
++AIM NEAR = "n"
++EXPLORE = "E"
++TRAVEL = "X"
++MESSAGE BUFFER = "M"
++SHOW VISIBLE = "L"
++ACTIVATE WEAPON = ";"
++ACTIVATE ARMOR = "'"
+diff -rupN xeno_orig/logfile.txt xeno-2011-02-03/logfile.txt
+--- xeno_orig/logfile.txt	2011-02-03 15:43:22.000000000 +0000
++++ xeno-2011-02-03/logfile.txt	2012-04-04 20:11:19.000000000 +0100
+@@ -0,0 +1,6 @@
++TOSAVE::LoadOptions
++
++*************************************************
++Changing level to: s01
++* LEVEL::LoadObject
++ERROR READ: Can not open file level save/Clem.s01
+\ No newline at end of file
+diff -rupN xeno_orig/save/Clem.opt xeno-2011-02-03/save/Clem.opt
+--- xeno_orig/save/Clem.opt	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/save/Clem.opt	2012-04-04 20:01:13.000000000 +0100
+@@ -0,0 +1,9 @@
++# OPTIONS
++
++Constant letters in inventory: FALSE
++Show experience needed for new level: FALSE
++Auto aim nearest enemy: FALSE
++Don't let friendly monsters to swap place with you: FALSE
++Show cursor on player: TRUE
++Always get the whole package of items: TRUE
++Auto aim if no enemy selected: TRUE
+diff -rupN xeno_orig/src/def_item.cpp xeno-2011-02-03/src/def_item.cpp
+--- xeno_orig/src/def_item.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/def_item.cpp	2012-04-04 17:47:53.000000000 +0100
+@@ -5,6 +5,8 @@
+ #include "parser.h"
+ #include "level.h"
+ #include <assert.h>
++#include <stdlib.h>
++
+ 
+ extern CLevel level;
+ extern DEFINITIONS definitions;
+diff -rupN xeno_orig/src/def_mons.cpp xeno-2011-02-03/src/def_mons.cpp
+--- xeno_orig/src/def_mons.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/def_mons.cpp	2012-04-04 17:48:29.000000000 +0100
+@@ -4,6 +4,7 @@
+ #include "parser.h"
+ #include "level.h"
+ #include "keyboard.h"
++#include <stdlib.h>
+ 
+ extern DEFINITIONS definitions;
+ extern CLevel level;
+diff -rupN xeno_orig/src/fov.cpp xeno-2011-02-03/src/fov.cpp
+--- xeno_orig/src/fov.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/fov.cpp	2012-04-04 17:57:23.000000000 +0100
+@@ -17,6 +17,7 @@ add ignoring libc.lib in linker configur
+ #include "fov.h"
+ #include "map.h"
+ #include "position.h"
++#include <stdlib.h>
+ 
+ inline int sgn(int a)
+ {
+diff -rupN xeno_orig/src/game.cpp xeno-2011-02-03/src/game.cpp
+--- xeno_orig/src/game.cpp	2011-02-03 15:18:06.000000000 +0000
++++ xeno-2011-02-03/src/game.cpp	2012-04-04 17:50:01.000000000 +0100
+@@ -20,6 +20,8 @@ using namespace std;
+ #include "system.h"
+ #include "sounds.h"
+ #include <math.h>
++#include <stdio.h>
++#include <string.h>
+ 
+ extern CLevel level;
+ extern CMyScreen screen;
+diff -rupN xeno_orig/src/game.h xeno-2011-02-03/src/game.h
+--- xeno_orig/src/game.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/game.h	2012-04-04 17:36:55.000000000 +0100
+@@ -1,11 +1,11 @@
+ #ifndef GAME_H
+ #define GAME_H
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include <string>
+ using namespace std;
+diff -rupN xeno_orig/src/game.h~ xeno-2011-02-03/src/game.h~
+--- xeno_orig/src/game.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/game.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,29 @@
++#ifndef GAME_H
++#define GAME_H
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++#pragma warning (disable: 4503)
++
++#include <string>
++using namespace std;
++
++class CGame {
++private:
++	  bool CheckToLoad(); // check if player file exists
++
++public:
++	  string name_of_player;
++      CGame();
++	  void Begin();   
++      void NewGame(); 
++      void Main();    
++	  void Quit();	  
++	  bool SaveGame(); 
++	  bool LoadGame(); 
++	  void DeleteSaveGame(); 
++};
++
++#endif
+diff -rupN xeno_orig/src/global.cpp xeno-2011-02-03/src/global.cpp
+--- xeno_orig/src/global.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/global.cpp	2012-04-04 18:27:41.000000000 +0100
+@@ -29,6 +29,8 @@
+ #define M_PI 3.1415926536
+ #endif
+ 
++
++
+ extern COptions options;
+ 
+ // global screen
+@@ -238,7 +240,7 @@ void CMyScreen :: CConsole :: add(string
+ 
+    if (text.size()>1)
+      if (male.find(*text.c_str())!=-1) // start with small
+-       transform(text.begin(), it, text.begin(), toupper);
++       transform(text.begin(), it, text.begin(), (int(&)(int))std::toupper);
+    
+    char col[4];
+    col[0]=' ';
+diff -rupN xeno_orig/src/global.h xeno-2011-02-03/src/global.h
+--- xeno_orig/src/global.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/global.h	2012-04-04 17:36:55.000000000 +0100
+@@ -2,11 +2,11 @@
+ #define GLOBAL_H
+ 
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include "fov.h"
+ #include "map.h"
+diff -rupN xeno_orig/src/global.h~ xeno-2011-02-03/src/global.h~
+--- xeno_orig/src/global.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/global.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,119 @@
++#ifndef GLOBAL_H
++#define GLOBAL_H
++
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++#pragma warning (disable: 4503)
++
++#include "fov.h"
++#include "map.h"
++#include "monster.h"
++#include <string>
++#include <map>
++#include "attrib.h"
++
++unsigned int random(unsigned int range);
++bool coin_toss();
++string IntToStr(long number);
++bool lower_random(int lower_value, int range);
++int generate_bresenham_line(int x1, int y1, int x2, int y2, struct CPosition *position, int max_range);
++double RadToDeg(double angle);
++double DegToRad(double angle);
++int round_up(double variable);
++
++#ifndef max
++int max(int value1, int value2);
++#endif
++
++#ifndef min
++int min(int value1, int value2);
++#endif
++
++int distance(const int& x1,const int& y1,const int& x2,const int& y2);
++
++class CMyScreen {
++private:
++       void draw_items();
++       void draw_smoke();
++public:
++       void draw_monsters(); // to publiczne, aby monsters zobaczyly gracza po jego of movement (potrzebne?)
++       void draw_all();
++       void init();
++       void relase();
++       void clear_all();
++       void clear_no_console();
++       void draw();
++       void draw2();
++       void draw_targeting_line(int x1,int y1,int x2, int y2);
++       int draw_box(int color,int left,int top, int right,int down);
++       bool draw_explosion(int *data, int max);
++       bool draw_stunning_explosion(int *data);
++	   bool draw_emp_explosion(int *data, int max);
++
++
++       class CConsole {
++	   friend class CToSave;
++       private:
++              string buffer;
++			  string last_text;
++              int posx;
++              int posy;
++			  bool dont_show_more;
++			  list < string > message_buffer;
++       public:
++			  CConsole() { dont_show_more=false; };
++              void add(string text, int color, bool stop_repeating=true);
++              void add_and_zero(string text, int color);
++			  void show_message_buffer(bool show_only_last);
++              
++              void zero();
++              void clean();
++              void show();  // pokazanie jej z efektem
++       };
++
++       CConsole console;
++
++};
++
++// mapa opisow
++
++class CDescriptions {
++private:
++	map < string, string> descript_texts;
++	map < string, string> attacks;
++public:
++	string get_description(string to_find);
++	bool add_description(string object,string to_add);
++	bool show_description(string to_find);
++
++	string get_attack(string to_find);
++	bool add_attack(string object,string to_add);	
++	bool zero_attack(string object);	
++};
++
++
++template <class _T1>
++void shuffle_list(list < _T1 > &l)
++{
++	typename list < _T1 >::iterator m,_m;
++	m=l.begin();
++	
++	for (size_t a=0;a<l.size();a++,m++)
++	{
++		_T1 t;
++		_m=l.begin();
++		
++		int random_value = random(l.size());
++		for (int b=0;b<random_value;b++,_m++);
++		t = *m;
++		*m = *_m;
++		*_m = t;
++	}	
++}
++
++#endif
++
++
+diff -rupN xeno_orig/src/items.h xeno-2011-02-03/src/items.h
+--- xeno_orig/src/items.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/items.h	2012-04-04 17:36:55.000000000 +0100
+@@ -3,11 +3,11 @@
+ #ifndef ITEMS_H
+ #define ITEMS_H
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include <list>
+ using namespace std;
+diff -rupN xeno_orig/src/items.h~ xeno-2011-02-03/src/items.h~
+--- xeno_orig/src/items.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/items.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,616 @@
++// Dodajac new_one wlasciwosc do itemu pamietaj o dodaniu jej do Load/Save
++
++#ifndef ITEMS_H
++#define ITEMS_H
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++#pragma warning (disable: 4503)
++
++#include <list>
++using namespace std;
++
++#include "tiles.h"
++#include "types.h"
++#include "map.h"
++#include "loadsave.h"
++
++#define DAMAGE_NONE 0
++#define DAMAGE_DEATH -1
++
++class CMonster;
++class CIntelligent;
++class CRangedWeapon;
++class CHandWeapon;
++class CGrenade;
++class CAmmo;
++class CTrash;
++class CPill;
++class CBaseArmor;
++class CArmor;
++class CCorpse;
++class CCountable;
++class CRobotShell;
++class CRobotLeg;
++class CProcessor;
++class CRepairKit;
++class CProgrammator;
++class CBattery;
++
++typedef list<void *> ptr_list;
++
++void bad_virtual_call(string method);
++
++class CItem : public CTile {
++private:
++	bool is_dead; // when death() for this item was called
++	
++public:
++   int category; // category of item - for probability of setting on the level
++   
++   CMonster *owner; // who go nosi lub NULL
++   CItem *in_robot_shell;
++   int purpose;   
++
++   bool on_ground; // if lays on ground
++   
++   int DMG; // Hand 2 hand combat
++   int HIT; // Hand 2 hand combat
++   int DEF; // Hand 2 hand combat
++
++   int energy_activated; // -1 cannot, 0 - when off, 1 - when on
++
++   PROPERTIES properties; // Armor Piercing / Explosive etc.
++
++   int hit_points;
++   int max_hit_points;
++   int required_strength;
++   int weight;
++   int price;
++   int skill_to_use; // which skill to concern when using
++   string activities;   
++
++   string sound_used;
++
++   int inventory_letter; // used only by player
++
++   CItem();
++   ~CItem();
++   
++   virtual bool ChangePosition(int x, int y);
++   
++// ----------------------------------------
++   /// dopasowane do konkretnych rodzajow
++   virtual int used_by_on(CMonster *who, CMonster *on_who, int skill);
++   virtual int uses_energy(bool by_activation=true); // return: 0 - nothing changed, 1 - turned self off
++   virtual int turn_energy_on()  { bad_virtual_call("Item: turn_energy_on"); return 0; };
++   virtual int turn_energy_off()  { bad_virtual_call("Item: turn_energy_off"); return 0; };
++   
++   // for granade
++   virtual int activate()  { bad_virtual_call("Item: activate"); return 0; };
++   // for pills - should be changed to used_by_on?
++   virtual int use_on(CMonster *who) { bad_virtual_call("Item: use_on"); return 0; };
++   
++   //  for ammo ('l')
++   virtual int  load_ammo(CAmmo *ammo) { bad_virtual_call("Item: load_ammo"); return 0;};
++   virtual bool unload_ammo(CIntelligent *czyj_backpack) { bad_virtual_call("Item: unload_ammo"); return 0;};
++   
++   /// dla countable ('i')
++   virtual void add_and_destroy_object (CItem *object) { bad_virtual_call("Item: add_and_destroy_object"); };
++// ----------------------------------------
++   // ogolne
++   virtual bool compare_activities_with (CItem *object); 
++   
++   virtual void print_item_with_letter(int x,int y,string additional_text);
++   virtual int evaluate_item() { return 0;}; // check the item value, base on "price" mostly
++   virtual int evaluate_item_for_h2h_combat();
++   virtual int evaluate_item_for_ranged_combat() { return 0; };
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++   virtual int calculate_weight();
++   virtual int damage_it(int value);
++   virtual int fix_damage(int value);   
++   virtual bool fix_with_item(CItem *parts, CMonster *who_fixes);
++
++   virtual void every_turn(); // cos, co sie wykonuje co ture z tym objectem
++   virtual void death();  // Call this method - at the end of turn is removes object from memory
++   virtual string show_name();
++   virtual string article_a();
++   virtual string article_the();
++
++   bool is_monster_around();
++
++   // fulfill activities
++   bool property_get();
++   bool property_drop();
++   bool property_buildrobot();
++   bool property_throw();
++   bool property_wield();
++   bool property_use(); 
++   bool property_controller(); 
++   bool property_load_ammo();
++   bool property_unload_ammo();
++   bool property_put_on();
++   bool property_to_load();
++   bool property_join(); // f.e. with pills or ammo
++   bool property_activate(); // f.e. grenades
++   bool property_ready();
++   bool property_mend();
++   bool property_program();
++   
++   // informacje o przedmiocie
++   CHandWeapon * IsHandWeapon();
++   CRangedWeapon * IsShootingWeapon();
++   CGrenade * IsGrenade();
++   CPill * IsPill();
++   CAmmo * IsAmmo();
++   CBaseArmor * IsArmor();
++   CCorpse * IsCorpse();
++   CTrash * IsGarbage();
++   CRepairKit * IsRepairSet();
++   CCountable * IsCountable();
++   CRobotShell * IsRobotShell();
++   CRobotLeg * IsRobotLeg();
++   CProcessor *IsRobotCPU();
++   CProgrammator *IsProgrammator();
++   CBattery *IsBattery();
++   
++   bool IsLoaded(); // is loaded with ammo
++   bool IsDead();
++
++   // duplicate on creation
++   virtual CItem * duplicate()  { bad_virtual_call("Item: duplicate"); return 0; };
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CTrash : public CItem {
++public:
++	CTrash();
++	virtual void every_turn() {}; // cos, co sie wykonuje co ture z tym objectem - tu nic
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual CItem * duplicate();
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CRepairKit : public CItem {
++public:
++	CRepairKit();
++	int regeneration_time;
++	int regeneration_progress;
++
++	bool can_be_used();
++	bool fix(CItem *item, CMonster *who_fixes);
++	virtual void every_turn(); // cos, co sie wykonuje co ture z tym objectem - tu nic
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual CItem * duplicate();
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CProgrammator : public CItem {
++public:
++	CProgrammator();
++	
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual CItem * duplicate();
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CBattery : public CItem {
++public:
++	CBattery();
++	int max_capacity;
++	int capacity; 
++
++	int regeneration_speed; // regeneruje maks. do swojej pojemnosci, ale u posiadacza
++
++	virtual void every_turn(); // cos, co sie wykonuje co ture z tym objectem - tu nic
++	
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual int evaluate_item() { return max_capacity + (regeneration_speed!=0)*100;};	
++	virtual CItem * duplicate();
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CCountable : public CItem { // it the item can be in packages (ammo, pills)
++public:
++	CCountable();
++	int quantity;
++	virtual void add_and_destroy_object (CItem *object);
++	virtual int damage_it(int value);
++	virtual int fix_damage(int value);
++	virtual string show_name();
++	virtual int calculate_weight();
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CPill : public CCountable {
++public:
++	int PWR;
++	
++	CPill();
++	
++    virtual void every_turn();
++	virtual int evaluate_item();
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual bool compare_activities_with (CItem *object);
++	virtual int use_on(CMonster *who);
++    virtual CItem * duplicate();   
++
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CCorpse : public CItem {
++public:
++   string of_what;
++   int rotting_state;
++   CCorpse();
++   virtual void every_turn(); // cos, co sie wykonuje co ture z tym objectem
++   virtual int evaluate_item();
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++   virtual CItem * duplicate();
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CAmmo : public CCountable {
++public:
++   CAmmo();
++   ~CAmmo();
++   
++   int PWR; // power of missile
++   int ACC; // accuracy 
++   AMMO_TYPE ammo_type; // f.e. 8mm
++   
++   CRangedWeapon *in_weapon;
++   virtual int evaluate_item();
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++   virtual string show_name();
++
++   virtual bool compare_activities_with (CItem *object);
++   virtual CItem * duplicate();   
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CRangedWeapon : public CItem {
++public:
++   CRangedWeapon();
++
++   AMMO_TYPE ammo_type; // must be the same in ammo and weapon
++   int PWR; // additional power for ammo
++   int ACC; // accuracy for weapon
++
++   int energy_PWR; // additional power with energy on
++   int energy_ACC; // additional accuracy with energy on
++   
++   int magazine_capacity;
++   int category_of_magazine; // category from which is randomized ammo on item creation. Not saved.
++   
++   FIRE_TYPE fire_type;
++   FIRE_TYPE available_fire_types;
++
++   CAmmo ammo;
++
++   // Sounds are not saved, are taken from definitions
++   string sound_file_single; 
++   string sound_file_double; 
++   string sound_file_triple;
++   string sound_file_burst;
++   string sound_reload;
++   string sound_gun_empty;
++
++   void incrase_fire_mode();
++   void decrase_fire_mode();
++
++   virtual int turn_energy_on(); 
++   virtual int turn_energy_off();
++   virtual int activate();
++   
++   
++   virtual int damage_it(int value);
++   virtual int calculate_weight();
++   virtual int load_ammo(CAmmo *ammo);
++   virtual bool unload_ammo(CIntelligent *backpack_owner);
++   virtual int evaluate_item();
++   virtual int evaluate_item_for_ranged_combat();      
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++   virtual void print_item_with_letter(int x,int y,string additional_text);
++   bool fire_missile(int x1, int y1, int x2, int y2,CMonster * enemy, int distance);
++   virtual CItem * duplicate();
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CBaseArmor : public CItem {
++public:
++   int ARM; // how much it blocks
++   // modifiers
++   int MOD_STR; // 
++   int MOD_DEX; // 
++   int MOD_SPD; // 
++
++   // additional modifiers for energy on
++   int energy_ARM;
++   int energy_MOD_STR;
++   int energy_MOD_DEX;
++   int energy_MOD_SPD;
++   PROPERTIES energy_properties;
++   PROPERTIES energy_real_properties;
++   
++   virtual int turn_energy_on(); 
++   virtual int turn_energy_off();
++   virtual int activate();
++   
++
++   CBaseArmor();
++   
++   int evaluate_item();
++   virtual void death();  // Call this method - at the end of turn is removes object from memory   
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey) {};
++   virtual string show_name();
++   virtual CItem * duplicate() ;
++
++   virtual bool fix_with_item(CItem *parts, CMonster *who_fixes);
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class NO_ARMOR : public CBaseArmor { // all OBRAZENIA ZADAWANE SA TEJ ZBROI czyli skorze
++public:
++   NO_ARMOR();
++
++   virtual int damage_it(int value);
++   virtual CItem * duplicate();   
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CArmor : public CBaseArmor {
++public:
++   CArmor();
++   
++   virtual void every_turn(); // cos, co sie wykonuje co ture z tym objectem   
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++   virtual CItem * duplicate() ;
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CHandWeapon : public CItem {
++public:
++   int energy_DMG;
++   int energy_HIT;
++   int energy_DEF;
++   PROPERTIES energy_properties;
++   PROPERTIES energy_real_properties;
++   CHandWeapon();
++
++   virtual int turn_energy_on(); 
++   virtual int turn_energy_off();
++   virtual int activate();
++   
++   virtual string show_name();
++   
++   virtual void death();  // Call this method - at the end of turn is removes object from memory
++   //   void used_by_on(MONSTER *who, MONSTER *on_who);
++   virtual int evaluate_item();
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++   virtual CItem * duplicate();
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++typedef CHandWeapon WEAPON_UNARMED;
++
++class CGrenade : public CItem {
++private:
++   int counter; // odlicza do 0, gdy 0 to wybuch. -1 nieactive
++   bool works_now;
++   int calculate_explosion(int *data);   
++public:
++   bool active;
++
++   int PWR;
++   int RNG;
++   int DLY; // value poczatkowa dla countera
++
++   string sound_explosion;
++
++   CGrenade();
++   virtual string show_name();
++   virtual void death();
++   virtual bool ChangePosition(int x, int y);
++
++   virtual int evaluate_item();   
++   virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++   virtual void every_turn(); // cos, co sie wykonuje co ture z tym objectem
++   virtual int activate();
++   virtual int damage_it(int value);
++   
++   int explode();
++   int fire_explosion();
++   int stun_explosion();
++   int emp_explosion();
++
++   int produce_gas();
++   int create_shield();
++   int remove_shield();
++
++   virtual CItem * duplicate();   
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class GAS : public CTile {
++public:
++   GAS();
++   bool is_dead; // gdy zostalo wywalane death() dla tego gazu
++   int density; //   density 0 - 100 invisible 101-200 visible 201+ blocks fov
++   PROPERTIES properties;
++
++   virtual bool ChangePosition(int x, int y);
++   
++   virtual void act_on_monster();
++   virtual void display();
++   virtual void death(); // usuwa ten gaz z map
++   virtual void every_turn(); // gaz sie rozprzestrzenia, dziala na monsters itd.
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class FIRE : public GAS {
++public:
++   FIRE();
++   virtual void act_on_monster();
++   virtual void act_on_items();
++   virtual void display();
++   virtual void death(); // usuwa ten ogien z map
++   virtual void every_turn(); // ogien sie rozprzestrzenia, dziala na monsters itd.
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CONTROLLER : public CItem {
++public:
++	int PWR;
++
++	CONTROLLER();
++
++    void display() {};
++    virtual void every_turn();
++    virtual CItem * duplicate();   
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CRobotLeg : public CItem {
++public:
++	int move_power;
++	CRobotLeg();
++
++//	virtual void death();  // Call this method - at the end of turn is removes object from memory   
++	
++	virtual void every_turn() {}; 
++	virtual int evaluate_item() { return 0; };
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual CItem * duplicate();
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CProcessor : public CItem {
++public:
++	string program;
++	int frequency;
++	int quality;
++	int group_affiliation;
++	CRobotShell *where_placed;
++
++	CProcessor();
++//	virtual void death();  // Call this method - at the end of turn is removes object from memory   
++	
++	virtual void every_turn() {};
++	virtual int evaluate_item() { return 0; };
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual CItem * duplicate();
++	virtual string show_name();
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CRobotShell : public CItem {
++public:
++	int max_number_move_slots;
++	int max_number_action_slots;
++
++	int ARM; // how much it blocks	
++	
++	ptr_list move_slots;
++	ptr_list action_slots;
++
++	CProcessor *cpu;
++
++	string last_robot_name;
++
++	CRobotShell();
++	virtual void death();  // Call this method - at the end of turn is removes object from memory   
++	
++	virtual int evaluate_item() { return 0; };
++	virtual void print_attributes_vertical(int x,int y, int *changex, int *changey);
++	virtual int calculate_weight();
++	virtual CItem * duplicate();
++
++	virtual bool install_CPU(CItem *item);
++	virtual bool install_in_action_slot(CItem *item);
++	virtual bool install_in_move_slot(CItem *item);
++
++	virtual bool separate_item(CItem *item);
++	virtual bool uninstall_CPU();
++	virtual bool uninstall_from_action_slot(CItem *item);
++	virtual bool uninstall_from_move_slot(CItem *item);
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++
++#endif
++
++
+diff -rupN xeno_orig/src/keyboard.cpp xeno-2011-02-03/src/keyboard.cpp
+--- xeno_orig/src/keyboard.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/keyboard.cpp	2012-04-04 20:09:47.000000000 +0100
+@@ -12,7 +12,7 @@ CKeyboard :: CKeyboard ()
+       w=52;
+       e=54;
+       nw=55;
+-      n=56;
++      n=66;
+       ne=57;
+       get='g';
+       quit='Q';
+diff -rupN xeno_orig/src/level.h xeno-2011-02-03/src/level.h
+--- xeno_orig/src/level.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/level.h	2012-04-04 17:36:55.000000000 +0100
+@@ -2,11 +2,11 @@
+ #define LEVEL_H
+ 
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include "fov.h"
+ #include "map.h"
+@@ -113,7 +113,7 @@ public:
+ 
+ 	  CLevel();
+ 
+-      void TimePass(); // up³ynê³a w grze chwilka
++      void TimePass(); // upï¿½ynï¿½a w grze chwilka
+ 	  
+       bool entering_on_cell_possible(int x,int y);
+       CMonster *monster_on_cell(int x,int y);
+diff -rupN xeno_orig/src/level.h~ xeno-2011-02-03/src/level.h~
+--- xeno_orig/src/level.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/level.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,154 @@
++#ifndef LEVEL_H
++#define LEVEL_H
++
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++#pragma warning (disable: 4503)
++
++#include "fov.h"
++#include "map.h"
++#include "monster.h"
++#include <string>
++#include "attrib.h"
++
++typedef map < int , int > map_of_probabilities;
++typedef pair < int, int > pair_of_probabilities;
++
++class LEVEL_DEFINITION
++{
++public:
++	string name;
++	string type;
++
++	string music;
++
++	int fov_range;
++
++	int number_of_items;
++	int number_of_items_deviation;
++
++	int number_of_monsters;
++	int number_of_monsters_deviation;
++
++	int max_number_of_monsters;
++	int monster_every_n_turns;
++
++	int items_param1;
++	int items_param2;
++
++	int items_concentration;
++	
++	map_of_probabilities item_probability;
++	map_of_probabilities monster_probability;
++
++	int sum_of_monster_probabilities;
++	int sum_of_items_probabilities;
++
++	void reset() {
++		name="";
++		type="";
++		fov_range = 12;
++		monster_every_n_turns = 99999999;
++		number_of_monsters = 0;
++		number_of_items = 0;
++		max_number_of_monsters = 0;
++		sum_of_monster_probabilities = 0;
++		sum_of_items_probabilities = 0;
++		number_of_monsters_deviation = 0;
++		number_of_items_deviation = 0;
++		item_probability.clear();			
++		monster_probability.clear();			
++		items_param1=0;
++		items_param2=0;
++		items_concentration=0;		
++	};
++};
++
++typedef map < string , list < string > > map_of_level_links;
++typedef map < string , LEVEL_DEFINITION > map_of_levels;
++
++class CLevel : public CToSave {
++private:
++	void CreateItemOnLevel(string type,int x, int y);
++	void CreateMonsterOnLevel(string type,int x, int y, bool create_not_moving);
++
++	void time_for_items();
++	void time_for_monsters();
++	void time_for_gases();
++	void time_for_level();
++
++	void remove_monsters();
++	
++public:
++	bool find_empty_place(int &x, int &y);
++	bool find_empty_not_visible_place(int &x, int &y);
++	
++	  bool is_player_on_level; // must not be saved!
++	  
++	  string ID; // ID (text) of this level
++	  int fov_range;
++      CHero *player;
++      CMutualFOV fov;
++      CMap map;
++      unsigned long turn;
++      ptr_list monsters;
++      ptr_list items_on_map;
++      ptr_list gases_on_map;
++
++      ptr_list all_items;     // all, jakie istnieja na tym poziomie
++
++      ptr_list monsters_to_delete;     // po kazdej turze jest zwalniana pamiec
++      ptr_list items_to_delete;  // po kazdej turze jest zwalniana pamiec
++      ptr_list gases_to_delete;
++
++	  void add_to_items_on_map(CItem *item);
++	  void remove_from_items_on_map(CItem *item);
++	  void remove_last_item_on_map();
++	  
++      void clear_lists_to_delete();
++      void list_of_items_from_cell(ptr_list *items,int x,int y);
++
++	  CLevel();
++
++      void TimePass(); // up³ynê³a w grze chwilka
++	  
++      bool entering_on_cell_possible(int x,int y);
++      CMonster *monster_on_cell(int x,int y);
++
++      // w def_mons.cpp
++      CMonster *create_monster(int x, int y, string name, int param1, int param2);
++      CHero *create_player(int x, int y, string name, int param1, int param2);
++      
++      // w def_item.cpp
++      CItem  *create_base_item(string ClassName);
++      CItem  *create_item(int x, int y, string name, int param1, int param2);
++
++      int get_gas_density(int x, int y);
++      
++      bool add_gas(int x,int y, PROPERTIES properties, int density);
++
++	  map_of_level_links stairs_up;
++	  map_of_level_links stairs_down;
++	  map_of_levels levels;
++
++	  void FreeLevelMemory();
++	  void CreateLevel(string type);
++	  void CreateItemsOnLevel(string id);
++	  void CreateMonstersOnLevel(string id);
++	  CItem *CreateRandomItemFromCategory(int category,int x,int y,int parametr1,int parametr2);
++
++
++	  void AddMonstersFollowingPlayerToNewLevel();
++	  
++	  void ChangeLevelTo(string ID_new_one);
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++#endif
+diff -rupN xeno_orig/src/loadsave.h xeno-2011-02-03/src/loadsave.h
+--- xeno_orig/src/loadsave.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/loadsave.h	2012-04-04 17:36:55.000000000 +0100
+@@ -1,11 +1,11 @@
+ #ifndef LOADSAVE_H
+ #define LOADSAVE_H
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include <stdio.h>
+ #include <list>
+diff -rupN xeno_orig/src/loadsave.h~ xeno-2011-02-03/src/loadsave.h~
+--- xeno_orig/src/loadsave.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/loadsave.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,98 @@
++#ifndef LOADSAVE_H
++#define LOADSAVE_H
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++#pragma warning (disable: 4503)
++
++#include <stdio.h>
++#include <list>
++#include <map>
++#include <string>
++#include "position.h"
++using namespace std;
++
++class CToSave;
++
++typedef list<void *> ptr_list;
++
++typedef pair<CToSave **,unsigned long>  para;
++typedef list < para > to_fix;
++typedef list <CToSave *> list_of_saved;
++
++typedef map <unsigned long, CToSave *> addresses;
++
++#define NULL_UNIQUE_NUMBER		0
++#define PLAYER_UNIQUE_NUMBER	5
++#define LEVEL_UNIQUE_NUMBER		6
++#define MAP_UNIQUE_NUMBER		7
++#define FIRST_UNIQUE_NUMBER		100
++
++class CHero;
++
++class CToSave {
++public:
++		bool IsAlreadySaved; // error control - to avoid double save of object
++
++		string ClassName;
++		unsigned long UniqueNumber;
++
++		void operator=(CToSave &) {}; // TOSAVE data are unique
++
++		virtual unsigned long SaveObject();
++		virtual bool LoadObject();
++		virtual void UpdatePointers();
++
++		static CHero *LoadPlayer(string name);
++		static bool LoadOptions(string file_name);
++		static bool SaveOptions(string file_name);
++
++		static bool LoadMessageBuffer(string file_name);
++		static bool SaveMessageBuffer(string file_name);		
++		
++		static void SaveNULLObject();
++		static void SaveString(string value);
++		static void SaveChar(char value);
++		static void SaveInt(int value);
++		static void SaveBool(bool value);		
++		static void SaveLong(unsigned long value);
++		static void SaveUniqueNumber(unsigned long value); 
++		static void SaveList(ptr_list &value);
++		static void SaveListOfPointers(ptr_list &value);
++
++		static void LoadString(string &value);
++		static void LoadChar(char &value);
++		static void LoadInt(int &value);
++		static void LoadBool(bool &value);		
++		static void LoadLong(unsigned long &value);
++		static void LoadUniqueNumber(CToSave **ptr); 
++		static void LoadList(ptr_list &value);
++		static void LoadListOfPointers(ptr_list &value);
++		static void OpenLogFile();
++		static void CloseLogFile();
++		static void LogLevelChange(string to_log);
++
++		static void FinishLoadingGame();
++
++		static to_fix ListToFix;
++		static addresses AddressesOfObjects;
++		static CToSave *CreateObject();
++
++		static list_of_saved saved;
++
++		CToSave();
++		virtual ~CToSave() {};
++		//// shared
++
++		static unsigned long LastUniqueNumber;
++		static FILE *FilePointer;
++		static FILE *loadlog;
++		static void InitFilePointer(FILE *fp);
++
++		void SaveLastUNToFile();
++		void LoadLastUNFromFile();
++};
++
++#endif
+diff -rupN xeno_orig/src/main.cpp xeno-2011-02-03/src/main.cpp
+--- xeno_orig/src/main.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/main.cpp	2012-04-04 17:46:42.000000000 +0100
+@@ -1,19 +1,20 @@
+ #include "mem_check.h"
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include "keyboard.h"
+ #include "game.h"
+ #include "global.h"
+ #include <stdlib.h>
++#include <stdio.h>
+ #include <curses.h>
+ #include <time.h>
+-
+ #include <string>
++#include <math.h>
+ using namespace std;
+ 
+ CGame game;
+diff -rupN xeno_orig/src/main.cpp~ xeno-2011-02-03/src/main.cpp~
+--- xeno_orig/src/main.cpp~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/main.cpp~	2012-04-04 17:17:32.000000000 +0100
+@@ -0,0 +1,40 @@
++#include "mem_check.h"
++
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
++
++#include "keyboard.h"
++#include "game.h"
++#include "global.h"
++#include <stdlib.h>
++#include <curses.h>
++#include <time.h>
++#include <cstdlib>
++#include <string>
++using namespace std;
++
++CGame game;
++
++int main(int argc, char* argv[])
++{
++	if (argc>1)
++	{
++		game.name_of_player = argv[1];
++		string letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";		
++		for (int a=0;a<game.name_of_player.size();a++)
++		{
++			if (letters.find(game.name_of_player[a])==-1)
++			{
++				game.name_of_player = "";
++				break;
++			}
++		}
++	}
++
++   game.Begin();
++   game.Main();
++   return 0;
++}
+diff -rupN xeno_orig/src/Makefile xeno-2011-02-03/src/Makefile
+--- xeno_orig/src/Makefile	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/Makefile	2012-04-04 18:44:28.000000000 +0100
+@@ -0,0 +1,3 @@
++all:
++
++	g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp -lncurses
+diff -rupN xeno_orig/src/map.h xeno-2011-02-03/src/map.h
+--- xeno_orig/src/map.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/map.h	2012-04-04 17:36:55.000000000 +0100
+@@ -5,11 +5,11 @@
+ #define MAPWIDTH  80
+ #define MAPHEIGHT 40
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include <string>
+ #include <list>
+diff -rupN xeno_orig/src/map.h~ xeno-2011-02-03/src/map.h~
+--- xeno_orig/src/map.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/map.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,186 @@
++#ifndef MAP_H
++#define MAP_H
++
++
++#define MAPWIDTH  80
++#define MAPHEIGHT 40
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++#pragma warning (disable: 4503)
++
++#include <string>
++#include <list>
++#include "loadsave.h"
++using namespace std;
++
++#define CORNER_VISIBLE 1
++#define CORNER_INVISIBLE 0
++#define CORNER_INVISIBLE_CHECKED -1
++
++// schody
++
++class STAIRS : public CToSave
++{
++public:
++	bool lead_up; //
++	int number; // ID of stairs
++	int x,y; // position
++	string to_where; // to where - ID of level
++	string name; // name f.e. "Enterance to ..."
++
++	STAIRS() { ClassName="STAIRS"; x=-1;y=-1; number=0; };
++	~STAIRS();
++	
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++// Zamkniete, otwarte lub opening niedozwolone
++#define OPEN_FALSE 0
++#define OPEN_TRUE  1
++#define OPEN_NOT_ALLOWED 2
++
++class CELL : public CToSave
++{
++   friend class CMap;
++private:
++   bool seen;
++   bool seen_by_player;
++   char last_tile;
++   char seen_at_least_once;
++   bool seen_by_camera;
++public: // 
++   CELL();
++   
++   string name;
++   char tile;
++   int color;
++   bool block_los;
++   bool real_block_los;
++   bool block_move;
++   bool real_block_move;
++   bool is_stairs;
++   bool is_monster;
++   int number_of_items;
++   int danger_value;
++   int shield; // value tarczy na tym polu
++   int number_of_gases;
++   int hit_points;
++   int max_hit_points;
++   int about_open; // OPEN_NOT_ALLOWED, OPEN_TRUE, OPEN_FALSE
++   
++   string destroyed_to;
++//   string destroyed_to_item;
++   bool operator == (CELL a);
++   CELL & operator = (CELL a);
++   bool operator != (CELL a);
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CMap : public CToSave
++{
++private:
++   CELL cells[MAPWIDTH][MAPHEIGHT];
++   int corners[MAPWIDTH+1][MAPHEIGHT+1];
++   int add_room(int x1,int y1, int x2, int y2, CELL *wall, CELL *door, float prawd_braku_sciany);
++   bool AddDoorsInShuttle();
++   
++public:
++   CMap(void);
++   ptr_list stairs_of_map;
++
++   STAIRS *StairsAt(int x,int y);
++
++   void UnSeenMap(); // zeruje dla liczenia FOV
++   void HideFromPlayerSight();
++	   
++   void display();
++   void setSeen(int x, int y, bool state);
++   void setSeenByPlayer(int x, int y);
++   void setSeenByCamera(int x, int y);
++   bool onMap(int x, int y);
++   bool seen(int x, int y);
++   bool seen_by_player(int x, int y);
++   bool seen_by_camera(int x, int y);
++   bool seen_once(int x, int y);
++   bool blockLOS(int x, int y);
++   bool blockMove(int x, int y);
++   bool blockMissile(int x, int y);
++   bool isShield(int x, int y);
++   bool addDanger(int x, int y, int danger);
++   int getDanger(int x, int y);
++
++   inline int getCornerState(const int &x, const int &y);
++   inline void setCornerState(const int &x, const int &y, const int &state);
++   inline bool cornerOnMap(const int &x, const int &y);
++   
++   void setBlockLOS(int x, int y);
++   void backBlockLOS(int x, int y);
++   void setBlockMove(int x, int y);
++   void backBlockMove(int x, int y);
++
++   void MarkMonsterOnMap(int x, int y);
++   void UnMarkMonsterOnMap(int x, int y);
++   bool IsMonsterOnMap(int x, int y);
++
++   bool AreStairs(int x, int y);
++   void MarkStairs(int x, int y);
++   void UnMarkStairs(int x, int y);
++   
++   void IncraseNumberOfItems(int x, int y);
++   void DecraseNumberOfItems(int x, int y);
++   int GetNumberOfItems(int x, int y);   
++   void IncraseNumberOfGases(int x, int y);
++   void DecraseNumberOfGases(int x, int y);   
++   int GetNumberOfGases(int x, int y);
++   
++   void addShield(int x, int y);
++   void removeShield(int x, int y);
++   int getShield(int x, int y);
++
++   void setLastTile(int x, int y, int tile);
++   string getCellName(int x, int y);
++   int getTile(int x, int y);
++   void DecraseShieldsOnMap();
++
++   bool open(int x, int y);
++   bool close(int x, int y);
++   bool isOpenable(int x, int y);
++   bool isClosable(int x, int y);
++
++   bool damage(int x, int y, int value);   
++   bool destroyCell(int x, int y);
++   int  getPercentDamage(int x, int y);
++   bool FindRectangleOfType(CELL *typ, int &px, int &py, int size_x, int size_y, int grid);
++   void CollapseCeiling(int x,int y);   
++
++   void CreateMapBunker(); // 1
++   void CreateMapCaves();  // 2
++   void CreateMapMines();  // 3
++   void CreateMapBuilding(); // 4
++   void CreateMapShuttle(); // 5
++   void CreateMapCapsule(); // 6
++   void CreateMapCityNW();  // 7
++   void CreateMapCitySW();  // 8
++   void CreateMapDoctorsCave(); // 9
++   void CreateMapGeneticLab(); // 10
++   void CreateMapUnderground(bool interpolation); // 11
++   void CreateMapTutorial();  // 12
++
++   bool CreateMapGeneticLabUnderground();
++   
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++#endif
++
+diff -rupN xeno_orig/src/monster.h xeno-2011-02-03/src/monster.h
+--- xeno_orig/src/monster.h	2011-01-27 15:20:06.000000000 +0000
++++ xeno-2011-02-03/src/monster.h	2012-04-04 17:36:55.000000000 +0100
+@@ -1,11 +1,11 @@
+ #ifndef MONSTER_H
+ #define MONSTER_H
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
+-#pragma warning (disable: 4503)
++//#pragma warning (disable: 4805)
++//#pragma warning (disable: 4503)
+ 
+ #include <list>
+ #include <set>
+diff -rupN xeno_orig/src/monster.h~ xeno-2011-02-03/src/monster.h~
+--- xeno_orig/src/monster.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/monster.h~	2011-01-27 15:20:06.000000000 +0000
+@@ -0,0 +1,585 @@
++#ifndef MONSTER_H
++#define MONSTER_H
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++#pragma warning (disable: 4503)
++
++#include <list>
++#include <set>
++using namespace std;
++
++#include "tiles.h"
++#include "actions.h"
++#include "items.h"
++#include "game.h"
++#include "attrib.h"
++
++typedef list<void *> ptr_list;
++typedef set <string> set_of_known_names;
++
++// w global.cpp
++void bad_virtual_call(string method);
++
++// value dla samoleczenia - po osiagnieciu tej wartosci HP wzrasta o 1
++#define REACHED_TREATMENT 1000
++
++#define GROUP_HERO		0
++#define GROUP_ENEMIES		1
++#define GROUP_NEUTRAL		2
++#define GROUP_CRAZY	3
++
++class CAnimal;
++class CIntelligent;
++class CRobot;
++class CHero;
++class CEnemy;
++class CSearchLight;
++class CMadDoctor;
++class CWorm;
++
++#define SPECIAL_PROPERTY_NONE 0
++#define SPECIAL_PROPERTY_SPLITTER 1
++
++#define MUTATION_POSITIVE 1
++#define MUTATION_NEGATIVE 0
++#define MUTATION_NEUTRAL 2
++
++class CMonster : public CTile {
++	
++protected:
++  void cell_in_current_direction(int &x, int &y);
++  void direction_to_near_cell(int x, int y); // tylko pole sasiadujace z potworem
++
++  int self_treatment; // incrases every turn by metabolism value, when 1000, HP++
++  virtual void self_treatment_every_turn();
++  virtual void status_management_every_turn();
++
++public:	
++  virtual bool ChangePosition(int x, int y);
++
++  bool is_dead; // is dead
++  int weight;  
++
++  int last_pX, last_pY; // position in last turn
++  
++  int category;
++  int special_properties;
++
++  CAttribute fov_radius;
++  
++  int size;
++
++  CAttribute hit_points;
++  CAttribute energy_points;
++  CAttribute strength;
++  CAttribute dexterity;
++  CAttribute endurance;
++  CAttribute intelligence;
++  CAttribute speed;
++  CAttribute metabolism;  
++
++  string sound_dying;
++  string sound_pain;
++
++  int group_affiliation; // 0 - player   1 - enemies   2 - neutral  3 - crazy - attack everything (SENTRY GUN)
++  int direction; // direction of movement
++
++  WEAPON_UNARMED unarmed;
++  NO_ARMOR no_armor;
++
++  CItem *weapon;
++  CBaseArmor *armor;
++
++  t_time next_action_time; // w ktore turze nastapi ruch tego potwora
++  bool seen_now; 
++  t_time seen_last_time_in_turn;
++
++  unsigned long experience_for_kill;  
++
++  CMonster * enemy; // selected enemy 
++
++  ptr_list seen_enemies;
++  ptr_list seen_friends;
++
++  int skill[NUMBER_OF_SKILLS];   // value for skills
++  int resist[NUMBER_OF_RESISTS]; // value for resists
++  int state[NUMBER_OF_STATES];   // value for states
++
++  bool IsBlinded() { return state[STATE_BLIND]>0; };
++  bool IsStunned()  { return state[STATE_STUN]>0; };
++  bool IsConfused(){ return state[STATE_CONFUSE]>0; };
++  bool IsBurning() { return state[STATE_TEMPERATURE]>0; };
++  bool IsFreezed() { return state[STATE_TEMPERATURE]<0; };
++  bool IsRadiated()    { return state[STATE_RADIOACTIVE]>0; };
++  bool IsSlowed()  { return state[STATE_SPEED]<0; };
++  bool IsHasted()  { return state[STATE_SPEED]>0; };
++  bool IsPoisoned(){ return state[STATE_CHEM_POISON]>0; };
++
++  CAnimal * IsAnimal();
++  CIntelligent * IsIntelligent();
++  CRobot *IsRobot();
++  CHero * IsPlayer();
++  CEnemy * IsHostile();
++  CSearchLight * IsSearchlight();
++  CMadDoctor * IsMadDoctor();
++  CWorm * IsWorm();
++  
++  virtual void ShowDescription();
++
++  CMonster();
++  ~CMonster();
++
++  virtual void set_attributes_on_self();
++  virtual int move();
++  void wait( t_time );
++  virtual void attack(CMonster *a_enemy);
++  bool is_unarmed(); // gdy ma jakas weapon
++  bool in_armor(); // gdy nosi jakis armor
++  
++  virtual bool have_low_hp() { return (hit_points.GetValue() <= hit_points.max/2); };
++  virtual bool have_critically_low_hp() { return (hit_points.GetValue() <= hit_points.max/4); };
++  
++  virtual bool is_intelligent() { return false; };
++  bool is_enemy(CMonster *m);
++  bool is_friendly(CMonster *m);
++  virtual int cause_damage(int damage); // return (0 - no damage, 1 - damage done or -1 death)
++  virtual int use_energy(int energy);
++  virtual int add_energy(int energy);
++  bool heal(int damage);
++  virtual int hit_by_item(int hit_power, CItem *item);
++  virtual int hit_by_explosion(int hit_power);
++  virtual int hit_changes_status(int kind, int power);
++  virtual bool attack_in_direction();
++  virtual bool look_around();
++  virtual int calculate_weight() { return weight; };
++  virtual int mutate(int type);
++  
++  virtual void monster_sees_enemy(CMonster *enemy) {};
++  virtual bool evade_missile(CMonster *thrower);
++  virtual int get_h2h_attack_value();
++  virtual int get_h2h_defense_value();
++  
++  virtual void enemy_died();
++  virtual bool death();
++  virtual EAction get_action() { bad_virtual_call("Monster: get_action"); return ACTION_NOTHING; };
++  virtual t_time do_action( EAction ) { bad_virtual_call("Monster: do_action");  return 0; };
++
++  virtual void select_closest_enemy() { bad_virtual_call("Monster: select_closest_enemy");};
++
++  virtual CMonster * duplicate()  { bad_virtual_call("Monster: duplicate"); return NULL; };
++
++  virtual void every_turn();
++  
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++enum BEHAVIOUR {
++	BEHAVIOUR_CALM,
++	BEHAVIOUR_H2H_COMBAT,
++	BEHAVIOUR_RANGED_COMBAT,
++	BEHAVIOUR_RUN_AWAY,
++	BEHAVIOUR_SEARCH_FOR_ENEMY,
++	BEHAVIOUR_TURN_TO_FIGHT
++};
++
++class CEnemy : public CMonster {
++public:
++  EAction chosen_action;	// do decyzji inteligentnego...
++  int actual_behaviour;
++  bool turned_to_fight;
++  
++  int camping; // Licznik postoju w jednym miejscu dla potwora. Gdy > 5 to idzie w losowa strone.
++  int last_x_of_enemy; // Ostatnie place, gdzie player byl widziany
++  int last_y_of_enemy; // Ostatnie place, gdzie player byl widziany
++  int last_direction_of_enemy;
++  bool is_at_enemy_position;
++  t_time enemy_last_seen_in_turn; 
++
++  CEnemy();
++  virtual void enemy_died();
++  int set_direction_to_cell_by_shortest_path(int cell_x, int cell_y, bool opening);
++  virtual int how_danger_is_cell(int x,int y) { return 0;}; // aby potrafil omijac (w direction na pole) takie pola  
++  virtual void monster_sees_enemy(CMonster *enemy);
++  virtual bool go_around_cell(int x,int y,bool opening);
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++#define AI_NOT_LIMITED					0x00000000
++#define AI_DONT_USE_GRENADES			0x00000001
++#define AI_DONT_USE_HEALING				0x00000002
++#define AI_DONT_USE_BOOSTERS			0x00000004
++#define AI_DONT_USE_RANGED_WEAPONS		0x00000008
++#define AI_DONT_MOVE					0x00000010
++#define AI_DONT_COOPERATE_WITH_FRIENDS	0x00000020
++#define AI_DONT_RUN_AWAY				0x00000040
++#define AI_DONT_PICK_UP_ITEMS			0x00000080
++#define AI_DONT_USE_OTHER_WEAPONS		0x00000100
++#define AI_DONT_USE_OTHER_ARMORS		0x00000200
++
++typedef unsigned long AI_CONTROL;
++
++void calculate_hit_place(int who_x, int who_y, int &target_x, int &target_y, double angle_miss);
++
++class CIntelligent : public CEnemy {
++private:
++	int misses_in_shooting; // to choose lower distance
++	int run_away_to_x, run_away_to_y;
++public:
++  AI_CONTROL AI_restrictions;
++  t_time turns_of_searching_for_enemy;
++  t_time turns_of_calm;
++  
++  ptr_list backpack;
++
++  ptr_list seen_items;
++
++  CItem *ready_weapon; // ready item  
++  
++  int max_items_in_backpack;
++  int items_in_backpack;
++
++  int get_backpack_weight(); // zwraca wage
++  int get_monster_capacity();
++
++  virtual bool look_around();
++  virtual bool defend_self_from_danger_on_map();
++  virtual bool is_intelligent() { return true; };
++  virtual int how_danger_is_cell(int x,int y); // aby potrafil omijac takie pola
++  virtual int cause_damage(int damage);
++  virtual int use_item(CItem *); // np. pill
++  virtual int set_weapon(CItem *);
++  virtual int set_armor(CItem *);
++  virtual int remove_armor();
++  virtual int take_out_from_backpack(CItem *);
++  virtual int drop_item(CItem *, bool see_possible);
++  virtual int pick_up_item(CItem *, bool see_possible);
++  virtual int shoot_into(int x, int y); // strzela z broni uzywanej w pole
++  virtual int reload_weapon();
++  virtual int can_pick_up(CItem *item);
++  virtual bool open_in_direction();
++  virtual bool close_in_direction();
++  virtual bool isStrained();
++  virtual bool isBurdened();
++  virtual int calculate_weight() { return weight + get_backpack_weight(); };
++  
++  // with shooting  
++  virtual bool evade_missile(CMonster *thrower);
++  virtual bool throw_item_to (int x,int y,CItem *item);
++  // AI
++  virtual bool throw_item_to();
++  virtual bool load_weapon();
++  virtual bool unload_weapon();
++  virtual bool fire_at_enemy();
++  virtual bool use_healing_item();
++  virtual bool use_remove_poison_item();
++  virtual bool throw_active_grenade();
++  virtual bool tell_others_about_enemy();
++  virtual bool use_booster_item();
++  virtual bool change_weapon_to_better_one();
++  virtual bool change_armor_to_better_one();
++  virtual bool activate_grenade_when_enemy_is_far();
++  virtual int activate_weapon_and_armor_when_energy_available();
++  virtual int carried_number_of_missiles_for_weapon(CRangedWeapon *ranged_weapon);
++  virtual bool choose_place_to_throw_grenade(int &x,int &y);
++  virtual int go_to_direction_of_enemy();
++  virtual bool find_best_weapons(CItem *&best_for_h2h, int &best_evaluation_h2h, CItem *&best_for_ranged, int &best_evaluation_ranged);
++  virtual int pick_valuable_items();
++  virtual CItem * go_to_valuable_item();
++  virtual bool choose_run_away_direction();
++  virtual bool use_defensive_techniques_running_away();
++  virtual int  turn_robot_on(CItem *to_turn_on);
++
++  virtual bool choose_ready_weapon(CItem *item);
++  virtual bool set_ready_weapon();
++
++  virtual void start_to_run_away();
++				
++  CIntelligent();
++  virtual bool death();
++  
++  virtual EAction get_action();
++  virtual t_time do_action( EAction );
++  
++  virtual CMonster * duplicate();
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++#define SKILL_MULTIPLIER 35
++
++// way of showing the inventory
++
++enum EInvShowType {
++	INV_SHOW_SIMPLE,
++	INV_SHOW_MATCH_AMMO,
++	INV_SHOW_HIGHLIGHT_CORPSES,
++	INV_SHOW_MATCH_ITEM_TO_REPAIR,
++	INV_SHOW_REPAIR_KIT,
++	INV_SHOW_HIGHLIGHT_REAPIR_KITS,
++	INV_SHOW_IMPROVE_ARMOR
++};
++
++enum ERepeatAction {
++	REPEAT_ACTION_NONE,
++	REPEAT_ACTION_REST,
++	REPEAT_ACTION_INVENTORY,
++	REPEAT_ACTION_TRAVEL,
++	REPEAT_ACTION_EXPLORE
++};
++
++class CHero : public CIntelligent {
++private:
++  CItem *choose_item_to_pick_up();
++
++  int turns_of_rest;
++  int exp_level;
++
++  unsigned long experience;
++  unsigned long level_at_experience;
++  unsigned long free_skill_pointes;
++  
++  int experience_in_skill[NUMBER_OF_SKILLS];   // experience w tym % w skillu
++  void train_skill(int skill, int value);
++
++  bool set_direction_to_closest_unexplored(); // returns distance
++  void got_level_up();  
++  int show_actions_of_item(CItem *);
++  int get_action_for_item(CItem *);
++  int shoot_into(int x, int y); // strzela z broni uzywanej w pole
++  CMonster * choose_target(int *x, int *y, string text);
++  virtual void select_closest_enemy();
++  bool choose_travel_destination();
++  bool print_visible_monsters_and_items();
++  void show_attributes();
++  int show_inventory();
++  bool use_stairs(bool direction);
++  bool reprogram_robot(CRobotShell *shell);
++  
++  void show_player_info();
++  void show_info();
++  
++  void look_with_cursor();
++  bool set_move_direction(void); // ustala zmienna direction gracza na chosen_one
++
++  ERepeatAction action_to_repeat;
++  bool inventory_repeat_break;
++  
++public:
++  ptr_list monsters_following_player_to_other_level;
++
++  set_of_known_names known_items;
++  void add_known_item(string real);
++  void add_known_category_of_items(string category_to_add);
++  bool is_item_known(string real);
++
++  string ID_of_level; // on which player is
++  string ID_of_last_level; // from which player came
++  int stairs_number_used; // with changing level
++  unsigned long adaptation_points;
++
++  int travel_dest_x, travel_dest_y; // not saved
++  
++  CItem *last_activated;
++  
++  CHero();
++  EAction get_action();
++  t_time do_action( EAction );
++
++  void create_list_of_monsters_following_player();
++
++  virtual int pick_up_item(CItem *, bool see_possible);
++
++  void show_laying_items();
++  void show_backpack(CItem *passed_item, EInvShowType print_type); 
++  void show_robot_build_screen(CRobotShell *shell, int show_letters); // if -1 then check is robot on;
++  int build_robot_change_field_number(CRobotShell *shell, int field_number);
++  bool build_robot_fix(CRobotShell *shell);
++  bool build_robot_find_available_parts(ptr_list &available_items);
++  
++  CItem *choose_item_from_backpack(int character);
++  CItem *choose_item_from_list(ptr_list &available_items, string header);
++  void give_experience(unsigned long value);
++  void skill_used(int skill);
++  void stop_repeating();
++  void repeat_action(ERepeatAction to_repeat);
++  int is_repeating_action() { return action_to_repeat; };
++  virtual bool look_around();  
++  virtual int build_robot(CItem *item);
++  virtual int reprogram (CProgrammator *item, CProcessor *cpu=NULL);
++  virtual int set_weapon(CItem *);  
++  virtual int drop_item(CItem *, bool visible_dropping);  
++  virtual bool throw_item_to (int x,int y,CItem *item); 
++  
++  virtual void display(); // nowa method
++  virtual bool death();
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CAnimal : public CEnemy {
++public:
++  CAnimal();
++  EAction get_action();
++  t_time do_action( EAction );
++  virtual bool look_around();
++  virtual bool evade_missile(CMonster *thrower);
++  virtual CMonster * duplicate();
++
++  virtual int how_danger_is_cell(int x,int y); // aby potrafil omijac takie pola
++  virtual int cause_damage(int damage);
++  
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CWorm : public CEnemy {
++private:
++	void reverse_worm();
++public:
++	CWorm *prev; // segments
++	CWorm *next;
++	int length_left;
++	string segment_name;
++	string tail_name;
++
++	CWorm();
++	EAction get_action();
++	t_time do_action( EAction );
++	virtual int move();
++	virtual bool look_around();
++	virtual CMonster * duplicate();
++
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++class CRobot : public CEnemy {
++private:
++	int last_x_of_creator; 
++	int last_y_of_creator; 
++	bool sees_creator; 
++
++	char get_CPU_instruction();
++	bool can_weapon_shoot();
++	bool load_ammo_to_weapon();
++	bool fire_grenades();
++					
++public:
++	CRobotShell *shell;
++
++	unsigned long Creator_ID; 	
++
++	CRobot();
++	EAction get_action();
++	t_time do_action( EAction );	
++
++	virtual bool death();	
++	void turn_robot_off();
++	bool tries_to_turn_off(CMonster *temp);
++
++	int get_robot_speed();
++	virtual int calculate_weight() { return shell->calculate_weight(); };	
++	
++	virtual void display(); // robot to specjalny type potworka, zmienia wyglad zaleznie od pancerza
++	virtual void ShowDescription();
++	
++	virtual bool look_around();
++	virtual bool evade_missile(CMonster *thrower) { return false; };
++	virtual CMonster * duplicate();
++
++	virtual int get_h2h_attack_value();
++	virtual int get_h2h_defense_value();
++	
++	virtual void attack(CMonster *enemy);	
++	virtual bool attack_with_ranged_weapon();
++	virtual bool shoot_into(int x, int y);
++
++	virtual int cause_damage(int damage); // zwraca (0 - bez obrazen, 1 - byly lub -1 gdy death)
++	bool heal(int damage);
++
++	virtual int hit_by_item(int hit_power, CItem *item);
++	virtual int hit_by_explosion(int hit_power);
++	virtual int hit_changes_status(int kind, int power);
++	virtual bool attack_in_direction();
++
++	virtual bool have_low_hp() { return (shell->hit_points <= shell->max_hit_points/2); };
++	virtual bool have_critically_low_hp() { return (shell->hit_points <= shell->max_hit_points/4); };	
++	
++	virtual int how_danger_is_cell(int x,int y) { return 0; }; // aby potrafil omijac takie pola
++
++	virtual void self_treatment_every_turn();
++	virtual void status_management_every_turn();	
++	
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++class CSearchLight : public CEnemy {
++public:
++	int destination_x,destination_y;
++	CSearchLight();
++	virtual bool death();	
++	
++	EAction get_action();
++	t_time do_action( EAction );
++	virtual bool look_around();
++	virtual bool evade_missile(CMonster *thrower) { return false; };
++	virtual CMonster * duplicate();
++		
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++#define MADDOCTOR_TEXTS 25
++
++class CMadDoctor : public CIntelligent {
++private:
++	string histext[MADDOCTOR_TEXTS];
++	int yelling_chance;
++	
++public:
++	CHandWeapon tail;
++	
++	CMadDoctor();
++	EAction get_action();
++	t_time do_action( EAction );
++	virtual bool look_around();
++	virtual CMonster * duplicate();
++	
++	virtual int how_danger_is_cell(int x,int y); // aby potrafil omijac takie pola
++	virtual bool death();
++	
++	// special akcje
++	int throw_enemy_at_the_wall();
++	int spit_poison();
++	int fire_needle();
++	int yell();
++
++	/// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++
++
++#endif
++
++
+diff -rupN xeno_orig/src/nbproject/configurations.xml xeno-2011-02-03/src/nbproject/configurations.xml
+--- xeno_orig/src/nbproject/configurations.xml	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/nbproject/configurations.xml	2012-04-04 18:02:20.000000000 +0100
+@@ -0,0 +1,82 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<configurationDescriptor version="80">
++  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
++    <df name="src" root=".">
++      <in>actions.h</in>
++      <in>attrib.h</in>
++      <in>def_item.cpp</in>
++      <in>def_mons.cpp</in>
++      <in>directions.h</in>
++      <in>fov.cpp</in>
++      <in>fov.h</in>
++      <in>game.cpp</in>
++      <in>game.h</in>
++      <in>global.cpp</in>
++      <in>global.h</in>
++      <in>hero.cpp</in>
++      <in>items.cpp</in>
++      <in>items.h</in>
++      <in>keyboard.cpp</in>
++      <in>keyboard.h</in>
++      <in>level.cpp</in>
++      <in>level.h</in>
++      <in>loadsave.cpp</in>
++      <in>loadsave.h</in>
++      <in>main.cpp</in>
++      <in>map.cpp</in>
++      <in>map.h</in>
++      <in>mem_check.h</in>
++      <in>monster.cpp</in>
++      <in>monster.h</in>
++      <in>mt19937int.cpp</in>
++      <in>mt19937int.h</in>
++      <in>options.cpp</in>
++      <in>options.h</in>
++      <in>parser.cpp</in>
++      <in>parser.h</in>
++      <in>places.cpp</in>
++      <in>places.h</in>
++      <in>position.h</in>
++      <in>resource1.h</in>
++      <in>screenshot.cpp</in>
++      <in>sounds.cpp</in>
++      <in>sounds.h</in>
++      <in>system.cpp</in>
++      <in>system.h</in>
++      <in>tiles.cpp</in>
++      <in>tiles.h</in>
++      <in>tutorial.cpp</in>
++      <in>tutorial.h</in>
++      <in>types.h</in>
++    </df>
++    <logicalFolder name="ExternalFiles"
++                   displayName="Important Files"
++                   projectFiles="false"
++                   kind="IMPORTANT_FILES_FOLDER">
++      <itemPath>Makefile</itemPath>
++    </logicalFolder>
++  </logicalFolder>
++  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
++  <sourceRootList>
++    <Elem>.</Elem>
++  </sourceRootList>
++  <projectmakefile>makefile</projectmakefile>
++  <confs>
++    <conf name="Default" type="0">
++      <toolsSet>
++        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
++        <compilerSet>default</compilerSet>
++      </toolsSet>
++      <makefileType>
++        <makeTool>
++          <buildCommandWorkingDir>.</buildCommandWorkingDir>
++          <buildCommand>${MAKE} -f Makefile</buildCommand>
++          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
++          <executablePath></executablePath>
++        </makeTool>
++      </makefileType>
++      <item path="resource1.h" ex="true" tool="3" flavor="0">
++      </item>
++    </conf>
++  </confs>
++</configurationDescriptor>
+diff -rupN xeno_orig/src/nbproject/Package-Default.bash xeno-2011-02-03/src/nbproject/Package-Default.bash
+--- xeno_orig/src/nbproject/Package-Default.bash	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/nbproject/Package-Default.bash	2012-04-04 17:41:46.000000000 +0100
+@@ -0,0 +1,75 @@
++#!/bin/bash -x
++
++#
++# Generated - do not edit!
++#
++
++# Macros
++TOP=`pwd`
++CND_PLATFORM=GNU-Linux-x86
++CND_CONF=Default
++CND_DISTDIR=dist
++CND_BUILDDIR=build
++NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
++TMPDIRNAME=tmp-packaging
++OUTPUT_PATH=MissingOutputInProject
++OUTPUT_BASENAME=MissingOutputInProject
++PACKAGE_TOP_DIR=src/
++
++# Functions
++function checkReturnCode
++{
++    rc=$?
++    if [ $rc != 0 ]
++    then
++        exit $rc
++    fi
++}
++function makeDirectory
++# $1 directory path
++# $2 permission (optional)
++{
++    mkdir -p "$1"
++    checkReturnCode
++    if [ "$2" != "" ]
++    then
++      chmod $2 "$1"
++      checkReturnCode
++    fi
++}
++function copyFileToTmpDir
++# $1 from-file path
++# $2 to-file path
++# $3 permission
++{
++    cp "$1" "$2"
++    checkReturnCode
++    if [ "$3" != "" ]
++    then
++        chmod $3 "$2"
++        checkReturnCode
++    fi
++}
++
++# Setup
++cd "${TOP}"
++mkdir -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package
++rm -rf ${NBTMPDIR}
++mkdir -p ${NBTMPDIR}
++
++# Copy files and create directories and links
++cd "${TOP}"
++makeDirectory "${NBTMPDIR}/src"
++copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
++
++
++# Generate tar file
++cd "${TOP}"
++rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/src.tar
++cd ${NBTMPDIR}
++tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/src.tar *
++checkReturnCode
++
++# Cleanup
++cd "${TOP}"
++rm -rf ${NBTMPDIR}
+diff -rupN xeno_orig/src/nbproject/private/configurations.xml xeno-2011-02-03/src/nbproject/private/configurations.xml
+--- xeno_orig/src/nbproject/private/configurations.xml	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/nbproject/private/configurations.xml	2012-04-04 17:41:46.000000000 +0100
+@@ -0,0 +1,39 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<configurationDescriptor version="80">
++  <projectmakefile>makefile</projectmakefile>
++  <confs>
++    <conf name="Default" type="0">
++      <toolsSet>
++        <developmentServer>localhost</developmentServer>
++        <platform>2</platform>
++      </toolsSet>
++      <dbx_gdbdebugger version="1">
++        <gdb_pathmaps>
++        </gdb_pathmaps>
++        <gdb_interceptlist>
++          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
++        </gdb_interceptlist>
++        <gdb_options>
++          <DebugOptions>
++          </DebugOptions>
++        </gdb_options>
++        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
++      </dbx_gdbdebugger>
++      <nativedebugger version="1">
++        <engine>gdb</engine>
++      </nativedebugger>
++      <runprofile version="9">
++        <runcommandpicklist>
++          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
++        </runcommandpicklist>
++        <runcommand>"${OUTPUT_PATH}"</runcommand>
++        <rundir>.</rundir>
++        <buildfirst>true</buildfirst>
++        <terminal-type>0</terminal-type>
++        <remove-instrumentation>0</remove-instrumentation>
++        <environment>
++        </environment>
++      </runprofile>
++    </conf>
++  </confs>
++</configurationDescriptor>
+diff -rupN xeno_orig/src/nbproject/private/Default.properties xeno-2011-02-03/src/nbproject/private/Default.properties
+--- xeno_orig/src/nbproject/private/Default.properties	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/nbproject/private/Default.properties	2012-04-04 17:41:51.000000000 +0100
+@@ -0,0 +1,22 @@
++/home/clem/storage2/DL/xeno-2011-02-03/src/hero.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/options.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/sounds.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/system.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/screenshot.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/places.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/def_item.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/keyboard.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/main.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/loadsave.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/fov.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/level.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/tutorial.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/map.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/game.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/mt19937int.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/items.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/global.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/parser.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/def_mons.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/monster.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
++/home/clem/storage2/DL/xeno-2011-02-03/src/tiles.cpp=/home/clem/storage2/DL/xeno-2011-02-03/src#g++ -o xeno main.cpp tutorial.cpp tiles.cpp system.cpp sounds.cpp screenshot.cpp places.cpp parser.cpp options.cpp mt19937int.cpp monster.cpp map.cpp loadsave.cpp level.cpp keyboard.cpp items.cpp hero.cpp global.cpp game.cpp fov.cpp def_mons.cpp def_item.cpp
+diff -rupN xeno_orig/src/nbproject/private/private.xml xeno-2011-02-03/src/nbproject/private/private.xml
+--- xeno_orig/src/nbproject/private/private.xml	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/nbproject/private/private.xml	2012-04-04 17:42:03.000000000 +0100
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
++    <code-assistance-data xmlns="http://www.netbeans.org/ns/make-project-private/1">
++        <code-model-enabled>true</code-model-enabled>
++    </code-assistance-data>
++    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
++        <activeConfTypeElem>0</activeConfTypeElem>
++        <activeConfIndexElem>0</activeConfIndexElem>
++    </data>
++</project-private>
+diff -rupN xeno_orig/src/nbproject/project.xml xeno-2011-02-03/src/nbproject/project.xml
+--- xeno_orig/src/nbproject/project.xml	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/nbproject/project.xml	2012-04-04 17:41:51.000000000 +0100
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://www.netbeans.org/ns/project/1">
++    <type>org.netbeans.modules.cnd.makeproject</type>
++    <configuration>
++        <data xmlns="http://www.netbeans.org/ns/make-project/1">
++            <name>src</name>
++            <c-extensions/>
++            <cpp-extensions>cpp</cpp-extensions>
++            <header-extensions>h</header-extensions>
++            <sourceEncoding>UTF-8</sourceEncoding>
++            <make-dep-projects/>
++            <sourceRootList>
++                <sourceRootElem>.</sourceRootElem>
++            </sourceRootList>
++            <confList>
++                <confElem>
++                    <name>Default</name>
++                    <type>0</type>
++                </confElem>
++            </confList>
++        </data>
++    </configuration>
++</project>
+diff -rupN xeno_orig/src/parser.cpp xeno-2011-02-03/src/parser.cpp
+--- xeno_orig/src/parser.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/parser.cpp	2012-04-04 18:27:06.000000000 +0100
+@@ -8,13 +8,14 @@
+ #include "global.h"
+ #include "map.h"
+ #include "level.h"
+-#include <stdio.h>
++#include <iostream>
+ 
+ // ponizsze dwa do toupper
+ #include <algorithm>
+ 
+ #include <cctype>
+ #include <vector>
++#include <string.h>
+ 
+ extern CLevel level;
+ extern CKeyboard keyboard;
+@@ -699,7 +700,7 @@ bool DEFINITIONS :: read_items_definitio
+   {
+     real=file.get_line();
+     line=string(real) + "";
+-	transform(line.begin(), line.end(), line.begin(), toupper);
++	transform(line.begin(), line.end(), line.begin(),(int(&)(int))std::toupper);
+     
+     
+     // loog for [
+@@ -1274,7 +1275,7 @@ bool DEFINITIONS :: read_monsters_defini
+   {
+     real=file.get_line();
+     line=string(real) + "";
+-	transform(line.begin(), line.end(), line.begin(), toupper);
++	transform(line.begin(), line.end(), line.begin(), (int(&)(int))std::toupper);
+     // szukamy of character [
+     if (*line.c_str()=='#' || *line.c_str()=='\n') // komentarz
+       continue;
+@@ -1690,7 +1691,7 @@ bool DEFINITIONS :: read_keyboard_mappin
+   {
+     real=file.get_line();
+     line=string(real) + "";
+-	transform(line.begin(), line.end(), line.begin(), toupper);
++	transform(line.begin(), line.end(), line.begin(), (int(&)(int))std::toupper);
+     
+       if (line.find("\"")!=-1)
+       {
+@@ -1811,7 +1812,7 @@ bool DEFINITIONS :: read_terrains_defini
+   {
+     real=file.get_line();
+     line=string(real) + "";
+-	transform(line.begin(), line.end(), line.begin(), toupper);
++	transform(line.begin(), line.end(), line.begin(), (int(&)(int))std::toupper);
+     // szukamy of character [
+     if (*line.c_str()=='#' || *line.c_str()=='\n') // komentarz
+       continue;
+@@ -1938,7 +1939,8 @@ bool DEFINITIONS::read_level_definitions
+ 	  {
+ 		  real=file.get_line();
+ 		  line=string(real) + "";
+-		  transform(line.begin(), line.end(), line.begin(), toupper);
++          //std::transform(s.begin(),s.end(), std::back_inserter(S), (int(&)(int))std::toupper);
++		  transform(line.begin(), line.end(), line.begin(),(int(&)(int))std::toupper);
+ 		  // szukamy of character [
+ 		  if (*line.c_str()=='#' || *line.c_str()=='\n') // komentarz
+ 			  continue;
+diff -rupN xeno_orig/src/parser.h xeno-2011-02-03/src/parser.h
+--- xeno_orig/src/parser.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/parser.h	2012-04-04 17:48:27.000000000 +0100
+@@ -3,6 +3,8 @@
+ #include "items.h"
+ #include "map.h"
+ #include <map>
++#include <stdlib.h>
++
+ 
+ bool get_boolean(string line, int line_number);
+ 
+diff -rupN xeno_orig/src/position.h xeno-2011-02-03/src/position.h
+--- xeno_orig/src/position.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/position.h	2012-04-04 17:36:55.000000000 +0100
+@@ -1,4 +1,4 @@
+-#pragma once
++//#pragma once
+ #ifndef POSITION_H
+ #define POSITION_H
+ 
+diff -rupN xeno_orig/src/position.h~ xeno-2011-02-03/src/position.h~
+--- xeno_orig/src/position.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/position.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,45 @@
++#pragma once
++#ifndef POSITION_H
++#define POSITION_H
++
++struct CPosition {
++	int x;
++	int y;
++	CPosition()
++	{
++	};
++	CPosition(const int &a_x, const int &a_y)
++		: x(a_x), y(a_y)
++	{
++	};
++
++
++	bool operator<(const CPosition &r) const
++	{
++		if (x<r.x)
++			return true;
++		else if (x==r.x && y<r.y)
++			return true;
++		return false;
++	}
++
++	bool operator== ( const CPosition &r) const
++	{ 
++		return (x==r.x && y == r.y); 
++	};
++	bool operator!= ( const CPosition &r) const
++	{ 
++		return !operator==(r); 
++	};
++
++	const CPosition & operator= ( const CPosition &r) 
++	{ 
++		x=r.x;
++		y=r.y;
++		return *this;
++	};
++};
++
++
++#endif
++
+diff -rupN xeno_orig/src/sounds.cpp xeno-2011-02-03/src/sounds.cpp
+--- xeno_orig/src/sounds.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/sounds.cpp	2012-04-04 17:54:42.000000000 +0100
+@@ -1,6 +1,6 @@
+ #include "sounds.h"
+ 
+-#define XENO_SOUNDS 1
++//#define XENO_SOUNDS 1
+ 
+ #ifdef XENO_SOUNDS
+ #if defined(WIN32) || defined(_WIN64) || defined(__WATCOMC__)
+diff -rupN xeno_orig/src/system.cpp xeno-2011-02-03/src/system.cpp
+--- xeno_orig/src/system.cpp	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/system.cpp	2012-04-04 18:40:16.000000000 +0100
+@@ -46,7 +46,7 @@
+ 
+ #include <curses.h>
+ 
+-extern void make_screenshot(string filename,bool put_date);
++extern void make_screenshot(string filename, bool put_date);
+ 
+ extern class COptions options;
+ extern string IntToStr(long number);
+@@ -62,464 +62,412 @@ struct SScreen_copy last_refresh;
+ 
+ bool global_dont_wait_for_key;
+ 
+-void init_system()
+-{
+-  // init rand()
+-  strcpy(player_name_8,"Player");
+-  delay(1); // inicjalizacja zegara
+-  init_genrand(get_ticks_count());
++void init_system() {
++    // init rand()
++    strcpy(player_name_8, "Player");
++    delay(1); // inicjalizacja zegara
++    init_genrand(get_ticks_count());
+ }
+ 
+-void create_directory(string name)
+-{
++void create_directory(string name) {
+ #ifdef COMPILER_GCC
+-       #ifdef __MINGW32_VERSION
+-       mkdir(name.c_str());
+-       #else
+-       mkdir(name.c_str(), S_IWUSR);
+-       #endif
++#ifdef __MINGW32_VERSION
++    mkdir(name.c_str());
++#else
++    mkdir(name.c_str(), S_IWUSR);
++#endif
+ #endif
+ #ifdef COMPILER_MSVC
+-	_mkdir(name.c_str());
++    _mkdir(name.c_str());
+ #endif
+ }
+ 
+-void delete_file(string name)
+-{
++void delete_file(string name) {
+ #ifdef COMPILER_GCC
+     unlink(name.c_str());
+ #endif
+ #ifdef COMPILER_MSVC
+-	_unlink(name.c_str());
++    _unlink(name.c_str());
+ #endif
+ }
+ 
+ unsigned long get_ticks_count() // proba zwrocenia w milisekundach
+ {
+-  struct timeb t;
+-  ftime(&t);
+-  return (t.time*1000 + t.millitm);
+-//  return  uclock()/(UCLOCKS_PER_SEC/1000);
++    struct timeb t;
++    ftime(&t);
++    return (t.time * 1000 + t.millitm);
++    //  return  uclock()/(UCLOCKS_PER_SEC/1000);
+ }
+ 
+-void delay(long how_long)
+-{
+-   unsigned long start, end;
+-   start=get_ticks_count();
+-   
+-   while (1)
+-   {
+-     end=get_ticks_count();
+-     if (start+how_long<=end)
+-       break;
+-   }
++void delay(long how_long) {
++    unsigned long start, end;
++    start = get_ticks_count();
++
++    while (1) {
++        end = get_ticks_count();
++        if (start + how_long <= end)
++            break;
++    }
+ }
+ 
+-void store_screen(SScreen_copy *s_copy)
+-{
+-   *s_copy=screen_copy;
++void store_screen(SScreen_copy *s_copy) {
++    *s_copy = screen_copy;
+ }
+ 
+-
+-char get_char_from_screen(int x,int y)
+-{
+-   if (x<0 || x>80 || y<0 || y>50)
+-     return 0;
+-   return screen_copy.copy[x][y];
++char get_char_from_screen(int x, int y) {
++    if (x < 0 || x > 80 || y < 0 || y > 50)
++        return 0;
++    return screen_copy.copy[x][y];
+ }
+ 
+-char get_color_from_screen(int x,int y)
+-{
+-   if (x<0 || x>80 || y<0 || y>50)
+-     return 0;
+-   return screen_copy.color[x][y];
++char get_color_from_screen(int x, int y) {
++    if (x < 0 || x > 80 || y < 0 || y > 50)
++        return 0;
++    return screen_copy.color[x][y];
+ }
+ 
+-char get_char_from_stored_screen(int x,int y, SScreen_copy *s_copy)
+-{
+-   if (x<0 || x>80 || y<0 || y>50)
+-     return 0;
+-   return s_copy->copy[x][y];
++char get_char_from_stored_screen(int x, int y, SScreen_copy *s_copy) {
++    if (x < 0 || x > 80 || y < 0 || y > 50)
++        return 0;
++    return s_copy->copy[x][y];
+ }
+ 
+-char get_color_from_stored_screen(int x,int y, SScreen_copy *s_copy)
+-{
+-   if (x<0 || x>80 || y<0 || y>50)
+-     return 0;
+-   return s_copy->color[x][y];
++char get_color_from_stored_screen(int x, int y, SScreen_copy *s_copy) {
++    if (x < 0 || x > 80 || y < 0 || y > 50)
++        return 0;
++    return s_copy->color[x][y];
+ }
+ 
+-
+-
+-int set_80_25(void)
+-{
++int set_80_25(void) {
+ #ifdef __PDCURSES__
+-  resize_term(OLD_LINES,OLD_COLS);
++    resize_term(OLD_LINES, OLD_COLS);
+ #else
+-  resizeterm(OLD_LINES,OLD_COLS);
++    resizeterm(OLD_LINES, OLD_COLS);
+ #endif
+-  return 0;
++    return 0;
+ }
+-                  
+-int set_80_50(void)
+-{
+-  OLD_LINES=LINES;
+-  OLD_COLS=COLS;
++
++int set_80_50(void) {
++    OLD_LINES = LINES;
++    OLD_COLS = COLS;
+ #ifdef __PDCURSES__
+-  resize_term(50,80);
++    resize_term(50, 80);
+ #else
+-  resizeterm(50,80);
++    resizeterm(50, 80);
+ #endif
+-  
+-  if (LINES<50 || COLS<80)
+-  {
+-	  print_text(1,1,"Warning! Xenocide requires screen at least 80 columns x 50 lines.");
+-	  string size = string("Your screen size is ") + IntToStr(COLS) + " columns x " + IntToStr(LINES) + " lines.";
+-	  print_text(1,2,size);
+-	  print_text(1,3,"The game wasn't able to change this size to proper one.");
+-	  print_text(1,4,"The screen will be probably screwed... :/");
+-	  print_text(1,6,"Do you want to continue game with such screen? (y/n)");
+-	  refresh();
+-	  while(1)
+-	  {
+-		  int key=getkeyvalue();
+-		  if (key=='y' || key=='Y')
+-			  break;
+-		  if (key=='n' || key=='N')
+-		  {
+-			  end_graph();
+-			  exit(0);
+-		  }
+-	  }
+-  }
+-  
+-  return 0;
+-}
+ 
+-void turn_on_wait_for_key()
+-{
+-	nodelay( stdscr, FALSE ); // WLACZENIE CZEKANIA W GETCH();
+-	global_dont_wait_for_key = false;
+-}
++    if (LINES < 50 || COLS < 80) {
++        print_text(1, 1, "Warning! Xenocide requires screen at least 80 columns x 50 lines.");
++        string size = string("Your screen size is ") + IntToStr(COLS) + " columns x " + IntToStr(LINES) + " lines.";
++        print_text(1, 2, size);
++        print_text(1, 3, "The game wasn't able to change this size to proper one.");
++        print_text(1, 4, "The screen will be probably screwed... :/");
++        print_text(1, 6, "Do you want to continue game with such screen? (y/n)");
++        refresh();
++        while (1) {
++            int key = getkeyvalue();
++            if (key == 'y' || key == 'Y')
++                break;
++            if (key == 'n' || key == 'N') {
++                end_graph();
++                exit(0);
++            }
++        }
++    }
+ 
+-void turn_off_wait_for_key()
+-{
+-	nodelay( stdscr, TRUE ); // WYLACZENIE CZEKANIA W GETCH();
+-	global_dont_wait_for_key = true;
++    return 0;
+ }
+ 
++void turn_on_wait_for_key() {
++    nodelay(stdscr, FALSE); // WLACZENIE CZEKANIA W GETCH();
++    global_dont_wait_for_key = false;
++}
++
++void turn_off_wait_for_key() {
++    nodelay(stdscr, TRUE); // WYLACZENIE CZEKANIA W GETCH();
++    global_dont_wait_for_key = true;
++}
++
++int init_graph(void) {
++    int front;
++    initscr();
++    turn_on_wait_for_key();
++
++    keypad(stdscr, TRUE); // Dodanie specjalnych klawiszy
++    cbreak();
++    noecho();
++
++    if (has_colors())
++        start_color();
++    for (front = 0; front < 48; front++) {
++        switch (front) {
++            case 0:
++            case 8:
++                init_pair(front, COLOR_BLACK, COLOR_BLACK);
++                break;
++            case 1:
++            case 9:
++                init_pair(front, COLOR_BLUE, COLOR_BLACK);
++                break;
++            case 2:
++            case 10:
++                init_pair(front, COLOR_GREEN, COLOR_BLACK);
++                break;
++            case 3:
++            case 11:
++                init_pair(front, COLOR_CYAN, COLOR_BLACK);
++                break;
++            case 4:
++            case 12:
++                init_pair(front, COLOR_RED, COLOR_BLACK);
++                break;
++            case 5:
++            case 13:
++                init_pair(front, COLOR_MAGENTA, COLOR_BLACK);
++                break;
++            case 6:
++            case 14:
++                init_pair(front, COLOR_YELLOW, COLOR_BLACK);
++                break;
++            case 7:
++            case 15:
++                init_pair(front, COLOR_WHITE, COLOR_BLACK);
++                break;
++
++            case 16:
++            case 24:
++                init_pair(front, COLOR_BLACK, COLOR_RED);
++                break;
++            case 17:
++            case 25:
++                init_pair(front, COLOR_BLUE, COLOR_RED);
++                break;
++            case 18:
++            case 26:
++                init_pair(front, COLOR_GREEN, COLOR_RED);
++                break;
++            case 19:
++            case 27:
++                init_pair(front, COLOR_CYAN, COLOR_RED);
++                break;
++            case 20:
++            case 28:
++                init_pair(front, COLOR_RED, COLOR_RED);
++                break;
++            case 21:
++            case 29:
++                init_pair(front, COLOR_MAGENTA, COLOR_RED);
++                break;
++            case 22:
++            case 30:
++                init_pair(front, COLOR_YELLOW, COLOR_RED);
++                break;
++            case 23:
++            case 31:
++                init_pair(front, COLOR_WHITE, COLOR_RED);
++                break;
++
++            case 32:
++            case 40:
++                init_pair(front, COLOR_BLACK, COLOR_BLUE);
++                break;
++            case 33:
++            case 41:
++                init_pair(front, COLOR_BLUE, COLOR_BLUE);
++                break;
++            case 34:
++            case 42:
++                init_pair(front, COLOR_GREEN, COLOR_BLUE);
++                break;
++            case 35:
++            case 43:
++                init_pair(front, COLOR_CYAN, COLOR_BLUE);
++                break;
++            case 36:
++            case 44:
++                init_pair(front, COLOR_BLUE, COLOR_BLUE);
++                break;
++            case 37:
++            case 45:
++                init_pair(front, COLOR_MAGENTA, COLOR_BLUE);
++                break;
++            case 38:
++            case 46:
++                init_pair(front, COLOR_YELLOW, COLOR_BLUE);
++                break;
++            case 39:
++            case 47:
++                init_pair(front, COLOR_WHITE, COLOR_BLUE);
++                break;
+ 
+-int init_graph(void)
+-{
+-  int front;
+-  initscr();
+-  turn_on_wait_for_key();
+-  
+-  keypad( stdscr, TRUE ); // Dodanie specjalnych klawiszy
+-  cbreak();
+-  noecho();
+-
+-  if (has_colors())
+-   start_color();
+-  for (front=0;front<48;front++)
+-  {
+-  switch(front)
+-  {
+-          case 0:
+-          case 8:
+-          init_pair(front,COLOR_BLACK,COLOR_BLACK);
+-          break;
+-          case 1:
+-          case 9:
+-          init_pair(front,COLOR_BLUE,COLOR_BLACK);
+-          break;
+-          case 2:
+-          case 10:
+-          init_pair(front,COLOR_GREEN,COLOR_BLACK);
+-          break;
+-          case 3:
+-          case 11:
+-          init_pair(front,COLOR_CYAN,COLOR_BLACK);
+-          break;
+-          case 4:
+-          case 12:
+-          init_pair(front,COLOR_RED,COLOR_BLACK);
+-          break;
+-          case 5:
+-          case 13:
+-          init_pair(front,COLOR_MAGENTA,COLOR_BLACK);
+-          break;
+-          case 6:
+-          case 14:
+-          init_pair(front,COLOR_YELLOW,COLOR_BLACK);
+-          break;
+-          case 7:
+-          case 15:
+-          init_pair(front,COLOR_WHITE,COLOR_BLACK);
+-          break;
+-          
+-          case 16:
+-          case 24:
+-          init_pair(front,COLOR_BLACK,COLOR_RED);
+-          break;
+-          case 17:
+-          case 25:
+-          init_pair(front,COLOR_BLUE,COLOR_RED);
+-          break;
+-          case 18:
+-          case 26:
+-          init_pair(front,COLOR_GREEN,COLOR_RED);
+-          break;
+-          case 19:
+-          case 27:
+-          init_pair(front,COLOR_CYAN,COLOR_RED);
+-          break;
+-          case 20:
+-          case 28:
+-          init_pair(front,COLOR_RED,COLOR_RED);
+-          break;
+-          case 21:
+-          case 29:
+-          init_pair(front,COLOR_MAGENTA,COLOR_RED);
+-          break;
+-          case 22:
+-          case 30:
+-          init_pair(front,COLOR_YELLOW,COLOR_RED);
+-          break;
+-          case 23:
+-          case 31:
+-          init_pair(front,COLOR_WHITE,COLOR_RED);
+-          break;			  
+-
+-          case 32:
+-          case 40:
+-			  init_pair(front,COLOR_BLACK,COLOR_BLUE);
+-			  break;
+-          case 33:
+-          case 41:
+-			  init_pair(front,COLOR_BLUE,COLOR_BLUE);
+-			  break;
+-          case 34:
+-          case 42:
+-			  init_pair(front,COLOR_GREEN,COLOR_BLUE);
+-			  break;
+-          case 35:
+-          case 43:
+-			  init_pair(front,COLOR_CYAN,COLOR_BLUE);
+-			  break;
+-          case 36:
+-          case 44:
+-			  init_pair(front,COLOR_BLUE,COLOR_BLUE);
+-			  break;
+-          case 37:
+-          case 45:
+-			  init_pair(front,COLOR_MAGENTA,COLOR_BLUE);
+-			  break;
+-          case 38:
+-          case 46:
+-			  init_pair(front,COLOR_YELLOW,COLOR_BLUE);
+-			  break;
+-          case 39:
+-          case 47:
+-			  init_pair(front,COLOR_WHITE,COLOR_BLUE);
+-			  break;			  
+-			  
++        }
+     }
+-  }
+-  set_80_50();
+-  hide_cursor();
++    set_80_50();
++    hide_cursor();
+ 
+-  // hide mouse cursor on full screen
++    // hide mouse cursor on full screen
+ #ifdef COMPILER_WINDOWS 
+-  SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), 0);
++    SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), 0);
+ #endif
+-  return 0;
++    return 0;
+ }
+ 
+ // Ustawia atrybuty tekstu, ktorym bedzie wszystko wypisywac
+ 
+-void set_color(int front)
+-{
+-       if (front<8)
++void set_color(int front) {
++    if (front < 8)
+         attrset(COLOR_PAIR(front));
+-       else
++    else
+         attrset(COLOR_PAIR(front) | A_BOLD);
+-       color_copy=front;
++    color_copy = front;
+ }
+ 
+-void print_text_to_buffer(int x, int y, char *ptr)
+-{
+-  int index;
+-  char *tmp;
+-  tmp=ptr;
+-  for (index=x;;index++)
+-  {
+-    if (*tmp=='\0')
+-     break;
+-    if (index>=0 && index<80 && y>=0 && y<50)
+-    {
+-      screen_copy.copy [index][y] = *tmp;
+-      screen_copy.color[index][y] = color_copy;
++void print_text_to_buffer(int x, int y, char *ptr) {
++    int index;
++    char *tmp;
++    tmp = ptr;
++    for (index = x;; index++) {
++        if (*tmp == '\0')
++            break;
++        if (index >= 0 && index < 80 && y >= 0 && y < 50) {
++            screen_copy.copy [index][y] = *tmp;
++            screen_copy.color[index][y] = color_copy;
++        }
++        tmp++;
+     }
+-    tmp++;
+-  }
+ }
+ 
+ 
+ // Wypisuje w x,y text
+ 
+-void print_text(int x,int y,string text)
+-{
+-  string t2;
+-  for (size_t a=0;a<text.size();a++)
+-  {
+-	  if (text[a]=='%')
+-		  t2+="%%";
+-	  else
+-		  t2+=text[a];
+-  }
+-  if (x>=0 && y>=0)
+-  {
+-    mvprintw(y,x,(char *) t2.c_str());
+-    print_text_to_buffer(x,y,(char *)text.c_str());
+-  }
++void print_text(int x, int y, string text) {
++    string t2;
++    for (size_t a = 0; a < text.size(); a++) {
++        if (text[a] == '%')
++            t2 += "%%";
++        else
++            t2 += text[a];
++    }
++    if (x >= 0 && y >= 0) {
++        mvprintw(y, x, (char *) t2.c_str());
++        print_text_to_buffer(x, y, (char *) text.c_str());
++    }
+ }
+ 
+ // Wypisuje w x,y liczbe
+ 
+-void print_number(int x,int y,long number)
+-{
+-  char tmp[50];
+-  if (x>=0 && y>=0)
+-  {
+-    mvprintw(y,x,"%ld",number);
+-    sprintf(tmp,"%ld",number);
+-    print_text_to_buffer(x,y,tmp);
+-  }
++void print_number(int x, int y, long number) {
++    char tmp[50];
++    if (x >= 0 && y >= 0) {
++        mvprintw(y, x, "%ld", number);
++        sprintf(tmp, "%ld", number);
++        print_text_to_buffer(x, y, tmp);
++    }
+ }
+ 
+ // Wypisuje liczbe przesunieta w to_right
+ 
+-void print_number_right_align(int x,int y,long number,int places)
+-{
+-  char tmp[50];
+-  int dec, sign;
+-  int ndig;
+-  if (number!=0)
+-  {
+-	  ndig=10;
+-	  ecvt(number, ndig, &dec, &sign);
+-  }
+-  else
+-	  dec = 1;
+-
+-  x=x+places-dec;
+-  if (x>=0 && y>=0)
+-  {
+-    mvprintw(y,x,"%ld",number);
+-    sprintf(tmp,"%ld",number);
+-    print_text_to_buffer(x,y,tmp);
+-  }
++void print_number_right_align(int x, int y, long number, int places) {
++    char tmp[50];
++    int dec, sign;
++    int ndig;
++    if (number != 0) {
++        ndig = 10;
++        ecvt(number, ndig, &dec, &sign);
++    } else
++        dec = 1;
++
++    x = x + places - dec;
++    if (x >= 0 && y >= 0) {
++        mvprintw(y, x, "%ld", number);
++        sprintf(tmp, "%ld", number);
++        print_text_to_buffer(x, y, tmp);
++    }
+ }
+ 
+ 
+ // Wypisuje w x,y character
+ 
+-void print_character(int x,int y,unsigned char character)
+-{
+-  char tmp[50];
+-  if (x>=0 && y>=0)
+-  {
+-    mvprintw(y,x,"%c",character);
+-    sprintf(tmp,"%c",character);
+-    print_text_to_buffer(x,y,tmp);
+-  }
++void print_character(int x, int y, unsigned char character) {
++    char tmp[50];
++    if (x >= 0 && y >= 0) {
++        mvprintw(y, x, "%c", character);
++        sprintf(tmp, "%c", character);
++        print_text_to_buffer(x, y, tmp);
++    }
+ }
+ 
+ // Zamyka funkcje grafiki
+ 
+-void end_graph(void)
+-{
+-  set_80_25();
+-  show_cursor();
+-  endwin();
++void end_graph(void) {
++    set_80_25();
++    show_cursor();
++    endwin();
+ }
+ 
+ // Kopiuje bufor grafiki na ekran
+ 
+-void myrefresh(void)
+-{
+-  refresh();
+-  last_refresh=screen_copy;
+-}
+-
+-void clear_copy(void)
+-{
+-  for (int x=0;x<80;x++)
+-   for (int y=0;y<50;y++)
+-   {
+-     screen_copy.copy [x][y]=' ';
+-     screen_copy.color[x][y]=7;
+-   }
+-}
+-
+-void myclear(void)
+-{
+-  clear();
+-  clear_copy();
++void myrefresh(void) {
++    refresh();
++    last_refresh = screen_copy;
++}
++
++void clear_copy(void) {
++    for (int x = 0; x < 80; x++)
++        for (int y = 0; y < 50; y++) {
++            screen_copy.copy [x][y] = ' ';
++            screen_copy.color[x][y] = 7;
++        }
++}
++
++void myclear(void) {
++    clear();
++    clear_copy();
+ }
+ 
+ // Pobiera character z stdin bez czekania. Zwraca character pobrany.
+ 
+-int getkeyvalue(void)
+-{
+- int character;
+- character=getch();
+- SScreen_copy scr_copy;
+- if (character==KEY_F(11))
+- {
+-	 make_screenshot(player_name_8,true);
+-	 store_screen(&scr_copy);
+-	 set_color(15);
+-	 print_text(0,0,string("[Screenshot saved to ") + player_name_8 + ".htm]");
+-	 myrefresh();
+-	 delay(500);
+-	 restore_screen(&scr_copy);
+-	 myrefresh();
+- }
+- return character;
++int getkeyvalue(void) {
++    int character;
++    character = getch();
++    SScreen_copy scr_copy;
++    if (character == KEY_F(11)) {
++        make_screenshot(player_name_8, true);
++        store_screen(&scr_copy);
++        set_color(15);
++        print_text(0, 0, string("[Screenshot saved to ") + player_name_8 + ".htm]");
++        myrefresh();
++        delay(500);
++        restore_screen(&scr_copy);
++        myrefresh();
++    }
++    return character;
+ }
+ 
+-void set_cursor(int x,int y)
+-{
+-	mvcur(0,0,y,x);
++void set_cursor(int x, int y) {
++    mvcur(0, 0, y, x);
+ }
+ 
+-void hide_cursor(void)
+-{
+-	curs_set(0);
+-	leaveok(stdscr, true);	
++void hide_cursor(void) {
++    curs_set(0);
++    leaveok(stdscr, true);
+ }
+ 
+-void show_cursor(void)
+-{
+- curs_set(1);
+- leaveok(stdscr, false);
++void show_cursor(void) {
++    curs_set(1);
++    leaveok(stdscr, false);
+ }
+ 
++void restore_screen(SScreen_copy *kopia) {
++    int character, color;
++    for (int x = 0; x < 80; x++)
++        for (int y = 0; y < 50; y++) {
++            character = kopia->copy [x][y];
++            color = kopia->color[x][y];
+ 
+-void restore_screen(SScreen_copy *kopia)
+-{
+-  int character, color;
+-  for (int x=0;x<80;x++)
+-   for (int y=0;y<50;y++)
+-   {
+-     character=kopia->copy [x][y];
+-     color=kopia->color[x][y];
+-     
+-     set_color(color);
+-     print_character(x,y,character);
+-   }
++            set_color(color);
++            print_character(x, y, character);
++        }
+ }
+ 
+ 
+diff -rupN xeno_orig/src/system.h xeno-2011-02-03/src/system.h
+--- xeno_orig/src/system.h	2011-01-27 15:19:40.000000000 +0000
++++ xeno-2011-02-03/src/system.h	2012-04-04 17:53:40.000000000 +0100
+@@ -8,14 +8,17 @@
+     #define KEYBOARD_NONE 0
+ #endif
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
++//#pragma warning (disable: 4805)
+ 
+ // Prototypy funkcji
+ #include <time.h>
+ #include <string>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ 
+ using namespace std;
+ 
+diff -rupN xeno_orig/src/system.h~ xeno-2011-02-03/src/system.h~
+--- xeno_orig/src/system.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/system.h~	2011-01-27 15:19:40.000000000 +0000
+@@ -0,0 +1,65 @@
++#ifndef SYSTEM_H
++#define SYSTEM_H
++
++
++#ifdef XCURSES
++    #define KEYBOARD_NONE -1
++#else
++    #define KEYBOARD_NONE 0
++#endif
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++
++// Prototypy funkcji
++#include <time.h>
++#include <string>
++
++using namespace std;
++
++//// COPYOF EKRANU
++struct SScreen_copy {
++ char copy[80][50];
++ char color[80][50];
++ bool operator != (SScreen_copy &right)
++ {
++	 if (memcmp(this->copy,&right.copy,80*50)!=0 || memcmp(this->color,&right.color,80*50)!=0)
++		return true;
++	 return false;
++ }
++};
++
++
++void init_system();
++void create_directory(string name);
++int init_graph(void);
++void set_color(int front);
++void print_text(int x,int y,string text);
++void print_number(int x,int y,long number);
++void print_number_right_align(int x,int y,long number,int places);
++void print_character(int x,int y,unsigned char character);
++void end_graph(void);
++void myrefresh(void);
++void myrefresh(void);
++void myrefresh(void);
++void myclear(void);
++int getkeyvalue(void);
++void hide_cursor(void);
++void show_cursor(void);
++void set_cursor(int x,int y);
++
++char get_char_from_screen(int x,int y);
++char get_color_from_screen(int x,int y);
++void restore_screen(struct SScreen_copy *kopia);
++void store_screen(struct SScreen_copy *s_copy);
++char get_char_from_stored_screen(int x,int y,struct SScreen_copy *s_copy);
++char get_color_from_stored_screen(int x,int y,struct SScreen_copy *s_copy);
++unsigned long get_ticks_count();
++void delay(long how_long);
++
++void delete_file(string name);
++
++#endif
++
+diff -rupN xeno_orig/src/tiles.h xeno-2011-02-03/src/tiles.h
+--- xeno_orig/src/tiles.h	2011-01-27 15:20:08.000000000 +0000
++++ xeno-2011-02-03/src/tiles.h	2012-04-04 17:36:55.000000000 +0100
+@@ -3,10 +3,10 @@
+ 
+ #include "loadsave.h"
+ 
+-#pragma warning (disable: 4786)
+-#pragma warning (disable: 4788)
++//#pragma warning (disable: 4786)
++//#pragma warning (disable: 4788)
+ // disable warning (compare bool with int)
+-#pragma warning (disable: 4805)
++//#pragma warning (disable: 4805)
+ 
+ #include <string>
+ using namespace std;
+diff -rupN xeno_orig/src/tiles.h~ xeno-2011-02-03/src/tiles.h~
+--- xeno_orig/src/tiles.h~	1970-01-01 01:00:00.000000000 +0100
++++ xeno-2011-02-03/src/tiles.h~	2011-01-27 15:20:08.000000000 +0000
+@@ -0,0 +1,43 @@
++#ifndef TILES_H
++#define TILES_H
++
++#include "loadsave.h"
++
++#pragma warning (disable: 4786)
++#pragma warning (disable: 4788)
++// disable warning (compare bool with int)
++#pragma warning (disable: 4805)
++
++#include <string>
++using namespace std;
++
++class CTile : public CToSave {
++private:
++	int positionX;
++	int positionY;
++public:
++
++	inline int pX() { return positionX; };
++	inline int pY() { return positionY; };
++
++  string name;
++  char color;
++  char tile;
++  bool invisible;
++
++  CTile();
++  virtual ~CTile();
++  virtual void display();
++  virtual void draw_at(int x, int y);
++  void rename(string);
++
++  virtual bool ChangePosition(int x, int y);  
++
++   /// INHERITED FROM ToSave
++	virtual unsigned long SaveObject();
++	virtual bool LoadObject();
++};
++
++#endif
++
++
+Binary files xeno_orig/src/xeno and xeno-2011-02-03/src/xeno differ
+Binary files xeno_orig/xeno and xeno-2011-02-03/xeno differ

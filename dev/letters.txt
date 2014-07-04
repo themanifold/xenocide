@@ -1,0 +1,55 @@
+@ - player
+
+a 
+b - small flying animals (bats, bees)
+c
+d - domestic animals
+e
+f
+g
+h
+i 
+j
+k
+l
+m - monkeys
+n
+o - Small round monsters like Critters
+p
+q
+r - rat-like creatures
+s - spider-like creatures
+t
+u
+v
+w - worms
+x
+y
+z
+
+A - Alien-like creatures, 
+B - Big Beetles
+C
+D
+E
+F
+G
+H - Humanoids
+I
+J - Animals with tentacles
+K
+L
+M
+N
+O - Large round monsters
+P
+Q
+R - robots
+S
+T - Teutons
+U
+V
+W
+X - ugly mother fuckers
+Y
+Z

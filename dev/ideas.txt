@@ -1,0 +1,361 @@
+SOME FREE IDEAS
+
+TO DO NOW:
+- exploding barrels
+
+Ok, wearing more that half of max carrying weight will cause slowness.
+The slowness will concern only movement action.s
+
+- cloaking devices
+- swarm monsters (1 tile, very high dexterity, weak?)
+- creating pills
+- grenade that produces monster - swarm - very hard to hit (High dex), low HP.
+
+- critical hits
+>Hey, Jakub! How about implementing a "critical hit" system? Make it some-
+>thing simple, like double damage on 5% of all hits, and possibly higher for
+>firearms (if we wish to make them comparably more powerful). Maybe make the
+>player immune to them, to increase his already-short lifespan... ^_^;
+
+
+You hit a vital organ? It could work, though the more amorphous creatures should be immune. The player should probably be immune as well, at least until the tougher, more skilled enemies come along.
+
+
+> Effects of thermal vision:
+> * Can see warm blooded (endothermic) enemies regardless of smoke, invisibility or lighting level.
+> * Can see through holograms (I doubt holograms would project accurate body heat).
+> * If the creature only has thermal vision, then it couldn't see
+> cold-blooded (ectothermic) creatures
+> * Fire and explosions can scramble the enemy's vision
+> * A thermal-retentive suit (that conceals the player's body heat)
+> could make the player virtually invisible to said creature (similar
+> to the tactic used near the end of "Predator 2").
+
+
+Monsters:
+
+- Potworek rzucaj¹cy kulami (potworkami) - kule te leca w stalym kierunku (DX, DY) i zadaja bardzo duze obrazenia. Sa wolne - SPD 25
+- Monster generator - small warp gate - tworzy potworki gdy widzi wroga
+- Potworek generuj¹cy inne potworki - rzucaj¹cy nimi w gracza - z kulek powstaj¹ potworki
+- Monster that attacks all the enemies around
+- Orthus can be an unique dog of Mad GenModified Scientist
+- Monster - Thrower - that throws an item
+- Monster that can regenerate after dead if player leave the body (GENEROWANY PRZEDMIOT STERUJACY PRZY SMIERCI)
+- Mad Doctor in GenLab - can grab player and throw it on the wall. Killed leaves Card For Genetic Machine
+- Queen of Genotroids
+- Monster made of sand - a kind of energy to form monster
+- Huge Polyp in caves
+- monster that can split into more smaller when he is near his enemy. When enemy is killed monsters join into one bigger.
+- Monster that try to attack, poison player and run away.
+- Monster that explodes on dead.
+- Monster that can produce another monsters.
+- Monster that can eat corpses to multiply or to heal wounds.
+- Monster that can multiply
+- Robot - mine dropper.
+- Monster - parasite - it attacks friendly monster and that monster changes into "infected one" (hard to kill),
+after dead parasite goes out and try to find other friendly monster.
+- Monster that have at the end of turn the same number of HP as his enemy (to kill with explosives or sth.)
+- Monster that can eat enemy in one turn.
+- DONE: Monster that split into two smaller after dead (HP of new one = HP_MAX/2 - 3)
+- Monster that make zombies from other monsters.
+- potworek uaktywniaj¹cy uszkodzone roboty
+	
+
+SOME IDEAS FOR MONSTERS:
+
+Aliens -
+	Hidder - invisible? invisible when not move?
+	Antremid
+	Soloid
+	Large Genotroid
+	Floatoid
+	Firont
+	Megamor
+
+Teutons -
+	Teuton Soldier
+	Teuton Officer
+	Teuton Leader
+
+Droids -
+	Scout Droid
+	Razor Droid
+	Puppethuman
+	Cyber Prankster
+	Cyber Spider
+
+
+- Sandworms on the desert
+- Camera - shows some place and can be instaled on monster, when player has HUD installed.
+- Dropship - that drops enemies in open area (radioactive desert, when player was in bunker?)
+- Overtaking control on enemy.
+- A tool that activets all granades in enemy inventory.
+- A tool that removes all the energy from the enemy.
+- level - generator - that gives power to some levels.
+- level - mirrorer - that looks like near environment - cameleon.
+- syringes.
+- security badge/cards/keys
+- move detector
+- Flamethrower
+- Weapons Sonic (?), Gravity (?)
+- "Living level", with moving walls.
+- Adding upgrades to weapons.
+- Sensor Trigger to install on granade.
+- Implants (?)
+- Monster that can teleport self into player (blink?)
+- Monster that can hide in the ground
+
+
+MONSTERS GENERAL:
+
+ROCK MONSTER: A scraping mass of rocks and boulders, held together and
+given a vaguely humanoid shape by a projected force field. Strong, massive
+and nigh-impossible to bring down.
+
+?: It doesn't look dangerous. It's just a sack of flesh with two clumsy
+limbs it uses to drag its weight along, and a fleshy fold near the bottom
+for a mouth. But it can emit a powerful, high-pitched sound that can
+shatter bones and liquefy tissue for consumption.
+
+PROTOPLASM: One of the more repulsive mutants so far, this one is hard to
+recognise as formerly human. It is almost completely transparent, and
+mostly jellified as well; internal organs can be seen floating around
+inside it.
+
+SKINSTEALER: This amorphous mass of mobile slime has developed a unique
+way to get close to its prey: it deftly flays its victims and then oozes
+inside the skin, becoming a shambling mockery of the original creature.
+
+GARGANTUAN: A ten-metre-tall silver tree with clusters of tentacles
+surrounding a mouth in its upper part. Each of the tentacles can lash
+out, individually or in groups, to grab prey and pull it into the mouth.
+
+KIRINI: A hovering sphere of seething tentacles that produces odd sounds
+when the tentacles rub together. It has been theorised that this may merely
+be the three-dimensional part of a multi-dimensional being, which may well
+be the case, as its touch has destructive qualities similar to a matter/
+antimatter reaction.
+[This one needs a new name, as it was lifted almost-as-is from R.
+Talsorian's excellent "Mekton Empire" RPG sourcebook...]
+
+FROSTBITE: A native of colder climes, this furry beast secretes a chemical
+compound with a high freezing point which it can exhale, rendering its prey
+immobile or at least causing great shock and tissue damage.
+
+SLITHER: A segmented, snake-like creature with crablike claws set just
+behind its head. It can spit poison to blind targets.
+
+DRAGONWORM: A distant relation of the Slither, this small winged serpent
+has a scaly body and wings that allow flight almost as agile as a dragon-
+fly's.
+
+MACHINE-GHOST: A computer-projected hologram that owes its solidity and
+ability to affect the environment to projected force fields. Attacks tend
+to pass right though, but the fields can be caused to overload.
+
+?: Consisting of a barrel-shaped body with three eyes and three segmented
+legs spaced evenly around it, short tentacles round the underside, and a
+long, muscular tentacle growing out of the top, this one is a disturbing
+sight. A scavenger, it's in its element in a carrion-rich environment like
+this. It can swing the top tentacle, which ends in a knobbly ball, to fend
+off competition.
+
+CAVIOMORPH: A bundle of claws and dark fur, the solitary Caviomorph prefers
+high places from which to pounce upon unwary prey. With powerful legs and
+a sleek body, it is a silent, cunning killer.
+[The ultimate trick monster, the Caviomorph is... a guinea pig. As everyone
+who has ever owned one knows, they are anything but the things described
+above. The name comes from caviomorpha, the disputed "third suborder" of
+the order rodentia.]
+
+
+
+MONSTERS FOR DESERT:
+
+Ah, I have some monster ideas for the Radioactive Desert (I think most, but not all, creatures here should have radiation attacks. Even those that aren't extremely radioactive should probably stand a chance of infecting the player with radiation whenever they attack in melee). I hope you enjoy them...
+ 
+(Warning: Typed up in hasted, expect numerous grammatical errors.)
+ 
+Aura Bug: Once a member of the species of ordinary insects that populated the desert, this creature became infected by radiation and grew to an abnormal size. Now it is surrounded by a perpetual aura of radiation that infects anything that gets near it (within one square), thus making it hard to approach. You would have to kill it from a distance, seeing how it doesn't even need to attack to give the player radiation poisoning (or at least bad burns).
+ 
+Land Shark: A large desert predator, this creature moves about the sands as a shark moves through water. It has the ability to dive under the desert, so that the player can only see its fin sticking up out of the ground. While the player cannot harm it while it is submerged (though armour piercing bullets and explosives may be able to penetrate the sand), it cannot harm the player, either. Only once it emerges from the ground can it attack, and then the player can hurt it, too.
+ 
+Dust-Devil: A large, hairy, bipedal mammal that has the ability to spin itself very fast, turning to a small cyclone of claws and fangs. Not only is this cyclone form powerful, but it also kicks up clouds of sand that obscure the player's vision. The Dust-Devil's weakness comes from the fact that he can only hold his cyclone form for a limited time, and afterward he is dizzy and stunned, having to rest for several turns before he can spin again. Probably a more powerful enemy in the desert.
+
+Death Blossom: What was once a harmless desert flower has mutated into a radioactive nightmare. The Death Blossom looks like a large shrub, but it can sprout crab legs and move around on its own. It also has a radioactive stinger that it uses to kill its prey. Maybe it can also suck up the nutrients from corpses? (This creature would be particularly deadly if there were normal "shrubs" scattered about the desert that didn't do much of anything much, so that the player wouldn't know whether or not he was seeing a real shrub or a monster).
+ 
+Radio-Slug: A large radioactive slug with a pair of large mandibles (or an octopus-like beak). It just so happens that when said creature is killed, it melts, leaving a semi-permanent scorching radioactive puddle behind (said puddle would probably disappear after several thousand turns).
+ 
+Flare Lizard: A dog-sized lizard capable of occasionally breathing small bursts of hot flame across short distances.
+ 
+Particle Lizard: A stronger, larger, more mutated flare lizard with hardened scales and radioactive breath.
+ 
+Deathtoll Scorpion: Inspired by the fact that our insane friend Herr Doktor can switch unarmed weapons (kudos, Jakub), the Deathtoll Scorpion has two unarmed melee weapons. He can either attack with his pincers, which attack twice per turn and do a decent ammount of damage, or he cn attack with his stinger, which poisons, radiates (though 'radiate' isn't the right word for being infected by radiation poisoning... It should probably just be "Rad. Poisoning' with 'Rad' being the abbreviation. So the message would read "the player has been rad. poisoned". Not exactly perfect English, but it works.), and can punch through armour. The draw back is that the stinger does very little damage compared to the pincers (which don't poison or punch through armour). This creature would probably attack by first trying to poison the player using its stinger and then finishing the player off with its pincers.
+ 
+Cactus Fiend: Neither a plant nor an animal, it is a gorilla-like monster with a tough, thorny hide. It is a master of melee combat, and can take quite a beating before dying. Also, players who engage it in melee combat will often get stuck with spines when they try and attack it. Definitely the kind of thing you want to save your bullets for, so you can attack it from afar..
+ 
+Opticor: A giant eyeball that moves around like a slug (or maybe it floats or walks on tentacles or something like that...). It can shoot radioactive eye-beams, as well as use its 'hypnotic stare' to slow the player from a distance. (I know, I know, very stereotypical, but I'm fond of such hideous creatures.).
+ 
+Sand Crawler: It's... A giant sandworm. No, no, wait... *sigh* (You know, I've yet to read "Dune"). But anyway, the Sand Crawler is a hideous mutant worm (or possibly a snake) that can spit sand into the player's eyes, thus temporarily blinding him. This sand is also radioactive, and it can occasionally give the player radiation poisoning.
+
+
+>> I think that this giant robot should, after it has one leg destroyed, shift
+>> itself onto the one leg, and then proceed to hop around, trying to crush
+>> the player.
+>> lots of mini-explosion occur on the battered robot's remains (like
+>> grenade explosions). And then comes the enormous, slow moving wave of heat,
+
+
+
+FLOODED CAVES MONSTERS
+
+> ELECTRIC EEL: Yes, yes, I know. Cliché, but it works. Either the
+> eel would be able to shoot a directed electrical pulse, or able to
+> fire off a generalised, weaker electric pulse, or maybe both. Also,
+> if the player attacks it in melee combat, then he gets shocked.
+
+> PIRANHA SCHOOL: I had this idea for "swarms" of monsters, where
+> many monsters can occupy one tile at once. Basically, each monster
+> in the swarm acts as a hit point, the more monsters, the more hit
+> points. But there's more. The more monsters there are in a swarm,
+> the higher the attacking power, because they all attack at once.
+> Consequently, they're easier to kill when grouped together, but it's
+> easier for them to kill you. Conversely, the smaller the swarm, the
+> harder it is to hit, but the weaker its attacking power. Plus,
+> smaller swarms are less courageous than large ones, and they will
+> often run away when attacked.
+
+>  
+
+> Now, the swarm's most powerful ability would be to combine with
+> other smaller swarms to make larger ones, and to break apart into
+> smaller swarms to either escape an enemy or to surround him. Of
+> course, there is a max swarm size limit for each creature, meaning
+> that only so many piranhas can combine into one school. So you won't
+> run into "A school of 1,672 piranhas" or anything like that.
+> Anyway...
+
+>  
+
+> SWORD SHARK: The sword shark is a shark with sword like teeth,
+> perfect for cutting through both armours and players alike.
+
+>  
+
+> PUFFER FISH: Well, a new name is in order, but it's the same
+> principal. The puffer fish can puff up, not taking up any more
+> tiles, but arming itself to attack. Then, after its puffed itself up
+> to its maximum size, it snaps back to normal, releasing a wave of
+> deadly puffer-fish needles in the process. These needles don't do
+> much damage, but they are poisonous, and they do shoot out in all
+> directions, meaning that this monster can poison players from a
+> distance with some guarantee of success.
+
+>  
+
+> SNAIL OR HERMIT CRAB TYPE MONSTER: Such a creative name, eh? The
+> idea is that a certain monster can retreat inside of its shell,
+> where it is virtually invulnerable. It only comes out when it wants
+> to attack, or move. This would probably result in it changing
+> colours when its in its shell and when its not. The basic idea is
+> that, when its in its shell, it becomes almost like a wall,
+> virtually invincible except to explosives and armour piercing
+> rounds. But if it wants to move, or attack, it has to come out of
+> its shell.
+
+>  
+
+> Hm... Maybe it goes into its shell whenever the player draws
+> near, meaning that you have to kill it from a distance. Only it can
+> attack your mind with its psychic powers! Or something like that...
+
+>  
+
+> GLOW FISH: As I said, I assumed that these caves were dark, hence
+> the glow fish. The glow fish provides lots of light to a section of
+> the caves. Ideally it would be possible to navigate the caves using
+> only the light of these glow fish. They are not hostile, but if they
+> end up killed, you're left in the dark, unless you have a light...
+
+>  
+
+> SQUID: It can entangle the player in its tentacles, keeping him
+> from running away. Maybe it could shoot ink, too, which is like
+> smoke under water?
+
+>  
+
+> MERR-THING: A bizarre creature that resembles a cross between a
+> man and a fish. Yes, yes, it's a "Deep One". They can often be found
+> hunting in packs, and are capable of taking in a mouthful of water,
+> which they pressurize inside of them and spit at an enemy like a
+> bullet. They might also carry some kind of spear or alien ranged
+> weapon (a harpoon gun, like "Predator", that can pin enemies against
+> walls?). Perhaps there is a small area that branches off of the
+> underwater caves, just two or three levels deep, that leads to "The
+> City of the Merr-Things", where you get to fight "N'daog", King of
+> the Merr-Things. Maybe he has an Ancient relic that looks an awful
+> lot like a trident, and when you kill him you get to keep it?
+> Perhaps it allows the player to use certain abilities, such as
+> detecting monsters or attacking their minds? But, of course, there
+> would be long delays between uses, when the trident has to recharge
+> itself...
+
+>  
+
+> SEA-STALLION: Like the sea horses of earth, only much larger and
+> more powerful. They are a pretty well balanced enemy, their biggest
+> advantage against the player is that they are often ridden by the
+> Merr-Things as humans ride horses. So, beware.
+
+>  
+
+> WOLF-SHARK: A strange kind of social shark, these beings hunt in
+> packs. While not as powerful as the sword-shark, their numbers and
+> tactics make them far more deadly.
+
+>  
+
+> AQUA-TOAD: A toad that dwells underwater all its life, it can
+> launch its tongue to attack its enemies, and possibly drag them in
+> closer to it, where it can attempt to swallow them whole (if they're
+> small enough, and the player certainly isn't).
+
+>  
+
+> WATER-WALKER: A rather jelly-fish like creature, the water-walker
+> flickers in and out of visibility. Only at very close ranges and
+> under very bright lights can the creature be seen with any
+> regularity. While not that strong, it can poison and/or stun the
+> player with its stingers, making it a rather difficult enemy
+> (especially if it uses hit and run tactics).
+
+>  
+
+> EMPEROR CRAB: Like the king-crabs back on earth, only much, much
+> large, the emperor-crab is a pretty standard enemy with a tough
+> shell to protect it. Only its not that slow, either.
+
+>  
+
+> SEA-BAT: (Not to be confused with Ganymede Sea-Rats, which are
+> quite delicious, or so I hear) This creature is a mammal that swims
+> instead of flying (much like a penguin). It moves fast under water,
+> which is its biggest advantage. It can also navigate by radar, so it
+> can see invisible things. It's too large to travel in a swarm,
+> though.
+
+>  
+
+> POSEIDONITE: The most fearsome creature in the underwater caves,
+> so called because of its strange appearance. It vaguely resembles a
+> floating human head covered in green scales, sporting a long, hoary
+> beard. Why this creature is so feared is pretty obvious; It has
+> phenomenal psychic powers, (assuming that Jakub's ban on psionics
+> was just for the player and not the monsters), and can use these to
+> cause great damage to the player, as well as regenerate its own
+> wounds almost instantly. Possible psionic powers include stunning
+> the player, harming him, controlling him (making him walk toward the
+> Poseidonite), healing itself and calling other monsters to its aide.
+> Yeah, its tough, I know. Very rare. Of course, players with higher
+> intelligence scores could resist the psionic attacks.

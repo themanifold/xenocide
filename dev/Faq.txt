@@ -1,0 +1,137 @@
+Frequently Asked Questions about "Xenocide: the roguelike".
+
+1. Who creates Xenocide?
+2. Where can I find the source code?
+3. Why updates aren't frequent?
+4. Why the game screen looks so weird?
+5. Is there a version for <platform name here>?
+6. How Xenocide is written?
+7. Is there a graphical version of Xenocide?
+8. Where can I find the latest version of Xenocide?
+9. Why the game runs so slow???
+10. The game hanged! Why and what to do?
+11. When I drop a number of items, like ammo, items don't connect on the ground into a single package. Why?
+12. What does experience means?
+13. How can I help?
+14. Can I play without numeric pad (laptop)? Can I remap keys?
+15. The game is too hard. Any tips?
+
+1. Who creates Xenocide?
+
+Xenocide is written by Jakub Debski from Poland, since May 2002.
+The game random number generator developed by Makoto
+Matsumoto and Takuji Nishimura.
+The music and sound effects are taken from internet websites.
+On these websites the sounds were marked as "free".
+If anyone complains about rights, I can remove or change something.
+
+Thanks go to Stephen Pasquella for constructive discussions,
+nice monster descriptions, help with the story and to Antti Hukkanen
+for emails so long, that I have no time to answer :)
+
+To contact the author write to: debski.jakub@wp.pl, or use
+the guestbook on the website for public compliments ;)
+
+2. Where can I find the source code?
+
+http://xeno.chaosforge.org
+
+3. Why updates aren't frequent?
+
+I'm a full-time programmer. After work I'm too tired to code anything
+for myself, so I write Xenocide usually only during weekends. 
+Writing this game is not the only thing I do. I have my private life
+and a lot of other hobbies. I spend on Xenocide as much time as I can,
+usually it is one or two weekends monthly.
+
+4. Why the game screen looks so weird?
+
+Xenocide requires console at least 80 columns x 50 lines.
+If your console isn't big enough, the screen will look weird.
+There should be a message if your console is too small.
+
+5. Is there a version for <platform name here>?
+
+For now there are binary version for Windows.
+Linux version can be compiled. DOS version is no longer supported.
+If anyone wants to have a version for his platform, has to prove
+me, that can and want to create such version. I can send
+a simple project to compile. It requires modern C++ compiler
+(like GCC) with STL support (lists, maps and strings are used).
+Curses library is wrapped by my functions and can be easily
+replaced.
+
+6. How Xenocide is written?
+
+Xenocide is written in C++ using Microsoft Visual C++ 2005
+I use only basic features of STL, to support porting, and basic
+functions of Curses library (console output), for the same reason.
+For now the source code has about 710KB.
+
+7. Is there a graphical version of Xenocide?
+
+Not, there isn't. My graphics skills aren't too good to create dreamed
+graphic for the game and I have no so much time to write the game
+and do the graphic. If you're interested in help, please, contact me.
+How would I image graphics? Do you know old Bitmap Brothers games -
+"Chaos Engine" or "Speedball 2"? I'd like to have this style of
+graphics... No manga style please.
+
+8. Where can I find the latest version of Xenocide?
+
+http://xeno.chaosforge.org
+
+9. Why the game runs so slow???
+
+If the game runs very slow, you are probalby running Windows version.
+The slowness is caused by Windows port of PDCurses.
+Try the DOS version (it works fine under Windows 9x/ME/2K/XP).
+Running DOS version in Windows press LEFT ALT + ENTER to turn the full-screen on.
+
+If the game still works slow, maybe it's time to upgrade your computer? :)
+
+10. The game hanged! Why and what to do?
+
+Maybe there's something wrong in the source code, maybe it's caused by PDCurses library.
+Hit Space Key a few times - maybe something will show up.
+
+11. When I drop a number of items, like ammo, items don't connect on the ground into a single package. Why?
+
+Because of implementation. It will be changed probably, so don't report it as a bug.
+
+12. What does experience means?
+
+"Free skill points" are points that can be allocated to improve your
+skills. Every time you use a skill, you train it a bit, but only when
+you have "free skill points". The other name for it could be:
+"unallocated experience", because points are equal to experience.
+
+"Adaptation points" are given every time you reach a new level.
+These points describe your abilility to modify yourself
+in places like "Genetic Lab" or to place implants in your body (not
+implemented yet). Having unallocated "adaptation points" will cause
+very slowly improvement of stats (not implemented yet).
+
+13. How can I help?
+
+If you like this game, propagate it! Write articles about it, show it to your friends or make a fan website :)
+If you know C++ you can join me in development.
+
+14. Can I play without numeric pad (laptop)? Can I remap keys?
+
+You can. In "data/keyboard.def" file you can redefine keyboard settings.
+You can also choose a predefined keyboard set that resembles your favourite game. Simply rename proper file to "keyboard.def".
+
+15. The game is too hard. Any tips?
+
+Survival tips:
+ * There is no food in Xenocide. Rest whenever you can.
+ * Prepare calm place to rest. Damage doors, make a hole in the wares etc.
+ * Find better h2h weapon as soon as possible.
+ * Beetles are slow, avoid them. You don't have to kill all monsters!
+ * Weaken distant enemies with ranged weapon, in close combat ‘e’xchange to ready melee weapon.
+ * Target’s name color is yellow since half energy, red when dying.
+ * Run away if your energy is low. You are faster than some enemies.
+
+regards
+Jakub Debski

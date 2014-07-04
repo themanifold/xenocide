@@ -1,0 +1,732 @@
+Ascendancy technology list
+--------------------------
+
+Tonklin Diary:                  e1, c1
+
+Orbital Structures:             Ship Yard, Orbital Shield
+
+Xenobiology:                    Xeno Dig
+
+Enviromental Encapsulation:     s1, Colonizer
+    Xenobiology
+
+InterPlanetary Exploration:     h1, g1
+    Orbital Structures
+
+Spectral Analysis:              w2
+    Tonklin Diary
+
+Superconductivity:              w1, Surface Shield
+    Tonklin Diary
+
+SpaceTime Surfing:              Star Lane Drive
+    InterPlanetary Exploration
+    Tonklin Diary
+
+Advanced Chemistry:             e2, Artificial Hydroponifier
+    Enviromental Encapsulation
+
+Advanced Interferometry:        c2, Invasion Module
+    Spectral Analysis
+
+Gravity Control:                w2
+    SpaceTime Surfing
+
+Power Conversion:               g2, Orbital Missile Base
+    SpaceTime Surfing
+
+Cloaking:                       base, orbital and ship
+    Advanced Interferometry
+
+HyperLogic:                     Research Campus, Intellect Scrambler,
+                        X-Ray Megaglasses
+    Xenobiology
+    Advanced Interferometry
+
+Momentum Deconservation:        s2
+    SpaceTime Surfing
+
+Molecular Explosives:           Phase Bomb, Mass Condensor
+    Spectral Analysis
+    Power Conversion
+
+Strong Force Weakening:         w4
+    Power Conversion
+
+Diplomatics:                    Alien Hospitality,
+                                Observation Installation
+    HyperLogic
+
+Gravimetrics:                   Oribital Docks, Molecular Tie Down
+    Gravity Control
+
+Level Logic:                    Scientists Takeover
+    HyperLogic
+
+Light Bending:                  s3, Replenisher
+    Gravity Control
+
+EM Field Coupling:              w5, c3
+    Light Bending
+
+Mass Phasing:                   Gravimetric Catapult
+    Gravimetrics
+                                        
+Thought Analisis:               Engineering Retreat
+    Level Logic
+
+Positron Guidance:              Industrial Megafacility,
+                                Positron Bouncer
+    Molecular Explosives
+
+Advanced Fun Techniques:        Logic Factory, Endless Party
+    Diplomatics
+
+Subatomics:                     HyperPower Plant, g3
+    Positron Guidance
+
+Advanced Exploration:           h2, Star Lane Hyperdrive
+    HyperLogic
+    Mass Phasing
+
+Gravimetric Combustion:         e3, Toroidal Blaster
+    Gravimetrics
+    Positron Guidance
+
+Planetary Replenishment:        Habitat, Terraforming
+    Enviromental Encapsulation
+    Gravimetric Combustion
+
+Plasmatics:                     w6, Plasma Coupler
+    Subatomics
+
+Momentum Reflection:            Gravity Distorter
+    Subatomics
+
+Large Scale Construction:       h3, Metroplex
+    Advanced Exploration
+    Gravimetric Combustion
+
+Hyperradiation:                 g4, c4
+    EM Field Coupling
+    Momentum Reflection
+
+Superstring Compression:        Hyperfuel
+    Plasmatics
+
+Energy Redirection:             s4, Recaller, Sacrificial Orb
+    Hyperradiation
+
+Murgatroyd Hypothesis:          c5, Short Range Orbital Whopper,
+                        Gyro-Inducter
+    Level Logic
+    Superstring Compression
+
+Matter Duplication:             Cloning Plant, Disarmer
+    Momentum Reflection
+    Superstring Compression
+
+Stasis Field Science:           Tractor Beam, Brunswik Dissipator
+    Hyperradiation
+
+Scientific Sorcery:             Smart Bomb, Containment Device
+    Murgatroyd Hypothesis
+
+Starlane Anatomy:               Lane Blocker, Lane Destabilizer
+    Plasmatics
+    Energy Redirection
+
+Microbotics:                    Automation
+    Matter Duplication
+
+Coherent Photonics:             w7, Cannibalizer
+    Energy Redirection
+
+Inertial Control:               e4
+    Matter Duplication
+    Starlane Anatomy
+
+Energy Focusing:                Myrmidonic Carbonizer, Accutron
+    Murgatroyd Hypothesis
+    Coherent Photonics
+
+Advanced Planetary Armaments:   Long Range Orbital Whopper,
+                                Surface Mega Shield
+    Large Scale Construction
+    Coherent Photonics
+
+Fergnatz's Last Theorem:        w8, Gizmogrifier
+    Scientific Sorcery
+
+Hypergeometry:                  w9, Hyperswapper
+    Fergnatz's Last Theorem
+
+Repulsion Beam Tech:            Fleet Disperser
+    Energy Focusing
+
+Megagraph Theory:               Internet
+    Fergnatz's Last Theorem
+
+Hyperwave Technology:           s5, Orbital Mega Shield
+    Hyperradiation
+    Energy Focusing
+
+Ecospher Phase Control:         Fertilization Plant
+    Planetary Replenishment
+    Hypergeometry
+
+Nanoenergons:                   c6, g5
+    Fergnatz's Last Theorem
+    Hyperwave Technology
+
+Teleinfilitration:              Shield Blaster, Specialty Blaster
+    Thought Analisis
+    Hyperwave Technology
+
+Action At A Distance:           Moving Part Exploiter
+    Megagraph Theory
+    Teleinfilitration
+
+Hyperdrive Technology:          Lane Magnetron
+    Starlane Anatomy
+    Teleinfilitration
+
+Hyperwave Emission Control:     Backfirer
+    Hyperwave Technology
+
+Doom Mechnization:              Disintegrator, Self Destructotron
+    Teleinfilitration
+    Hyperwave Emission Control
+
+Snooping:                       Lane Endoscope
+    Thought Analisis
+    Hyperwave Emission Control
+
+Nanofocusing:                   w10
+    Nanoenergons
+
+Self Modifing Structures:       Remote Repair Facility
+    Microbotics
+    Nanofocusing
+
+Nanopropulsion:                 e5
+    Nanoenergons
+    Hyperdrive Technology
+
+Nanodeflection:                 Nanoshell
+    Inertial Control
+    Nanofocusing
+
+Accel Energy Replenishment:     Lush Growth Bomb
+    Megagraph Theory
+    Nanopropulsion
+
+Gravity Flow Control:           Gravimetric Condensor
+    Nanopropulsion
+
+Illusury Machination:           Invulnerablizer
+    Nanofocusing
+    Accel Energy Replenishment
+
+Ascendancy - Charts
+-------------------------------------
+PLANTARY ITEMS
+
+Factory
+     The Factory is a common structure on most colonized
+     planets.  Factories
+     increase a colony's industry, which helps speed the
+     completion of
+     planetary projects.
+
+Agriplot
+     The Agriplot is a high-productivity farming area.
+     Agriplots increase a
+     colony's prosperity, which causes its population to
+     grow more quickly.
+
+Laboratory
+     The Laboratory is a center for research and
+     development.  Laboratories
+     provide research, which allows a species to make
+     technological discoveries.
+
+Habitat
+     The Habitat is a high-density living and working
+     complex with a precisely
+     controlled internal climate.  Habitats provide a colony
+     with prosperity,
+     and also allow room for additional population.
+
+Metroplex
+     The Metroplex is an urban center with industrial,
+     technological, and
+     residential capacities.
+
+Colony Base
+     You should not be able to build this.
+
+Industrial Megafacility
+     The Industrial Megafacility is a huge, self-reliant
+     production plant.
+     Its industrial output is greater than that of a
+     Factory.
+
+Artificial Hydroponifer
+     The Artificial Hydroponifer is a super-efficient
+     nourishment production
+     facility.  Its prosperity output is greater than that
+
+     of an Agriplot.
+
+Research Campus
+     The Research Campus is a well-equipped experimentation
+     center.  It is of more
+     research value than a Laboratory.
+
+Logic Factory
+     The Logic Factory is a research complex that
+     specializes in the
+     entertainment and happiness of sentient beings.  It
+     provides both research
+     and prosperity.
+
+Engineering Retreat
+     The Engineering Retreat is an academized production
+     plant where engineers
+     devise improvements in logistics and production
+     methods.  It provides a colony
+     with industry as well as research.
+
+Surface Cloaker
+     The Surface Cloaker uses high-frequency diffraction
+     generators to make a
+     planet surface practically invisible to alien ships.
+
+Hyperpower Plant
+     The Hyperpower Plant is a marvel of high technology.
+     By generating power
+     for all of a colony's industry structures, it
+     significantly increases the
+     colony's entire industrial output.  There is no need
+     for more than one
+     Hyperpower Plant on any colony.
+
+Fertilization Plant
+     The Fertilization Plant produces vast quantities of
+     agricultural and
+     hydroponics supplies.  It boosts the prosperity of an
+     entire colony.  There
+     is no need for more than one Fertilization Plant on any
+     colony.
+
+Internet
+     The Internet provides a colony with a high-speed
+     information and data
+     transfer system.  It greatly improves the progress made
+     by a colony's
+     research centers.  There is no need to build more than
+     one Internet on any
+     colony.
+
+Cloning Plant
+     The Cloning Plant organically duplicates new members of
+     a planet's
+     population.  There is no need to build more than one
+     Cloning Plant on any
+     planet.
+
+Observation Installation
+     The Observation Installation scans nearby alien ships.
+     There is no need to build more than one Observation
+     Installation on any
+     planet.
+
+Tractor Beam Element
+     The Tractor Beam generates a powerful stasis field to
+     overcome a ship's drives
+     and pull it toward a planet.  You can use a planet's
+     Tractor Beam in the System
+     Display by selecting the planet and then selecting the
+     Tractor Beam from its
+     item list.
+
+Surface Shield
+     The Surface Shield houses defense armaments that
+     protect a colony against
+     alien invasion.  Several Surface Shields may be
+     necessary to defend against
+     large invasion forces.
+
+Surface Mega Shield
+     The Surface Mega Shield is a powerful defense against
+     alien invasion. It
+     uses protective ion fields to augment the endurance of
+     its defense armaments.  It is much more valuable than
+     the normal Surface
+     Shield, but certainly not invulnerable.
+
+Outpost
+     The Outpost is an important structure for colonies on
+     small or minimally
+     habitable planets.  It provides living facilities for
+     additional
+     population.
+
+Transport Tubes
+     Transport Tubes allow colony structures to spread
+     quickly over the surface
+     of a planet.  They are easy to produce, require no
+     maintenance, and can even
+     be constructed on black squares.
+
+Shipyard
+     The Shipyard is an enormous orbital center for the
+     production of space ships.
+     Though expensive to construct, it is a necessary first
+     step toward space
+     exploration.  A colony must have a Shipyard in order to
+     build ships.
+
+Ship
+     Ships are the key to the exploration of space.  Each
+     Ship can be designed
+     differently, and can hold various types of equipment
+     that allow it to do
+     such things as travel, engage in combat, and colonize
+     or invade planets.
+
+Orbital Docks
+     Orbital Docks provide a maintenance platform for the
+     repair and refitting of
+     ships.  Any ship orbiting a colony with Orbital Docks
+     can be refitted.  When
+     a ship is refitted, its contents may be changed, and
+     its hull is repaired.
+                                        
+Orbital Cloaker
+     The Orbital Cloaker uses modified diffraction
+     generators to disguise structures
+     orbiting a colony, rendering them invisible to alien
+     ships.
+
+Orbital Shields
+     Orbital Shields are a colony's primary defense against
+     alien invasion.  As
+     long as a colony is protected by Orbital Shields, alien
+     ships may not enter
+     orbit.
+
+Orbital Mega Shields
+     Orbital Mega Shields are highly fortified planetary
+     defenses.  Much harder to
+     destroy than the lower-tech Orbital Shields, they
+     prevent alien ships from
+     entering orbit around a colony.
+
+Orbital Missile Base
+     The Orbital Missile Base is a potent short-range
+     planetary weapon.  Though it
+     may only be used once per game day, it can severely
+     damage nearby ships.
+
+Short Range Orbital Whopper
+     The Short Range Orbital Whopper is a powerful planetary
+     energy weapon with a
+     short range.  It may be fired three times per day.  Woe
+     to the ship that
+     runs out of power while in its range.
+
+Long Range Orbital Whopper
+     The Long Range Orbital Whopper is the elite of
+     planetary weaponry.  Its
+     focused energy beams achieve a long range, and its
+     reusability makes
+     it dauntingly powerful.
+
+Alien Hospitality
+     Alien Hospitality is not an individual structure, but
+     rather an overall
+     planetary project.  While a colony dedicates its
+     industry to Alien Hospitality,
+     it helps improve diplomatic relations with alien
+     species.
+
+Interstellar Trucking
+     Interstellar Trucking is a myth.
+
+Endless Party
+     The Endless Party is not an individual structure, but
+
+     rather an overall
+     planetary project.  While a colony's project is set to
+     Endless Party,
+     its prosperity increases by an amount proportional to
+     its industrial output.
+
+Scientist Takeover
+     The Scientist Takeover is not an individual structure,
+     but rather an overall
+     planetary project.  While a colony's project is set to
+     Scientist Takeover,
+     its research progress increases by an amount
+     proportional to its industrial output.
+
+Automation
+     Automation is a process by which the personnel
+     maintaining a structure
+     are replaced by robotic equipment. When a structure has
+     been fully automated,
+     its personnel are freed for use elsewhere on the
+     colony.
+
+Terraforming
+     Terraforming is an important project for colonies on
+     minimally habitable planets.
+     When a black surface square is terraformed, it becomes
+     a white square, and
+     the colony may then build structures on it.
+
+Lush Growth Bomb
+     The Lush Growth Bomb combines chaos technology with
+     organic synthesis
+     equipment to make a planet surface significantly more
+     habitable.  Only
+     one Lush Growth Bomb is of noticeable value on any
+     planet.
+
+Xeno Archeological Dig
+     The Xeno Archeological Dig allows a colony to uncover
+     and analyze the ruinsof ancient civilizations.  When
+     unearthed, these ruins very often providethe key to the
+     discovery of advanced technologies.
+
+GIZMOS
+
+Mass Barrage Gun
+     The %s launches a spray of projectiles from its
+     electromagnetic
+     accelerators.  It is cheap to build and uses little
+     power_the projectiles
+     are low-tech spheres of solid metal that rely on
+     kinetic energy to do
+     damage.  It is easy to deflect, slow to reload, and has
+     a short range.
+
+Fourier Missiles
+     %s use image recognition to identify vulnerable areas
+     of a ship.  They
+     require little power to fire, but they reload slowly
+     and don't do much damage.
+
+Quantum Singularity Launcher
+     The %s generates and fires tiny black holes_infinitely
+     small but
+     incredibly massive objects that easily punch through an
+     Ion Wrap
+     field.  The disadvantages of this weapon are its short
+     range and long
+     recharge time.
+
+Molecular Disassociator
+     The %s generates a cloud that weakens the molecular
+     bonds in matter.
+     This tends to corrode the target rapidly.  Its main
+     drawback is that
+     it takes a long time to form a fully charged cloud.
+
+Electromagnetic Pulser
+     The %s produces electromagnetic pulses that disrupt
+     delicate technological
+     equipment.  It does little structural damage but it
+     strobes very quickly,
+     producing many pulses in a short time that can overload
+     and destroy
+     the target ship.
+
+Plasmatron
+     The %s fires extremely long range bolts of super-heated
+     plasma.  It
+     takes a long time to recharge.
+
+Ueberlaser
+     The %s is a high-power pulse laser that cuts instantly
+     through an
+     unshielded ship hull.  It uses a lot of power but does
+     heavy damage.
+
+Fergnatz Lens
+     The %s passively collects and focuses cosmic energies
+     at its target.
+     It requires no power to operate.
+
+Hypersphere Driver
+     The %s creates unstable bubbles in spacetime that
+     extend into higher
+     dimensions.  When these bubbles intersect normal matter
+     they collapse,
+     pinching off the matter inside another dimension.  They
+     have a very long
+     range and inflict massive damage.  This weapon is
+     extremely expensive to
+     produce and gobbles power.
+
+Nanomanipulator
+     The %s fires bursts of highly focused nanoenergon flux.
+     The flux
+     induces a chaotic nanowave upon impact that rips
+     through the target,
+     destructively jumbling alternate realities together.
+     It is hugely
+     destructive, fires in quick bursts, and uses a lot of
+     power.
+
+Ion Wrap
+     The %s is a low-grade particle defense shield.  Like
+     most shields,
+     it only consumes power when it is active.
+
+Concussion Shield
+     The %s surrounds a ship with a flexible energy barrier
+     that absorbs kinetic
+     impulses and spreads them over its entire surface.
+     Like most shields,
+     it only consumes power when it is active.
+
+Wave Scatterer
+     The %s is an energy dispersion mechanism that passively
+     diffracts and scatters
+     energy waves as they make contact with a ship's hull.
+     The Wave Scatterer is
+     a weak defense, but unlike most shields it consumes no
+     power.
+
+Deactotron
+     The %s is a high-tech active defense module.  When it
+     detects the approach
+     of particle or energy projectiles, it reacts by
+     ejecting an appropriate
+     countermeasure. Like most shields, it only consumes
+     power when it is
+
+Hyperwave Nullifier
+     The %s surrounds a ship with a space-distorting
+     hyperwave field.  The field
+     causes incoming projectiles to slide around the hull of
+     their target and miss
+     it completely.  Like most shields, the Hyperwave
+     Nullifier only consumes
+     power when it is active.
+
+Nanoshell
+     The Nanoshell simply creates a dense barrier of
+     Nanoenergons around a ship.
+     Few weapons are able to penetrate it.  Like most
+     shields, it only consumes
+     power when it is active.
+
+Tonklin Motor
+     The %s is a weak engine based on an elegant quirk of
+     momentum theory.
+     It is very inexpensive to construct.
+
+Ion Banger
+     The %s sucks in ions from surrounding space and smashes
+     them into each
+     other at high speeds, creating a propulsive force.  It
+     is significantly
+     more powerful than the Tonklin Motor.
+
+Graviton Projector
+     The %s sprays a gravity field in front of a ship,
+     pulling it perpetually
+     forward.  The Graviton Projector is more powerful than
+     the Ion Banger.
+
+Inertia Negator
+     The %s generates an anti-mass field that allows a ship
+     to float lightly
+     through space.  It is about as strong as the Graviton
+     Projector, but it
+     consumes much less power.
+
+Nanowave Space Bender
+     The %s projects a wide-band field of nanoenergy that
+     warps the space around
+     a ship, allowing it to slide rapidly in any direction.
+     It is a very powerful
+     engine.
+
+Tonklin Frequency Analyzer
+     The %s scans energy leakages from a ship to determine
+     information about its
+     status.  Its range is relatively short.  It is always
+     active and consumes no
+     power.
+
+Subspace Phase Array
+     The %s detects subtle variations in the space flow
+     around a ship.  It is able
+     to detect a ship's status information at short to
+     medium range.  It is always
+     active and consumes no power.
+
+Aural Cloud Constructor
+     The %s is a medium range scanner that projects an aural
+     cloud through
+     surrounding space, observing vibrations in the cloud to
+     detect the status
+     of other ships.  It is always active and consumes no
+     power.
+
+Hyperwave Tympanum
+     The %s is a long range scanner that is able to detect
+     the minutest
+     variations in the hyperwave ether and analyze them to
+     obtain status information
+     about other ships.  It is always active and consumes no
+     power.
+
+Murgatroyd's Knower
+     %s is a very long range scanner that uses a combination
+     of advanced
+     technologies to determine the status of other ships.
+     It is always active and
+     consumes no power.
+
+Nanowave Decoupling Net
+     The %s harvests coupled nanowaves from surrounding
+     space and analyzes them
+     to learn the status of other ships.  Its range is
+     practically unlimited.  It
+     is always active and consumes no power.
+
+Proton Shaver
+     The %s is a power generator that operates by extracting
+     small quantities
+     of protons from heavy atomic nuclei and converting them
+     to energy.  It is
+     inexpensive but produces little power.
+
+Subatomic Scoop
+     The %s sucks subatomic particles from surrounding space
+     and converts them
+     to energy.  It is a stronger generator than the Proton
+     Shaver.
+
+Quark Express
+     The %s uses a little-understood technology to squeeze
+     energy from various
+     sub-subatomic particles.  It is a powerful generator.
+
+Van Creeg Hypersplicer
+     The %s merges mixed-frequency hyperwaves and collects
+     the energy bleed-off.
+     It is a very powerful generator.
+
+Nanotwirler
+     The %s puts a stream of Nanoenergons into sympathetic
+     resonant motion, and
+     channels off the energy they release from each other.
+     It generates even
+     more power than the Van Creeg Hypersplicer.

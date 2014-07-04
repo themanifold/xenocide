@@ -1,0 +1,2296 @@
+# Ammot types are defined in file data/ammotype.def
+#
+# Available fire modes:
+# FIRE_SINGLE | FIRE_DOUBLE | FIRE_TRIPLE | FIRE_BURST
+#
+# Grenades properties:
+# 
+# Explosive   - PWR - damage,    RNG - range
+# Smoke       - PWR - how many turns works, RNG - how much gas to add
+# Power_Shield - PWR - how many turns works, RNG - range
+# Incendiary  - PWR - temperature,      RNG - range
+# Sensor      - after activation looks for a monster around, then activates other properties
+#
+# WARNING: CATEGORY MUST BE AFTER THE NAME!
+
+[TRASH]
+NAME = "Trash"
+DESCRIPTION = "A pile of trash."
+COLOR = 8
+CATEGORY = "GARBAGE_SPACESHIP"
+WEIGHT = 300
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Garbage"
+DESCRIPTION = "Some bits of random garbage."
+COLOR = 8
+CATEGORY = "GARBAGE_SPACESHIP"
+WEIGHT = 300
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Broken Glass"
+DESCRIPTION = "Some pieces of broken glass. Watch your fingers."
+CATEGORY = "GARBAGE_SPACESHIP"
+WEIGHT = 100
+HIT POINTS = 3
+
+[TRASH]
+NAME = "Metal Trinket"
+DESCRIPTION = "A kind of unidentifiable trinket made of metal."
+CATEGORY = "GARBAGE_SPACESHIP"
+WEIGHT = 100
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Rubbish"
+DESCRIPTION = "Some rubbish. What did you expect?"
+CATEGORY = "GARBAGE_SPACESHIP"
+WEIGHT = 500
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Organic Rubbish"
+DESCRIPTION = "Some strange rubbish of indeterminate organic origin."
+TILE = "%"
+COLOR = 3
+CATEGORY = "GARBAGE_ORGANIC"
+WEIGHT = 300
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Rotten Rubbish"
+DESCRIPTION = "Smelly rubbish, definitely organic, and probably rotten."
+TILE = "%"
+COLOR = 7
+CATEGORY = "GARBAGE_ORGANIC"
+WEIGHT = 200
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Smelly Gunk"
+DESCRIPTION = "A glob of sticky and smelly gunk. Get rid of it."
+CATEGORY = "GARBAGE_ORGANIC"
+WEIGHT = 400
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Sticky Blob"
+DESCRIPTION = "Yuck! You wouldn't want to put your hand into that..."
+TILE = "%"
+COLOR = 3
+CATEGORY = "GARBAGE_ORGANIC"
+WEIGHT = 400
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Human Hand"
+DESCRIPTION = "A severed hand."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 200
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Human Foot"
+DESCRIPTION = "A severed foot."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 200
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Human Arm"
+DESCRIPTION = "A sleeve, with the arm still inside."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 400
+HIT POINTS = 10
+
+[TRASH]
+NAME = "Human Leg"
+DESCRIPTION = "A severed leg with some shreds of a trouser leg."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 1000
+HIT POINTS = 10
+
+[CORPSE]
+NAME = "Human Female"
+DESCRIPTION = "Disgusting! A mutilated female corpse. At least, you suppose it is female."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 10000
+HIT POINTS = 15
+
+[CORPSE]
+NAME = "Human"
+DESCRIPTION = "The mutilated corpse of a man."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 10000
+HIT POINTS = 15
+
+[TRASH]
+NAME = "Human Male Head"
+DESCRIPTION = "A severed male head."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 4000
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Human Female Head"
+DESCRIPTION = "A severed head, formerly female."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 4000
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Human Ear"
+DESCRIPTION = "A severed ear covered in clotted blood."
+TILE = "%"
+COLOR = 4
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 50
+HIT POINTS = 1
+
+[TRASH]
+NAME = "Burned Human Part"
+DESCRIPTION = "A fried piece of meat. Something tells you it was probably originally human tissue."
+COLOR = 4
+TILE = "%"
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 1000
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Burned Human Head"
+DESCRIPTION = "A fried human head."
+COLOR = 4
+TILE = "%"
+CATEGORY = "GARBAGE_HUMAN_PARTS"
+WEIGHT = 3000
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Clod of Soil"
+DESCRIPTION = "A large clod of soil."
+COLOR = 6
+TILE = ";"
+CATEGORY = "GARBAGE_ROCKS"
+WEIGHT = 3000
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Fragile Stone"
+DESCRIPTION = "A round, fragile stone."
+COLOR = 7
+TILE = ";"
+CATEGORY = "GARBAGE_ROCKS"
+WEIGHT = 1000
+HIT POINTS = 3
+
+[TRASH]
+NAME = "Black Stone"
+DESCRIPTION = "A black shiny stone. Probably a coal."
+COLOR = 8
+TILE = ";"
+CATEGORY = "GARBAGE_ROCKS"
+WEIGHT = 500
+HIT POINTS = 5
+
+[TRASH]
+NAME = "Piece Of Ore"
+DESCRIPTION = "A dirty piece of ore."
+COLOR = 8
+TILE = ";"
+CATEGORY = "GARBAGE_ROCKS"
+WEIGHT = 1000
+HIT POINTS = 10
+
+[TRASH]
+NAME = "Garbage Cleaner"
+TILE = "^"
+DESCRIPTION = "A cleaning tool for utility bots. It works by converting matter directly into energy."
+COLOR = 11
+CATEGORY = "UTILITY_CLEANER"
+WEIGHT = 1000
+HIT POINTS = 5
+
+[PROGRAMMATOR]
+NAME = "Programming Tool"
+DESCRIPTION = "Allows to convert enemy CPU into friendly one. Programming abilities required."
+COLOR = 14
+CATEGORY = "CPU_TOOL_1"
+WEIGHT = 1000
+HIT POINTS = 25
+PROPERTIES = CONVERT_CPU
+
+[PROGRAMMATOR]
+NAME = "CPU Programming Tool"
+DESCRIPTION = "Allows to convert enemy CPU into friendly one or to write"
+COLOR = 15
+CATEGORY = "CPU_TOOL_2"
+WEIGHT = 1000
+HIT POINTS = 25
+PROPERTIES = CONVERT_CPU | WRITE_PROGRAM
+
+[REPAIR_KIT]
+NAME = "Simple Repair Tool"
+DESCRIPTION = "! NOT WRITTEN YET !"
+COLOR = 7
+CATEGORY = "REPAIR_SET_1"
+WEIGHT = 1000
+HIT POINTS = 25
+PURPOSE = REPAIR_HP
+
+[REPAIR_KIT]
+NAME = "Automatic Repair Tool"
+DESCRIPTION = "! NOT WRITTEN YET !"
+COLOR = 5
+CATEGORY = "REPAIR_SET_3"
+WEIGHT = 1000
+HIT POINTS = 20
+PURPOSE = REPAIR_HP
+REGENERATION TIME = 500
+
+[REPAIR_KIT]
+NAME = "Armor Improving Tool"
+DESCRIPTION = "This tool fixes some disadvantages of armor."
+COLOR = 9
+CATEGORY = "REPAIR_SET_2"
+WEIGHT = 1000
+HIT POINTS = 25
+PURPOSE = REPAIR_FIX_ARMOR
+
+[AMMO]
+NAME = "Bullet 8mm"
+DESCRIPTION = "An 8mm round."
+CATEGORY = "AMMO_LIGHT_PISTOL"
+PWR = 4
+TYPE = "8MM"
+WEIGHT = 50
+PROPERTIES = NORMAL
+
+[AMMO]
+NAME = "Bullet 9mm"
+DESCRIPTION = "A 9mm bullet."
+CATEGORY = "AMMO_LIGHT_PISTOL_2"
+PWR = 5
+TYPE = "9MM"
+WEIGHT = 50
+PROPERTIES = NORMAL
+
+[BATTERY]
+NAME = "Machine Battery"
+COLOR = 11
+DESCRIPTION = "Heavy battery used in heavy machines. Low capacity."
+CATEGORY = "BATTERY_1"
+BATTERY CAPACITY = 20
+WEIGHT = 5000
+HIT POINTS = 30
+
+[BATTERY]
+NAME = "Nanotech Battery"
+COLOR = 11
+DESCRIPTION = "High-tech battery with regenerator."
+CATEGORY = "BATTERY_3"
+BATTERY CAPACITY = 50
+REGENERATION SPEED = -30
+WEIGHT = 500
+HIT POINTS = 5
+
+[BATTERY]
+NAME = "Small Nanotech Battery"
+COLOR = 11
+DESCRIPTION = "Small high-tech battery with solar regenerator."
+CATEGORY = "BATTERY_3"
+BATTERY CAPACITY = 35
+REGENERATION SPEED = -40
+WEIGHT = 500
+HIT POINTS = 5
+
+
+[BATTERY]
+NAME = "Mining Battery"
+COLOR = 9
+DESCRIPTION = "Battery to feed mining tools with simple reactor."
+CATEGORY = "BATTERY_2"
+BATTERY CAPACITY = 40
+REGENERATION SPEED = -10
+WEIGHT = 2500
+HIT POINTS = 50
+
+[BATTERY]
+NAME = "Self-Charging Accumulator"
+COLOR = 9
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "BATTERY_3"
+BATTERY CAPACITY = 100
+REGENERATION SPEED = 1
+WEIGHT = 2000
+HIT POINTS = 15
+
+[BATTERY]
+NAME = "Small Reactor"
+COLOR = 9
+DESCRIPTION = "! NOT WRITTEN YET ! - an enemy tool"
+CATEGORY = "BATTERY_4"
+BATTERY CAPACITY = 150
+REGENERATION SPEED = 3
+WEIGHT = 2000
+HIT POINTS = 40
+
+[AMMO]
+NAME = "Rifle Bullet 6.25mm"
+DESCRIPTION = "A 6.25mm cartridge for rifles."
+CATEGORY = "AMMO_LIGHT_RIFLE"
+PWR = 6
+TYPE = "6_25MM"
+WEIGHT = 50
+PROPERTIES = NORMAL
+
+[AMMO]
+NAME = "Turret Plasma Beam"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "AMMO_BUNKER_GUN"
+PWR = 20
+TYPE = "BUNKER_GUN"
+WEIGHT = 100
+PROPERTIES = NORMAL|ENERGY
+
+[AMMO]
+NAME = "Rifle Bullet 6.69mm"
+DESCRIPTION = "A 6.69mm cartridge for heavy rifles."
+CATEGORY = "AMMO_HEAVY_RIFLE"
+PWR = 9
+TYPE = "6_69MM"
+WEIGHT = 80
+PROPERTIES = NORMAL
+
+[AMMO]
+NAME = "Nail"
+DESCRIPTION = "A long nail. It can be used as a projectile with the right type of tool."
+CATEGORY = "AMMO_IMPROVISED"
+PWR = 2
+TYPE = "NAILS"
+WEIGHT = 10
+PROPERTIES = NORMAL|ARMOR_PERCING
+
+[RANGED_WEAPON]
+NAME = "Nail Pistol"
+DESCRIPTION = "A metallic tool that can be used as an improvised gun."
+CATEGORY = "WEAPON_RANGE_IMPROVISED_1"
+IN MAGAZINE = "AMMO_IMPROVISED"
+DMG = 1
+COLOR = 11
+ACC = 1
+PWR = 4
+TYPE = "NAILS"
+WEIGHT = 800
+HIT POINTS = 100
+REQ STRENGTH = 4
+MAGAZINE CAPACITY = 3
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/nailpistol/fire1.wav"
+SOUND RELOAD = "data/sounds/weapons/pistol8mm/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Nail Gun"
+DESCRIPTION = "A heavy-duty tool firing the same nails as the Nail Pistol, but with a semi-automatic action and a greater feed capacity."
+CATEGORY = "WEAPON_RANGE_IMPROVISED_2"
+IN MAGAZINE = "AMMO_IMPROVISED"
+DMG = 2
+COLOR = 11
+ACC = 0
+PWR = 4
+TYPE = "NAILS"
+WEIGHT = 2800
+HIT POINTS = 100
+REQ STRENGTH = 7
+MAGAZINE CAPACITY = 15
+FIRE MODE = FIRE_TRIPLE
+AVAILABLE FIRE MODES = FIRE_SINGLE | FIRE_TRIPLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/nailpistol/fire1.wav"
+SOUND FIRE TRIPLE = "data/sounds/weapons/nailpistol/fire1.wav"
+SOUND RELOAD = "data/sounds/weapons/pistol8mm/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Pistol 8mm"
+DESCRIPTION = "A standard-issue 8mm handgun."
+CATEGORY = "WEAPON_LIGHT_PISTOL"
+IN MAGAZINE = "AMMO_LIGHT_PISTOL"
+DMG = 1
+COLOR = 11
+ACC = 1
+PWR = 6
+TYPE = "8MM"
+WEIGHT = 1200
+HIT POINTS = 100
+REQ STRENGTH = 5
+MAGAZINE CAPACITY = 8
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/pistol8mm/fire1.ogg"
+SOUND RELOAD = "data/sounds/weapons/pistol8mm/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Berreta 9mm 'Wolff'"
+DESCRIPTION = "The famous high-quality 9mm pistol."
+CATEGORY = "WEAPON_LIGHT_PISTOL"
+IN MAGAZINE = "AMMO_LIGHT_PISTOL_2"
+DMG = 2
+COLOR = 11
+ACC = 1
+PWR = 9
+TYPE = "9MM"
+WEIGHT = 1200
+HIT POINTS = 60
+REQ STRENGTH = 5
+MAGAZINE CAPACITY = 12
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/pistol8mm/fire1.ogg"
+SOUND RELOAD = "data/sounds/weapons/pistol8mm/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Combat Shotgun"
+DESCRIPTION = "A semiautomatic scattergun designed to look like its user means business."
+CATEGORY = "WEAPON_LIGHT_SHOTGUN"
+IN MAGAZINE = "AMMO_LIGHT_SHOTGUN"
+DMG = 2
+COLOR = 11
+ACC = 0
+PWR = 6
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 3500
+HIT POINTS = 100
+REQ STRENGTH = 8
+MAGAZINE CAPACITY = 8
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/shotgun1/fire1.wav"
+SOUND RELOAD = "data/sounds/weapons/shotgun1/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Compact Laser Pistol"
+DESCRIPTION = "This pistol is a compact version of the standard laser pistol. Its size allows it to be concealed, so as not to be detected by potential targets. It has a longer battery life, but reduced power."
+CATEGORY = "WEAPON_ENERGY_1"
+IN MAGAZINE = "AMMO_ENERGY_1"
+DMG = 1
+COLOR = 12
+# person is easier to hit in H2H when wield this
+DEF = -4
+ACC = 3
+PWR = 7
+TYPE = "LASER_1"
+WEIGHT = 500
+HIT POINTS = 20
+REQ STRENGTH = 3
+MAGAZINE CAPACITY = 1
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = ENERGY WEAPONS
+PROPERTIES = ENERGY
+
+SOUND FIRE SINGLE = "data/sounds/weapons/laser1/fire1.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/laser1/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Laser Rifle"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "WEAPON_ENERGY_1"
+IN MAGAZINE = "AMMO_ENERGY_1"
+DMG = 1
+COLOR = 12
+# person is easier to hit in H2H when wield this
+DEF = -4
+ACC = 3
+PWR = 9
+TYPE = "LASER_1"
+WEIGHT = 2500
+HIT POINTS = 20
+REQ STRENGTH = 6
+MAGAZINE CAPACITY = 1
+FIRE MODE = FIRE_DOUBLE
+AVAILABLE FIRE MODES = FIRE_DOUBLE
+SKILL TO USE = ENERGY WEAPONS
+PROPERTIES = ENERGY
+
+SOUND FIRE DOUBLE = "data/sounds/weapons/laser2/fire2.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/laser1/empty.wav"
+
+
+[RANGED_WEAPON]
+NAME = "Hunting Rifle"
+DESCRIPTION = "A light, reliable semiautomatic longarm with a simple, rugged design."
+CATEGORY = "WEAPON_LIGHT_RIFLE"
+IN MAGAZINE = "AMMO_LIGHT_RIFLE"
+DMG = 2
+COLOR = 11
+ACC = 4
+PWR = 6
+TYPE = "6_25MM" 
+WEIGHT = 3000
+HIT POINTS = 50
+REQ STRENGTH = 6
+MAGAZINE CAPACITY = 15
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/rifle1/fire1.wav"
+SOUND RELOAD = "data/sounds/weapons/rifle1/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+
+[RANGED_WEAPON]
+NAME = "LR-30 Assault Rifle"
+DESCRIPTION = "An automatic rifle whose main selling points are the large magazine and low cost."
+CATEGORY = "WEAPON_LIGHT_RIFLE"
+IN MAGAZINE = "AMMO_LIGHT_RIFLE"
+DMG = 2
+COLOR = 11
+ACC = 2
+PWR = 6
+TYPE = "6_25MM" 
+WEIGHT = 3000
+HIT POINTS = 80
+REQ STRENGTH = 7
+MAGAZINE CAPACITY = 35
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE|FIRE_TRIPLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/rifle3/fire1.wav"
+SOUND FIRE TRIPLE = "data/sounds/weapons/rifle3/fire3.wav"
+SOUND RELOAD = "data/sounds/weapons/rifle3/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Standard Sentry Gun Rifle"
+DESCRIPTION = "A compact autogun designed for easy interchangeability and both hand-held and sentry gun use."
+CATEGORY = "WEAPON_SENTRY_GUN_1"
+IN MAGAZINE = "AMMO_LIGHT_RIFLE"
+DMG = 1
+COLOR = 11
+ACC = 2
+PWR = 1
+TYPE = "6_25MM"
+WEIGHT = 5000
+HIT POINTS = 80
+REQ STRENGTH = 9
+MAGAZINE CAPACITY = 21
+FIRE MODE = FIRE_TRIPLE
+AVAILABLE FIRE MODES = FIRE_TRIPLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE TRIPLE = "data/sounds/weapons/sentrygun/fire3.wav"
+SOUND RELOAD = "data/sounds/weapons/rifle3/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Bunker Gun Cannon"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "ITEM_UNIQUE"
+IN MAGAZINE = "AMMO_BUNKER_GUN"
+DMG = 2
+COLOR = 10
+ACC = 2
+PWR = 10
+TYPE = "BUNKER_GUN" 
+WEIGHT = 15000
+HIT POINTS = 80
+REQ STRENGTH = 9
+MAGAZINE CAPACITY = 1
+FIRE MODE = FIRE_TRIPLE
+AVAILABLE FIRE MODES = FIRE_TRIPLE
+SKILL TO USE = BIG_GUNS
+PROPERTIES = ENERGY
+
+SOUND FIRE TRIPLE = "data/sounds/weapons/bunkergun/fire3.wav"
+SOUND RELOAD = "data/sounds/weapons/rifle3/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "SeaGull 8mm Pistol"
+DESCRIPTION = "The standard-issue NAVY sidearm, a long-barreled revolver, very reliable."
+CATEGORY = "WEAPON_LIGHT_PISTOL"
+IN MAGAZINE = "AMMO_LIGHT_PISTOL"
+DMG = 3
+COLOR = 11
+ACC = 4
+PWR = 7
+TYPE = "8MM"
+WEIGHT = 1500
+HIT POINTS = 120
+REQ STRENGTH = 7
+MAGAZINE CAPACITY = 6
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/pistol8mm/fire1.ogg"
+SOUND RELOAD = "data/sounds/weapons/pistol8mm/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "M-Pistol Weasel 8mm"
+DESCRIPTION = "A semi-automatic 8mm pistol with an extended magazine."
+CATEGORY = "WEAPON_LIGHT_PISTOL"
+IN MAGAZINE = "AMMO_LIGHT_PISTOL"
+DMG = 3
+COLOR = 11
+ACC = 0
+PWR = 6
+TYPE = "8MM"
+WEIGHT = 1500
+HIT POINTS = 100
+REQ STRENGTH = 6
+MAGAZINE CAPACITY = 15
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE|FIRE_TRIPLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/semiauto2/fire1.wav"
+SOUND FIRE TRIPLE = "data/sounds/weapons/semiauto2/fire3.wav"
+SOUND RELOAD = "data/sounds/weapons/pistol8mm/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "AR-28 Assault Rifle 6.25mm"
+DESCRIPTION = "The standard assault rifle used by Marines and Earth forces."
+CATEGORY = "WEAPON_LIGHT_RIFLE_2"
+IN MAGAZINE = "AMMO_LIGHT_RIFLE"
+DMG = 4
+COLOR = 11
+ACC = 1
+PWR = 6
+TYPE = "6_25MM"
+WEIGHT = 1500
+HIT POINTS = 100
+REQ STRENGTH = 6
+MAGAZINE CAPACITY = 25
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE|FIRE_TRIPLE|FIRE_BURST
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/autorifle/fire1.wav"
+SOUND FIRE TRIPLE = "data/sounds/weapons/autorifle/fire3.wav"
+SOUND FIRE BURST = "data/sounds/weapons/autorifle/fire3.wav"
+SOUND RELOAD = "data/sounds/weapons/autorifle/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "M-35 Wolverine"
+DESCRIPTION = "A very modern, carbine-format assault rifle usually issued to military spacecraft crews."
+CATEGORY = "WEAPON_LIGHT_RIFLE_2"
+IN MAGAZINE = "AMMO_LIGHT_RIFLE"
+DMG = 4
+COLOR = 11
+ACC = 3
+PWR = 6
+TYPE = "6_25MM"
+WEIGHT = 2500
+HIT POINTS = 100
+REQ STRENGTH = 7
+MAGAZINE CAPACITY = 35
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE|FIRE_TRIPLE|FIRE_BURST
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/autorifle/fire1.wav"
+SOUND FIRE TRIPLE = "data/sounds/weapons/autorifle/fire3.wav"
+SOUND FIRE BURST = "data/sounds/weapons/autorifle/fire3.wav"
+SOUND RELOAD = "data/sounds/weapons/autorifle/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "H&K SA Shotgun"
+DESCRIPTION = "A long, black shotgun, produced by Hecklen & Koll."
+CATEGORY = "WEAPON_LIGHT_SHOTGUN"
+IN MAGAZINE = "AMMO_LIGHT_SHOTGUN"
+DMG = 4
+COLOR = 6
+ACC = 2
+PWR = 6
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 4000
+REQ STRENGTH = 10
+MAGAZINE CAPACITY = 12
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE|FIRE_DOUBLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/shotgun1/fire1.wav"
+SOUND FIRE DOUBLE = "data/sounds/weapons/shotgun1/fire2.wav"
+SOUND RELOAD = "data/sounds/weapons/shotgun1/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Mossberg ML4"
+DESCRIPTION = "The ML4 is a well known and popular model of shotgun. Despite being a 20-year-old design, it is still a great weapon."
+CATEGORY = "WEAPON_LIGHT_SHOTGUN"
+IN MAGAZINE = "AMMO_LIGHT_SHOTGUN"
+DMG = 4
+COLOR = 6
+ACC = 3
+PWR = 6
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 3000
+REQ STRENGTH = 10
+MAGAZINE CAPACITY = 6
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/shotgun1/fire1.wav"
+SOUND RELOAD = "data/sounds/weapons/shotgun1/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[RANGED_WEAPON]
+NAME = "Double Barreled Shotgun"
+DESCRIPTION = "A shotgun with two barrels, mostly used on Earth for hunting birds."
+CATEGORY = "WEAPON_LIGHT_SHOTGUN_2"
+IN MAGAZINE = "AMMO_LIGHT_SHOTGUN"
+DMG = 5
+COLOR = 6
+ACC = -2
+PWR = 6
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 4000
+REQ STRENGTH = 12
+MAGAZINE CAPACITY = 2
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE|FIRE_DOUBLE
+SKILL TO USE = SMALL GUNS
+
+SOUND FIRE SINGLE = "data/sounds/weapons/shotgun1/fire1.wav"
+SOUND FIRE DOUBLE = "data/sounds/weapons/shotgun1/fire2.wav"
+SOUND RELOAD = "data/sounds/weapons/shotgun1/reload.wav"
+SOUND GUN EMPTY = "data/sounds/weapons/pistol8mm/empty.wav"
+
+[AMMO]
+NAME = "Shotgun Shell"
+DESCRIPTION = "A typical buckshot shell."
+CATEGORY = "AMMO_LIGHT_SHOTGUN"
+COLOR = 9
+PWR = 8
+ACC = -4
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 80
+PROPERTIES = NORMAL
+
+[AMMO]
+NAME = "EM Shotgun Shell"
+DESCRIPTION = "Shotgun shell with electromagnetic trigger."
+CATEGORY = "AMMO_LIGHT_SHOTGUN"
+COLOR = 11
+PWR = 8
+ACC = 1
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 100
+PROPERTIES = NORMAL|ELECTRIC
+
+[AMMO]
+NAME = "HiAcc Shotgun Shell"
+DESCRIPTION = "The special shape gives this shell better accuracy, but somewhat lower stopping power."
+CATEGORY = "AMMO_LIGHT_SHOTGUN"
+COLOR = 9
+PWR = 6
+ACC = 2
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 100
+PROPERTIES = NORMAL
+
+[AMMO]
+NAME = "Laser Beam"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "AMMO_ENERGY_1"
+#power in this case is multiplyer of energy usage
+PWR = 4
+TYPE = "LASER_1"
+WEIGHT = 100
+PROPERTIES = NORMAL|ENERGY
+
+
+[AMMO]
+NAME = "Sharp Shotgun Shell"
+DESCRIPTION = "A flechette shell with superior penetration but terrible accuracy due to the wide spread."
+CATEGORY = "AMMO_LIGHT_SHOTGUN"
+COLOR = 6
+PWR = 6
+ACC = -4
+TYPE = "SHOTGUN_SHELLS"
+WEIGHT = 100
+PROPERTIES = NORMAL|ARMOR_PERCING
+
+[HAND_WEAPON]
+NAME = "Metal Pipe"
+DESCRIPTION = "A long metal pipe. It can be used as a weapon."
+CATEGORY = "WEAPON_H2H_IMPROVISED_1"
+ATTACK = "beats on"
+DMG = 4
+HIT = 2
+DEF = 2
+HIT POINTS = 150
+WEIGHT = 1000
+REQ STRENGTH = 5
+COLOR = 11
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/pipe/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Wrench"
+DESCRIPTION = "A heavy wrench can be a deadly weapon in skilled hands."
+COLOR = 8
+CATEGORY = "WEAPON_H2H_IMPROVISED_1"
+ATTACK = "bangs on"
+DMG = 4
+HIT = 3
+DEF = 1
+HIT POINTS = 100
+WEIGHT = 1000
+REQ STRENGTH = 5
+COLOR = 11
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/wrench/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Hammer"
+DESCRIPTION = "A large and heavy (about 5 kg) hammer."
+COLOR = 7
+CATEGORY = "WEAPON_H2H_IMPROVISED_1"
+ATTACK = "hits"
+DMG = 5
+HIT = 2
+DEF = 0
+HIT POINTS = 120
+WEIGHT = 5000
+REQ STRENGTH = 5
+COLOR = 11
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/hammer/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Knife"
+DESCRIPTION = "A small knife. It's not too impressive as a weapon, but it's better than going barehanded..."
+CATEGORY = "WEAPON_H2H_IMPROVISED_1"
+ATTACK = "cuts"
+DMG = 4
+HIT = 3
+DEF = 0
+HIT POINTS = 80
+WEIGHT = 400
+REQ STRENGTH = 4
+COLOR = 11
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/knife/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Small Razor Blade"
+DESCRIPTION = "A wickedly sharp circular blade designed for robot, rather than human, use."
+CATEGORY = "WEAPON_H2H_ROBOTS_1"
+ATTACK = "cuts"
+DMG = 4
+HIT = 3
+DEF = 0
+HIT POINTS = 120
+WEIGHT = 1500
+REQ STRENGTH = 6
+COLOR = 7
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/razor/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Medium Razor Blade"
+DESCRIPTION = "A wickedly sharp circular blade designed for robot, rather than human, use."
+CATEGORY = "WEAPON_H2H_ROBOTS_2"
+ATTACK = "cuts"
+DMG = 10
+HIT = 5
+DEF = 3
+HIT POINTS = 120
+WEIGHT = 1500
+REQ STRENGTH = 10
+COLOR = 7
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/razor/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Axe"
+DESCRIPTION = "A handy axe can be used as a deadly weapon. You've seen it done in so many horror movies..."
+CATEGORY = "WEAPON_H2H_IMPROVISED_2"
+ATTACK = "chops"
+DMG = 6
+HIT = 3
+DEF = 1
+HIT POINTS = 100
+WEIGHT = 4000
+REQ STRENGTH = 6
+COLOR = 7
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/axe/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Crowbar"
+DESCRIPTION = "A heavy, black crowbar. It could be of some use as a weapon."
+CATEGORY = "WEAPON_H2H_IMPROVISED_2"
+ATTACK = "bangs on"
+DMG = 5
+HIT = 2
+DEF = 2
+HIT POINTS = 100
+WEIGHT = 3000
+REQ STRENGTH = 5
+COLOR = 7
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/pipe/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Wooden Rail"
+DESCRIPTION = "A thick wooden rail."
+CATEGORY = "WEAPON_H2H_IMPROVISED_2"
+ATTACK = "bangs on"
+DMG = 2
+HIT = 1
+DEF = 2
+HIT POINTS = 40
+WEIGHT = 3000
+REQ STRENGTH = 5
+COLOR = 6
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/wood/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Large Hammer"
+DESCRIPTION = "A large hammer."
+CATEGORY = "WEAPON_H2H_IMPROVISED_2"
+ATTACK = "hits"
+DMG = 7
+HIT = 3
+DEF = 0
+HIT POINTS = 150
+WEIGHT = 6000
+REQ STRENGTH = 9
+COLOR = 7
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/hammer/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Security Stun Baton 200K"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "WEAPON_ENERGY_IMPROVISED_1"
+ATTACK = "smites"
+DMG = 2
+HIT = 1
+DEF = 2
+DMG ENERGY = 10
+HIT ENERGY = 0
+DEF ENERGY = 0
+HIT POINTS = 50
+WEIGHT = 1000
+REQ STRENGTH = 5
+COLOR = 15
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+# NORMAL i NORMAL sie zeruja, bo opeacja XOR przy wlaczonych
+PROPERTIES ENERGY = STUN|ELECTRIC
+
+SOUND USED = "data/sounds/weapons/stun/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Chainsaw"
+DESCRIPTION = "An old chainsaw, produced by "Thorvan & Son Tools" more than 20 years ago."
+CATEGORY = "WEAPON_H2H_IMPROVISED_2"
+ATTACK = "cuts"
+DMG = 0
+HIT = 0
+DEF = 0
+DMG ENERGY = 8
+HIT ENERGY = 2
+DEF ENERGY = 1
+HIT POINTS = 50
+WEIGHT = 6000
+REQ STRENGTH = 9
+COLOR = 7
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/chainsaw/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Mining Drill"
+DESCRIPTION = "A huge power drill used by miners to crack ore into smaller pieces. Requires strong arms to wield effectively."
+CATEGORY = "WEAPON_H2H_IMPROVISED_2"
+ATTACK = "drills"
+DMG = 0
+HIT = 0
+DEF = 0
+DMG ENERGY = 8
+HIT ENERGY = 3
+DEF ENERGY = 1
+HIT POINTS = 50
+WEIGHT = 15000
+REQ STRENGTH = 13
+COLOR = 8
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/drill/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Nanotech Scalpel"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "WEAPON_ENERGY_IMPROVISED_1"
+ATTACK = "cuts"
+DMG = 2
+HIT = 0
+DEF = 0
+DMG ENERGY = 4
+HIT ENERGY = 3
+DEF ENERGY = 1
+HIT POINTS = 50
+WEIGHT = 500
+REQ STRENGTH = 5
+COLOR = 8
+SKILL TO USE = MELEE WEAPONS
+PROPERTIES = NORMAL
+PROPERTIES ENERGY = NORMAL|ARMOR_PERCING
+SOUND USED = "data/sounds/weapons/nanoscalpel/hit.wav" 
+
+[ARMOR]
+NAME = "Power Armor"
+DESCRIPTION = "! NOT WRITTEN YET !"
+COLOR = 8
+CATEGORY = "ARMOR_LIGHT_ENERGY"
+ARM = 2
+MOD_DEX = -2
+ARM ENERGY = 3
+DEX ENERGY = 2
+STR ENERGY = 2
+SPD ENERGY = 5
+WEIGHT = 10000
+HIT POINTS = 100
+
+[ARMOR]
+NAME = "Kevlar Vest"
+DESCRIPTION = "This is an old type of vest made of the archaic ballistic fiber, Kevlar."
+COLOR = 8
+CATEGORY = "ARMOR_LIGHT_MILITARY"
+ARM = 2
+MOD_DEX = -2
+WEIGHT = 5000
+HIT POINTS = 80
+
+[ARMOR]
+NAME = "Military Bulletproof Vest"
+DESCRIPTION = "An old type of military flak jacket. It doesn't offer much protection against today's weapons."
+COLOR = 2
+CATEGORY = "ARMOR_LIGHT_MILITARY"
+ARM = 2
+MOD_DEX = -1
+MOD_SPD = -5
+WEIGHT = 6000
+HIT POINTS = 100
+PROPERTIES = ARMOR_PERCING
+
+[ARMOR]
+NAME = "Light Infantry Armor"
+DESCRIPTION = "A full suit of armor used by light infantry on long sorties, where logistics difficulties make more advanced powered armor impractical."
+COLOR = 7
+CATEGORY = "ARMOR_LIGHT_MILITARY"
+ARM = 2
+MOD_DEX = -1
+MOD_SPD = -3
+WEIGHT = 4000
+HIT POINTS = 120
+
+[ARMOR]
+NAME = "Protective Body Suit"
+DESCRIPTION = "This is a body suit of hard protective plates."
+COLOR = 1
+CATEGORY = "ARMOR_LIGHT_MILITARY"
+ARM = 3
+MOD_DEX = -2
+WEIGHT = 5000
+HIT POINTS = 80
+
+[ARMOR]
+NAME = "Heavy Body Armor"
+DESCRIPTION = "An older type of heavy armor. Very heavy..."
+COLOR = 1
+CATEGORY = "ARMOR_HEAVY_MILITARY"
+ARM = 4
+MOD_DEX = -2
+MOD_SPD = -5
+WEIGHT = 9000
+HIT POINTS = 200
+
+[ARMOR]
+NAME = "Colonial Marine Armor"
+DESCRIPTION = "! NOT WRITTEN YET !"
+COLOR = 2
+CATEGORY = "ARMOR_HEAVY_MILITARY"
+ARM = 4
+MOD_DEX = -2
+MOD_SPD = -5
+WEIGHT = 6000
+HIT POINTS = 100
+
+[ARMOR]
+NAME = "Space Rangers Armor"
+DESCRIPTION = "! NOT WRITTEN YET !"
+COLOR = 4
+CATEGORY = "ARMOR_HEAVY_MILITARY"
+ARM = 4
+MOD_DEX = -1
+MOD_SPD = -5
+WEIGHT = 4000
+HIT POINTS = 70
+
+[ARMOR]
+NAME = "Trooper Armor"
+DESCRIPTION = "This is the basic armor of SpaceTroopers."
+COLOR = 2
+CATEGORY = "ARMOR_HEAVY_MILITARY"
+ARM = 3
+MOD_DEX = -1
+MOD_SPD = -5
+WEIGHT = 4000
+HIT POINTS = 70
+
+[ARMOR]
+NAME = "Leather Jacket"
+DESCRIPTION = "A leather jacket. Brown. Well sewed."
+COLOR = 6
+CATEGORY = "ARMOR_SPACE_SHIP"
+ARM = 1
+MOD_DEX = -1
+WEIGHT = 1000
+
+HIT POINTS = 40
+
+[ARMOR]
+NAME = "Medical Clothing"
+DESCRIPTION = "A white laboratory coat."
+COLOR = 15
+CATEGORY = "ARMOR_SPACE_SHIP"
+ARM = 1
+MOD_SPD = -4
+WEIGHT = 1000
+HIT POINTS = 25
+
+[ARMOR]
+NAME = "Workwear"
+DESCRIPTION = "Typical jeans coveralls. Fashionable among mechanics."
+COLOR = 7
+CATEGORY = "ARMOR_SPACE_SHIP"
+ARM = 1
+MOD_DEX = -1
+WEIGHT = 2000
+HIT POINTS = 40
+
+[ARMOR]
+NAME = "Mining Suit"
+DESCRIPTION = "A heavy protective overcoat designed for miners. Mostly effective against falling rocks, it badly impedes movement."
+COLOR = 7
+CATEGORY = "ARMOR_MINES"
+ARM = 2
+MOD_SPD = -5
+WEIGHT = 5000
+HIT POINTS = 40
+
+[HAND_WEAPON]
+NAME = "Bare Hands"
+DESCRIPTION = "A pair of bare hands."
+ATTACK = "punches"
+TILE = "*"
+COLOR = 6
+DMG = 3
+HIT = 0
+DEF = 0
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/barehands/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Small Claws"
+DESCRIPTION = "A set of small claws."
+ATTACK = "claws"
+TILE = "*"
+DMG = 3
+HIT = 4
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/clawssmall/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Genotroid Claws"
+DESCRIPTION = "A set of medium claws."
+ATTACK = "claws"
+TILE = "*"
+DMG = 5
+HIT = 4
+DEF = 2
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/genotroid/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Claw Arms"
+DESCRIPTION = "! NOT WRITTEN YET ! - Mad Doctor's hands"
+ATTACK = "claws"
+TILE = "*"
+DMG = 6
+HIT = 4
+DEF = 4
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+SOUND USED = "data/sounds/weapons/clawssmall/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Scorpion Tail"
+CATEGORY = "ITEM_UNIQUE"
+DESCRIPTION = "! NOT WRITTEN YET ! - Mad Doctor's tail"
+ATTACK = "hits"
+TILE = "*"
+DMG = 10
+HIT = 0
+DEF = 0
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|CHEM_POISON
+
+SOUND USED = "data/sounds/weapons/tail/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Needle"
+COLOR = 6
+DESCRIPTION = "! NOT WRITTEN YET !"
+ATTACK = "hits"
+TILE = "|"
+DMG = 5
+HIT = 0
+DEF = 0
+PROPERTIES = NORMAL|ARMOR_PERCING
+# disappears after turn or when hit
+PURPOSE = TEMP_MISSILE
+
+SOUND USED = "data/sounds/weapons/needle/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Sticky Spittle"
+COLOR = 2
+DESCRIPTION = "! NOT WRITTEN YET ! - Mad Doctor's "
+ATTACK = "sticks"
+TILE = "*"
+DMG = 10
+HIT = 10
+DEF = 0
+PROPERTIES = PARALYZE
+# disappears after turn or when hit
+PURPOSE = TEMP_MISSILE
+
+SOUND USED = "data/sounds/weapons/spittle/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Large Claws"
+DESCRIPTION = "A set of large claws."
+ATTACK = "claws"
+TILE = "*"
+DMG = 6
+HIT = 6
+DEF = 4
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+
+SOUND USED = "data/sounds/weapons/clawslarge/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Small Teeth"
+DESCRIPTION = "A small set of teeth."
+ATTACK = "bites"
+TILE = "*"
+DMG = 5
+HIT = 3
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+
+SOUND USED = "data/sounds/weapons/teeth/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Small Radioactive Teeth"
+DESCRIPTION = "Small contaminated teeth."
+ATTACK = "bites"
+TILE = "*"
+DMG = 5
+HIT = 3
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|RADIOACTIVE
+
+SOUND USED = "data/sounds/weapons/teeth/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Small Poisoning Teeth"
+DESCRIPTION = "Small poisonous teeth."
+ATTACK = "bites"
+TILE = "*"
+DMG = 5
+HIT = 3
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|CHEM_POISON
+
+SOUND USED = "data/sounds/weapons/teeth/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Large Poisoning Teeth"
+DESCRIPTION = "Big poisonous fangs."
+ATTACK = "bites"
+TILE = "*"
+DMG = 10
+HIT = 3
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|CHEM_POISON
+
+SOUND USED = "data/sounds/weapons/teeth/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Large Radioactive Teeth"
+DESCRIPTION = "Big radioactive fangs."
+ATTACK = "bites"
+TILE = "*"
+DMG = 10
+HIT = 3
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|RADIOACTIVE
+
+SOUND USED = "data/sounds/weapons/teeth/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Paralyzing and poisoning teeth"
+DESCRIPTION = "A large set of poisonous teeth that can paralyze!"
+ATTACK = "bites"
+TILE = "*"
+DMG = 10
+HIT = 4
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|CHEM_POISON|PARALYZE
+
+SOUND USED = "data/sounds/weapons/teeth/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Vampiric Teeth"
+DESCRIPTION = "Some small and sharp teeth."
+ATTACK = "bites"
+TILE = "*"
+DMG = 7
+HIT = 4
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|VAMPIRIC
+
+SOUND USED = "data/sounds/weapons/flyleech/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Sting"
+DESCRIPTION = "A large sting with poison dripping from it."
+ATTACK = "stabs"
+TILE = "*"
+DMG = 6
+HIT = 3
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|CHEM_POISON
+
+SOUND USED = "data/sounds/weapons/sting/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Poisoning Tentacles"
+DESCRIPTION = "A bunch of large poisonous tentacles."
+ATTACK = "sucks"
+TILE = "*"
+DMG = 5
+HIT = 8
+DEF = 8
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|CHEM_POISON
+
+SOUND USED = "data/sounds/weapons/sucker/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Poisoning and Paralyzing Tentacles"
+DESCRIPTION = "A bunch of large poisonous and paralyzing tentacles."
+ATTACK = "sucks"
+TILE = "*"
+DMG = 8
+HIT = 8
+DEF = 8
+SKILL TO USE = UNARMED
+PROPERTIES = CHEM_POISON|PARALYZE
+
+SOUND USED = "data/sounds/weapons/sucker/hit.wav" 
+
+[SKIN]
+NAME = "Human Skin"
+COLOR = 6
+ARM = 0
+
+[SKIN]
+NAME = "Small Fur"
+ARM = 1
+
+[SKIN]
+NAME = "Soft Skin"
+ARM = 0
+
+[SKIN]
+NAME = "Searchlight Shell"
+COLOR = 11
+ARM = 2
+
+[HAND_WEAPON]
+NAME = "Light"
+COLOR = 11
+ATTACK = "lights"
+TILE = "*"
+DMG = 0
+HIT = 0
+DEF = 0
+SKILL TO USE = UNARMED
+
+[HAND_WEAPON]
+NAME = "Dog Teeth & Claws"
+DESCRIPTION = "Small teeth and sharp claws."
+ATTACK = "bites"
+TILE = "*"
+DMG = 5
+HIT = 5
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+
+SOUND USED = "data/sounds/weapons/dog/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Sharp Teeth"
+DESCRIPTION = "A row of small, sharp teeth."
+ATTACK = "bites"
+TILE = "*"
+DMG = 5
+HIT = 3
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|ARMOR_PERCING
+
+SOUND USED = "data/sounds/weapons/teethsharp/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Paralyzing Sucker"
+ATTACK = "sucks on"
+TILE = "*"
+DMG = 10
+HIT = 5
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = PARALYZE
+
+SOUND USED = "data/sounds/weapons/flyleech/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Large Jaws"
+ATTACK = "bites"
+TILE = "*"
+DMG = 8
+HIT = 8
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+
+SOUND USED = "data/sounds/weapons/jaws/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Worm Tail"
+ATTACK = "stabs"
+TILE = "*"
+DMG = 10
+HIT = 5
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL|ARMOR_PERCING|CHEM_POISON
+
+SOUND USED = "data/sounds/weapons/tail/hit.wav" 
+
+[HAND_WEAPON]
+NAME = "Worm Segment"
+ATTACK = "crushes"
+TILE = "*"
+DMG = 7
+HIT = 5
+DEF = 1
+SKILL TO USE = UNARMED
+PROPERTIES = NORMAL
+
+SOUND USED = "data/sounds/weapons/segment/hit.wav" 
+
+[SKIN]
+NAME = "Hard Skin"
+ARM = 2
+
+[SKIN]
+NAME = "Hard Scales"
+ARM = 4
+PROPERTIES = CHEM_POISON
+
+[SKIN]
+NAME = "Chitin Armor"
+ARM = 4
+
+[GRENADE]
+NAME = "Personal Field"
+DESCRIPTION = "A hand-held generator that can instantly create a forcefield in the immediate vicinity for short time."
+CATEGORY = "GRENADE_ENERGY_1"
+PWR = 30
+RNG = 1
+DLY = 0
+WEIGHT = 300
+PROPERTIES = POWER_SHIELD
+SOUND EXPLOSION = "data/sounds/weapons/grenades/forcefield/explosion.wav"
+
+[GRENADE]
+NAME = "Force Field"
+DESCRIPTION = "This is a hand-held forcefield generator. It's usually used on Space Ships as a protection from natural and weapon attacks. This generator generates a small field."
+CATEGORY = "GRENADE_ENERGY_2"
+PWR = 120
+RNG = 1
+DLY = 0
+WEIGHT = 300
+PROPERTIES = POWER_SHIELD
+SOUND EXPLOSION = "data/sounds/weapons/grenades/forcefield/explosion.wav"
+
+[GRENADE]
+NAME = "Large Force Field"
+CATEGORY = "GRENADE_ENERGY_2"
+DESCRIPTION = "This is a hand-held forcefield generator. It's usually used on Space Ships as a protection from natural and weapon attacks. This generator generates a large field for a long period of time, but needs some time to generate the field."
+PWR = 300
+DLY = 40
+RNG = 3
+PROPERTIES = POWER_SHIELD
+SOUND EXPLOSION = "data/sounds/weapons/grenades/forcefield/explosion.wav"
+
+[GRENADE]
+NAME = "Incendiary Grenade"
+DESCRIPTION = "When this hand grenade explodes, it covers the area in liquid fire."
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 25
+RNG = 5
+DLY = 10
+PROPERTIES = INCENDIARY
+SOUND EXPLOSION = "data/sounds/weapons/grenades/incendiary/explosion.wav"
+
+[GRENADE]
+NAME = "EMP Grenade"
+DESCRIPTION = "EMP Grenade releases an electromagnetic wave that creates a short-circuit effect, damaging nearby electronic devices."
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 25
+RNG = 5
+DLY = 0
+PROPERTIES = ELECTRIC
+SOUND EXPLOSION = "data/sounds/weapons/grenades/emp/explosion.wav"
+
+[GRENADE]
+NAME = "Smoke Grenade"
+DESCRIPTION = "This hand grenade, when activated, releases thick smoke which can cover a large area."
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 200
+RNG = 200
+DLY = 10
+PROPERTIES = SMOKE
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/gas/explosion.wav"
+
+[GRENADE]
+NAME = "Poison-Gas Grenade"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 200
+RNG = 200
+DLY = 10
+PROPERTIES = SMOKE|CHEM_POISON
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/gas/explosion.wav"
+
+[GRENADE]
+NAME = "Stun-Gas Grenade"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 200
+RNG = 200
+DLY = 10
+PROPERTIES = SMOKE|STUN
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/gas/explosion.wav"
+
+[GRENADE]
+NAME = "Paralyze-Gas Grenade"
+DESCRIPTION = "! NOT WRITTEN YET !"
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 200
+RNG = 200
+DLY = 10
+PROPERTIES = SMOKE|PARALYZE
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/gas/explosion.wav"
+
+[GRENADE]
+NAME = "Hand Grenade"
+DESCRIPTION = "A standard hand grenade. It explodes, damaging everything in range of the explosion."
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 30
+RNG = 7
+DLY = 10
+PROPERTIES = EXPLOSIVE|STUN
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/explosion/explosion.wav"
+
+[GRENADE]
+NAME = "HE Grenade"
+DESCRIPTION = "A much more powerful version of the standard hand grenade, this one will severely damage all targets in a wide area."
+CATEGORY = "GRENADE_NORMAL_2"
+PWR = 45
+RNG = 8
+DLY = 5
+PROPERTIES = EXPLOSIVE|STUN
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/explosion/explosion.wav"
+
+[GRENADE]
+NAME = "Stun Grenade"
+DESCRIPTION = "A concussion grenade. It can blind and shock creatures for a few seconds."
+CATEGORY = "GRENADE_NORMAL_1"
+PWR = 60
+RNG = 20
+DLY = 10
+WEIGHT = 300
+PROPERTIES = STUN
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/explosion/explosion3.wav"
+
+[GRENADE]
+NAME = "Sensor Mine"
+DESCRIPTION = "The sensor mine scans its surroundings for moving creatures and explodes when one is detected nearby."
+CATEGORY = "GRENADE_MINE_1"
+TILE = "^"
+PWR = 35
+RNG = 6
+DLY = 20
+PROPERTIES = SENSOR | EXPLOSIVE | STUN
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/explosion/explosion2.wav"
+
+[GRENADE]
+NAME = "Sensor Incendiary Mine"
+DESCRIPTION = "The sensor mine scans its surroundings for moving creatures and explodes when one is detected nearby. This mine causes a burst of liquid flame."
+CATEGORY = "GRENADE_MINE_1"
+TILE = "^"
+COLOR = 4
+PWR = 25
+RNG = 5
+DLY = 20
+PROPERTIES = SENSOR | INCENDIARY
+
+SOUND EXPLOSION = "data/sounds/weapons/grenades/incendiary/explosion.wav"
+
+[CONTROLLER]
+NAME = "Door Opener"
+HIT POINTS = 10
+PURPOSE = AUTO_DOOR_OPEN
+
+[CONTROLLER]
+NAME = "Weak Corridor in Mines"
+HIT POINTS = 1
+PURPOSE = WEAK_CORRIDOR_IN_MINES
+
+[CONTROLLER]
+NAME = "Smoke Generator"
+HIT POINTS = 1
+PURPOSE = SMOKE_GENERATOR
+
+[CONTROLLER]
+NAME = "Tutorial Advancer"
+HIT POINTS = 10000
+PURPOSE = TUTORIAL_ADVANCE
+
+[PILL]
+NAME = "Nanorebuilding Pill"
+DESCRIPTION = "This pill contains nanorobots that activate on contact with gastric acid. Nanorobots are programmed to close wounds."
+COLOR = 11
+CATEGORY = "PILLS_POPULAR"
+HIT POINTS = 3
+PWR = 20
+PURPOSE = INCRASE_HP
+
+[PILL]
+NAME = "Booster Pill"
+DESCRIPTION = "This adrenaline-based drug stimulates your brain and body to react faster."
+COLOR = 12
+CATEGORY = "PILLS_POPULAR"
+HIT POINTS = 3
+PWR = 100
+PURPOSE = INCRASE_SPEED 
+
+[PILL]
+NAME = "Mijon Pill"
+DESCRIPTION = "This drug, also called 'Mighty Johnny', is the most popular pharmaceutical product of the Mijon company. It gives a great, but temporary, strength boost to the one who swallows it." 
+COLOR = 13
+CATEGORY = "PILLS_POPULAR"
+HIT POINTS = 3
+PWR = 200
+PURPOSE = INCRASE_STRENGTH
+
+[PILL]
+NAME = "Antitoxin"
+DESCRIPTION = "A broad-spectrum antidote that can purify most toxins from the bloodstream."
+COLOR = 14
+CATEGORY = "PILLS_POPULAR"
+HIT POINTS = 3
+PWR = 200
+PURPOSE = DECRASE_CHEM_POISON
+
+[PILL]
+NAME = "AntiRad Medicine"
+DESCRIPTION = "An indispensable military drug that reduces the effects of radiation poisoning."
+COLOR = 15
+CATEGORY = "PILLS_POPULAR"
+HIT POINTS = 3
+PWR = 200
+PURPOSE = DECRASE_RADIOACTIVE
+
+[RANGED_WEAPON]
+NAME = "M56 Smartgun"
+DESCRIPTION = "The support weapon of the Colonial Marine Corps, with a special guidance system."
+CATEGORY = "WEAPON_HEAVY_MACHINE_GUN"
+IN MAGAZINE = "AMMO_LIGHT_RIFLE"
+DMG = 1
+COLOR = 11
+ACC = 10
+PWR = 7
+TYPE = "6_25MM"
+WEIGHT = 10000
+HIT POINTS = 100
+REQ STRENGTH = 12
+MAGAZINE CAPACITY = 100
+FIRE MODE = FIRE_TRIPLE
+AVAILABLE FIRE MODES = FIRE_TRIPLE | FIRE_BURST
+SKILL TO USE = BIG GUNS
+
+[RANGED_WEAPON]
+NAME = "M42 PL Rifle"
+DESCRIPTION = "A weapon of the Colonial Marine Corps. Very handy."
+CATEGORY = "WEAPON_LIGHT_MACHINE_GUN"
+IN MAGAZINE = "AMMO_LIGHT_RIFLE"
+DMG = 1
+COLOR = 11
+ACC = 3
+PWR = 7
+TYPE = "6_25MM"
+WEIGHT = 5000
+HIT POINTS = 100
+REQ STRENGTH = 12
+MAGAZINE CAPACITY = 30
+FIRE MODE = FIRE_SINGLE
+AVAILABLE FIRE MODES = FIRE_SINGLE | FIRE_TRIPLE
+SKILL TO USE = SMALL GUNS
+
+[RANGED_WEAPON]
+NAME = "Minigun"
+DESCRIPTION = "A multi-barrel machine gun, capable of laying down a withering hail of lead."
+CATEGORY = "WEAPON_HEAVY_MACHINE_GUN"
+IN MAGAZINE = "AMMO_HEAVY_RIFLE"
+DMG = 1
+COLOR = 11
+ACC = 0
+PWR = 7
+TYPE = "6_25MM"
+WEIGHT = 10000
+HIT POINTS = 100
+REQ STRENGTH = 15
+MAGAZINE CAPACITY = 200
+FIRE MODE = FIRE_BURST
+AVAILABLE FIRE MODES = FIRE_BURST
+SKILL TO USE = BIG GUNS
+
+
+# ROBOTY
+# Powloka to szkielet, zawiera iles miejsc na "nogi" (kola, gasiennice) (move slot)
+# oraz na sloty (uchwyty na bron lub inne przedmioty) (action slot)
+# Szybkosc ruchu robota jest obliczana nastepujaco:
+# S = suma move power wszystkich "nog"
+# W = waga calego robota (powloka, nogi, cpu, bron)
+# SPD = S - W/4000
+# Wiec szybkosc poruszania sie robota trzeba definiowac jego wag¹
+# Szybkosz poruszania sie nie jest rowna szybkosci reakcji, do tego jest CPU i jego szybkosc.
+# Szybkosc CPU jest wykorzystywana podobnie jak u zwyklych potworow ich szybkosc
+
+[ROBOT_SHELL]
+NAME = "Small Stationary Robot Shell"
+DESCRIPTION = "A compact casing without attachments for motive systems."
+COLOR = 3
+TILE = "G"
+CATEGORY = "ROBOT_SHELL_1"
+MOVE SLOTS = 0
+ACTION SLOTS = 2
+WEIGHT = 10000
+HIT POINTS = 20
+ARM = 3
+
+[ROBOT_SHELL]
+NAME = "Tutorial Target Shell"
+DESCRIPTION = "None"
+COLOR = 15
+TILE = "O"
+CATEGORY = "ROBOT_SHELL_UNIQUE"
+MOVE SLOTS = 0
+ACTION SLOTS = 0
+WEIGHT = 10000
+HIT POINTS = 20
+ARM = 0
+
+[ROBOT_SHELL]
+NAME = "Bunker Gun Shell"
+DESCRIPTION = "A massive hulk of a shell for a robot gun, it sends the message 'don't mess with me' loud and clear."
+COLOR = 4
+TILE = "G"
+CATEGORY = "ROBOT_SHELL_UNIQUE"
+MOVE SLOTS = 0
+ACTION SLOTS = 2
+WEIGHT = 100000
+HIT POINTS = 150
+ARM = 3
+
+[ROBOT_SHELL]
+NAME = "Medium Stationary Robot Shell"
+DESCRIPTION = "A squat shell with plenty of storage space but no place for a movement system."
+COLOR = 11
+TILE = "G"
+CATEGORY = "ROBOT_SHELL_2"
+MOVE SLOTS = 0
+ACTION SLOTS = 3
+WEIGHT = 15000
+HIT POINTS = 30
+ARM = 4
+
+[ROBOT_SHELL]
+NAME = "Small Armored Stationary Robot Shell"
+DESCRIPTION = "A heavier version of the small casing, with thick armor plating added."
+COLOR = 3
+TILE = "G"
+CATEGORY = "ROBOT_SHELL_2"
+MOVE SLOTS = 0
+ACTION SLOTS = 2
+WEIGHT = 30000
+
+HIT POINTS = 60
+ARM = 6
+
+[ROBOT_SHELL]
+
+NAME = "Medium Armored Stationary Robot Shell"
+DESCRIPTION = "Originally designed as a turret for robot tanks, it certainly looks the part."
+COLOR = 11
+TILE = "G"
+CATEGORY = "ROBOT_SHELL_3"
+MOVE SLOTS = 0
+ACTION SLOTS = 3
+WEIGHT = 55000
+HIT POINTS = 80
+ARM = 7
+
+[ROBOT_SHELL]
+NAME = "Small Quick Robot Shell"
+DESCRIPTION = "The ubiquitous shell around which many civilian robots are designed."
+COLOR = 11
+TILE = "o"
+CATEGORY = "ROBOT_SHELL_1"
+MOVE SLOTS = 1
+ACTION SLOTS = 1
+WEIGHT = 1000
+HIT POINTS = 10
+ARM = 1
+
+[ROBOT_SHELL]
+NAME = "Small Dark Quick Robot Shell"
+DESCRIPTION = "The ubiquitous shell around which many civilian robots are designed. This one is dark."
+COLOR = 2
+TILE = "o"
+CATEGORY = "ROBOT_SHELL_1"
+MOVE SLOTS = 1
+ACTION SLOTS = 1
+WEIGHT = 1000
+HIT POINTS = 10
+ARM = 1
+
+
+[ROBOT_SHELL]
+NAME = "Utility Bot Shell"
+DESCRIPTION = "A large, ugly robot casing that is good for limited tasks only."
+COLOR = 11
+TILE = "R"
+CATEGORY = "ROBOT_SHELL_1"
+MOVE SLOTS = 2
+ACTION SLOTS = 1
+WEIGHT = 30000
+HIT POINTS = 30
+ARM = 1
+
+[ROBOT_SHELL]
+NAME = "Small Moving Robot Shell"
+COLOR = 3
+TILE = "R"
+CATEGORY = "ROBOT_SHELL_1"
+DESCRIPTION = "A variation of the Utility Bot shell that has had much internal structure sacrificed for additional equipment spaces."
+MOVE SLOTS = 2
+ACTION SLOTS = 2
+WEIGHT = 30000
+HIT POINTS = 20
+ARM = 2
+
+[ROBOT_SHELL]
+NAME = "Medium Moving Robot Shell"
+DESCRIPTION = "A slightly smaller than man-sized casing, with several modular component slots."
+COLOR = 12
+TILE = "R"
+CATEGORY = "ROBOT_SHELL_2"
+MOVE SLOTS = 2
+ACTION SLOTS = 3
+WEIGHT = 40000
+HIT POINTS = 40
+ARM = 3
+
+[ROBOT_SHELL]
+NAME = "Small Vehicle Robot Shell"
+COLOR = 3
+TILE = "V"
+CATEGORY = "ROBOT_SHELL_2"
+DESCRIPTION = "A type of robot shell that takes its shape from certain light ground vehicles."
+MOVE SLOTS = 4
+ACTION SLOTS = 2
+WEIGHT = 60000
+HIT POINTS = 30
+ARM = 3
+
+
+[ROBOT_SHELL]
+NAME = "Medium Vehicle Robot Shell"
+COLOR = 11
+TILE = "V"
+CATEGORY = "ROBOT_SHELL_3"
+DESCRIPTION = "A larger vehicle-form casing, designed for speed above all else."
+MOVE SLOTS = 4
+ACTION SLOTS = 3
+WEIGHT = 100000
+HIT POINTS = 80
+ARM = 5
+
+[ROBOT_SHELL]
+NAME = "Small Spider Robot Shell"
+COLOR = 3
+TILE = "s"
+CATEGORY = "ROBOT_SHELL_3"
+DESCRIPTION = "A high-mobility light robot shell. Makes a decent assault unit."
+MOVE SLOTS = 6
+ACTION SLOTS = 2
+WEIGHT = 200000
+HIT POINTS = 50
+ARM = 3
+
+[ROBOT_SHELL]
+NAME = "Medium Spider Robot Shell"
+COLOR = 11
+TILE = "s"
+CATEGORY = "ROBOT_SHELL_4"
+MOVE SLOTS = 6
+ACTION SLOTS = 3
+WEIGHT = 350000
+HIT POINTS = 100
+ARM = 5
+
+[ROBOT_LEG]
+NAME = "Metal Robot Leg"
+DESCRIPTION = "An articulated metal leg system for walker robots."
+CATEGORY = "ROBOT_LEG_1"
+HIT POINTS = 20
+MOVE PWR = 20
+WEIGHT = 7500
+
+[ROBOT_LEG]
+NAME = "Rubber Robot Wheel"
+DESCRIPTION = "A powered wheel with a rubber tire, fast but easily punctured."
+CATEGORY = "ROBOT_LEG_1"
+HIT POINTS = 5
+MOVE PWR = 35
+WEIGHT = 2000
+
+[ROBOT_LEG]
+NAME = "Metal Robot Caterpillar"
+DESCRIPTION = "A rugged tread system, popular in military robots. Slow but durable."
+CATEGORY = "ROBOT_LEG_1"
+HIT POINTS = 40
+MOVE PWR = 15
+WEIGHT = 2000
+
+# CPU PROGRAMMING
+# Program is a string of characters.
+# Program is executed lineary every time from the beginning, on every get_action for robot.
+# Executed is the first non-conditional activity
+# There are two types of instructions: conditional and non-conditional
+# Conditional instructions - when condition is fulfiled, CPU executes next instruction
+#  	      		     when condition is not fulfiled, CPU skip the next non-conditional instruction
+#			     (instruction pointer moves to the position after the next non-conditional)
+# Available instructions:
+#
+# Conditional
+# 0 - If I see the enemy
+# 1 - If I stand on position where you last saw enemy
+# 2 - If I stand on just by position where you last saw enemy
+# 3 - If I are >4 cells from last seen enemy position
+# 4 - If I are >8 cells from last seen enemy position
+# 5 - If my weapon has ammo
+# 6 - If I see my creator
+# 7 - Coin toss (50% chance)
+# 8 - If I can move
+# ! - Negate next condition
+#
+# Non-conditional
+# a - go to the last seen creator's position
+# b - attack enemy by range weapon
+# c - go to last seen enemy position
+# d - search for an enemy
+# e - go to nearest TRASH and utility it (treat trash an enemy) - for Utility Robot
+# f - activate grenades by activating and damaging it
+# g -
+# h -
+# i -
+# j - #not implemented - go to the last position of friend
+# k - #alarm
+# l - #run away from enemy
+# m - load ammo to the weapon
+# n - wait
+
+[PROCESSOR]
+NAME = "Tutorial Target CPU"
+CATEGORY = "ROBOT_CPU_UNIQUE"
+GROUP = ENEMY
+PROGRAM = "n"
+FREQ = 20
+QUALITY = 100
+HIT POINTS = 1
+WEIGHT = 100
+DESCRIPTION = "None"
+
+[PROCESSOR]
+NAME = "Walking Bomb CPU"
+CATEGORY = "ROBOT_CPU_1"
+GROUP = ENEMY
+# Program
+# 1 - If I stand on position where you last saw enemy
+# 	d - search for an enemy
+# 0 - If I see the enemy
+# 	2 - If I stand on just by position where you last saw enemy
+# 		f - activate grenades by activating and damaging it
+# c - go to last seen enemy position
+
+PROGRAM = "1d02fc"
+FREQ = 35
+QUALITY = 35
+HIT POINTS = 10
+WEIGHT = 100
+DESCRIPTION = "A CPU module with the most rudimentary programming: to move towards sighted enemies and blow up if equipped with grenad
+s (also known as the Kamikaze program)."
+
+[PROCESSOR]
+NAME = "ED710 CPU"
+CATEGORY = "ROBOT_CPU_1"
+GROUP = ENEMY
+# Program
+# !6 - If I DONT see my creator
+# 	a - go to the last seen creator's position
+# !5 - If my weapon DOESNT have ammo
+# 	m - load ammo to the weapon
+# 0 - If I see the enemy
+# 	3 - If I are >4 cells from last seen enemy position
+# 		7 - Coin toss (50% chance)
+# 			7 - Coin toss (50% chance)
+# 				c - go to last seen enemy position
+# 0 - If I see the enemy
+# 	3 - If I are >4 cells from last seen enemy position
+# 		7 - Coin toss (50% chance)
+# 			c - go to last seen enemy position
+# 0 - If I see the enemy
+# 	!5 - If my weapon DOESNT have ammo
+# 		c - go to last seen enemy position
+# 0 - If I see the enemy
+# 	5 - If my weapon has ammo
+# 		b - attack enemy by range weapon
+# !0 - If I DONT see the enemy
+# 	1 - If I stand on position where you last saw enemy
+# 		7 - Coin toss (50% chance)
+# 			d - search for an enemy
+# !0 - If I DONT see the enemy
+# 	c - go to last seen enemy position
+
+PROGRAM = "!6a!5m0377c047c0!5c05b!017d!0c"
+FREQ = 35
+QUALITY = 60
+HIT POINTS = 10
+DESCRIPTION = "An advanced combat CPU module, it will seek out and intelligently destroy enemies with ranged weapons."
+
+[PROCESSOR]
+NAME = "SentryGun CPU"
+CATEGORY = "ROBOT_CPU_1"
+GROUP = ENEMY
+# Program
+# ! - negacja
+# 	5 - Jezeli bron ma amunicje
+# 		m - zaladuj amunicje do broni (z pierwszego slotu, gdzie amunicja jest)
+# 5 - Jezeli bron ma amunicje
+# 	0 - gdy widzisz wroga
+# 		3 - Jezeli stoisz >4 pola od gdzie ostatni raz widziales wroga
+# 			7 - 50% szansy
+# 				n - czekaj
+# 5 - Jezeli bron ma amunicje
+# 	0 - gdy widzisz wroga
+# 		4 - Jezeli stoisz >8 pola od gdzie ostatni raz widziales wroga
+# 			7 - 50% szansy
+# 				n - czekaj
+# 5 - Jezeli bron ma amunicje
+# 	0 - gdy widzisz wroga
+# 		b - atakuj wroga na odleglosc
+PROGRAM = "!5m5037n5047n50b"
+FREQ = 10
+QUALITY = 40
+HIT POINTS = 10
+WEIGHT = 100
+
+[PROCESSOR]
+NAME = "BunkerGun CPU"
+CATEGORY = "ROBOT_CPU_UNIQUE"
+GROUP = ENEMY
+# Program
+# ! - negacja
+# 	5 - Jezeli bron ma amunicje
+# 		m - zaladuj amunicje do broni (z pierwszego slotu, gdzie amunicja jest)
+# 5 - Jezeli bron ma amunicje
+# 	0 - gdy widzisz wroga
+# 		b - atakuj wroga na odleglosc
+PROGRAM = "!5m50b"
+FREQ = 35
+QUALITY = 100
+HIT POINTS = 50
+WEIGHT = 2000
+DESCRIPTION = "The most advanced sentry robot CPU, optimized for near-instant acquisition of targets."
+
+[PROCESSOR]
+NAME = "Simple Seeker CPU"
+CATEGORY = "ROBOT_CPU_1"
+GROUP = ENEMY
+# Program
+# 6 - Jezeli widzisz stworce
+# 	!0 - gdy nie widzisz wroga
+#		7 - 50% szansy
+#			7 - 50% szansy
+#				d - poszukuj wroga
+# 6 - Jezeli widzisz stworce
+# 	!0 - gdy nie widzisz wroga
+#		7 - 50% szansy
+#			a - idz do ostatniej pozycji stworcy
+# !6 - Jezeli nie widzisz stworcy
+# 	a - idz do ostatniej pozycji stworcy
+# 1 - Jezeli stoisz tam, gdzie ostatni raz widziales wroga
+#	d - poszukuj wroga
+# c - idz w kierunku, gdzie ostatni raz widziales wroga
+PROGRAM = "6!077d6!07a!6a1dc"
+FREQ = 45
+QUALITY = 40
+HIT POINTS = 10
+WEIGHT = 100
+DESCRIPTION = "A multi-purpose CPU module. Will identify specified classes of target, close in and activate onboard equipment." 
+
+[COPYOF "Simple Seeker CPU"]
+NAME = "Weak Simple Seeker CPU"
+QUALITY = 30
+DESCRIPTION = "A multi-purpose CPU module. Will identify specified classes of target, close in and activate onboard equipment. This is an old model." 
+
+[PROCESSOR]
+NAME = "Utility Bot CPU"
+CATEGORY = "ROBOT_CPU_1"
+GROUP = NEUTRAL
+# Program
+# !6 - Jezeli nie widzisz stworcy
+# 	a - idz do ostatniej pozycji stworcy
+# e - Idz do TRASHia i utylizuj go (dla Utility Robot) - TRASH to wrog
+# 1 - Jezeli stoisz tam, gdzie ostatni raz widziales wroga
+# 	d - poszukuj wroga
+
+PROGRAM = "!6ae1d"
+FREQ = 35
+QUALITY = 35
+HIT POINTS = 10
+WEIGHT = 100
+DESCRIPTION = "One of the dumber CPU modules, all this one can do is look for garbage and use whatever equipment it has on it."
+
+
+
+
+#przedmiot zostawiany przez maddoctora
+[TRASH]
+NAME = "Genetic Machine Card"
+TILE = "-"
+DESCRIPTION = "A small chip card."
+COLOR = 15
+CATEGORY = "ITEM_UNIQUE"
+WEIGHT = 100
+HIT POINTS = 5
+PURPOSE = GENETIC_MACHINE_CARD
+
